@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Atharva Dnyaneshwar Shastrakar - Original Resume PDF">
+  <title>Atharva Dnyaneshwar Shastrakar — Resume (PDF)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #0b1120;
+      color: #f8fafc;
+      font-family: 'Outfit', sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 1.5rem;
+      background: #070c18;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      flex-shrink: 0;
+    }
+    .toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .toolbar a, .toolbar button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .btn-back {
+      background: rgba(255, 255, 255, 0.08);
+      color: #f8fafc;
+    }
+    .btn-back:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #00f2fe;
+    }
+    .btn-download {
+      background: linear-gradient(135deg, #00f2fe 0%, #0284c7 100%);
+      color: #040711;
+      border: none;
+      font-weight: 700;
+    }
+    .btn-download:hover {
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
+      transform: translateY(-1px);
+    }
+    .pdf-container {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <header class="toolbar">
+    <div class="toolbar-left">
+      <a href="index.html" class="btn-back">← Back to Portfolio</a>
+      <span style="font-size: 0.95rem; font-weight: 600; color: #94a3b8;">Atharva_Dnyaneshwar_Shastrakar_Resume.pdf</span>
+    </div>
+    <div style="display: flex; gap: 0.6rem;">
+      <a href="assets/Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" download="Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" class="btn-download">📥 Download Original PDF</a>
+      <a href="assets/Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" target="_blank" class="btn-back">↗ Open in Full Tab</a>
+    </div>
+  </header>
+  <main class="pdf-container">
+    <iframe src="assets/Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" title="Atharva Dnyaneshwar Shastrakar Original PDF Resume"></iframe>
+  </main>
+</body>
+</html>

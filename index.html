@@ -14,7 +14,7 @@
   <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=Fira+Code:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Core & Component Stylesheets -->
   <link rel="stylesheet" href="css/main.css">
@@ -129,9 +129,9 @@
           </button>
 
           <!-- Resume Button -->
-          <button class="btn btn-outline-cyber btn-sm btn-open-resume" id="btn-open-resume-nav">
-            Resume
-          </button>
+          <a href="assets/Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-cyber btn-sm" id="btn-open-resume-nav">
+            Resume (PDF)
+          </a>
 
           <!-- Mobile Hamburger -->
           <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Open Navigation Menu">
@@ -187,9 +187,12 @@
             <a href="#terminal-section" class="btn btn-secondary">
               <span>💻 SOC Terminal</span>
             </a>
-            <button class="btn btn-outline-cyber btn-open-resume" id="btn-hero-resume">
-              <span>📄 View Resume</span>
-            </button>
+            <a href="assets/Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" download="Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" class="btn btn-primary" id="btn-hero-resume-download" title="Download Original PDF Resume">
+              <span>📥 Download PDF</span>
+            </a>
+            <a href="assets/Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-cyber" id="btn-hero-resume">
+              <span>📄 View Original PDF</span>
+            </a>
             <a href="#contact" class="btn btn-secondary">
               <span>✉ Contact</span>
             </a>
@@ -1321,146 +1324,25 @@
     </div>
   </div>
 
-  <!-- 2. Formatted Printable Resume Modal -->
+  <!-- 2. Original PDF Resume Modal -->
   <div class="modal-backdrop" id="resume-modal" role="dialog" aria-modal="true">
-    <div class="modal-card" style="max-width: 860px;">
+    <div class="modal-card" style="max-width: 960px; background: #0b1120;">
       <div class="modal-header">
         <div>
-          <h3 style="font-size: 1.3rem;">Atharva Dnyaneshwar Shastrakar — Resume</h3>
-          <div style="font-size: 0.85rem; color: var(--text-secondary); font-family: var(--font-mono);">
-            Cybersecurity Analyst &amp; Full Stack Developer
+          <h3 style="font-size: 1.25rem;">Atharva Dnyaneshwar Shastrakar — Original Resume</h3>
+          <div style="font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono);">
+            Official PDF Document (Original Upload)
           </div>
         </div>
-        <div style="display: flex; gap: 0.6rem;">
-          <button class="btn btn-primary btn-sm" onclick="window.print()">🖨️ Print / Save PDF</button>
+        <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
+          <a href="assets/Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" download="Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" class="btn btn-primary btn-sm" title="Download Original PDF Resume">📥 Download Original PDF</a>
+          <a href="assets/Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" title="Open PDF in Full Tab">↗ Open in Tab</a>
           <button class="modal-close-btn" id="resume-modal-close" aria-label="Close resume">✕</button>
         </div>
       </div>
 
-      <div class="modal-body" style="font-size: 0.92rem; color: var(--text-secondary);">
-        <!-- Summary -->
-        <div>
-          <h4 style="color: var(--primary); font-size: 1.05rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.3rem; margin-bottom: 0.6rem;">
-            PROFESSIONAL SUMMARY
-          </h4>
-          <p>
-            Cybersecurity and Digital Forensics undergraduate with hands-on experience in full-stack web development, secure application design, and cloud technologies. Proficient in Python, JavaScript, React.js, Next.js, REST APIs, and AWS, with a strong foundation in cybersecurity and digital forensics. Passionate about building scalable, secure, and user-centric software solutions.
-          </p>
-        </div>
-
-        <!-- Education -->
-        <div>
-          <h4 style="color: var(--primary); font-size: 1.05rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.3rem; margin-bottom: 0.6rem;">
-            EDUCATION
-          </h4>
-          <div style="display: flex; justify-content: space-between; font-weight: 700; color: var(--text-primary);">
-            <span>VIT Bhopal University</span>
-            <span>Bhopal, India</span>
-          </div>
-          <div style="display: flex; justify-content: space-between; font-style: italic; margin-bottom: 0.3rem;">
-            <span>B.Tech, Computer Science &amp; Engineering – Cyber Security and Digital Forensics</span>
-            <span>Jun 2022 – Jun 2026</span>
-          </div>
-          <div><strong>CGPA:</strong> 7.3 / 10.0</div>
-        </div>
-
-        <!-- Experience -->
-        <div>
-          <h4 style="color: var(--primary); font-size: 1.05rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.3rem; margin-bottom: 0.6rem;">
-            EXPERIENCE
-          </h4>
-
-          <!-- Offcomfrt -->
-          <div style="margin-bottom: 1.2rem;">
-            <div style="display: flex; justify-content: space-between; font-weight: 700; color: var(--text-primary);">
-              <span>Customer Support Executive — Offcomfrt Apparels LLP</span>
-              <span style="color: #34d399;">July 2026 – Present</span>
-            </div>
-            <ul style="padding-left: 1.2rem; margin-top: 0.4rem; display: flex; flex-direction: column; gap: 0.3rem;">
-              <li>Managing high-priority client communications, dispute resolution, and cross-channel support workflows.</li>
-              <li>Streamlining service workflows and CRM ticketing systems, ensuring prompt escalations and high customer satisfaction scores.</li>
-              <li>Collaborating with operational teams to analyze client feedback, identify recurring service bottlenecks, and optimize processes.</li>
-            </ul>
-          </div>
-
-          <!-- Chrysadalus -->
-          <div style="margin-bottom: 1.2rem;">
-            <div style="display: flex; justify-content: space-between; font-weight: 700; color: var(--text-primary);">
-              <span>Full Stack Developer — Chrysadalus</span>
-              <span>Nov 2025 – March 2026</span>
-            </div>
-            <ul style="padding-left: 1.2rem; margin-top: 0.4rem; display: flex; flex-direction: column; gap: 0.3rem;">
-              <li>Developed responsive web applications using modern frontend and backend technologies, delivering scalable and user-friendly solutions.</li>
-              <li>Built and integrated RESTful APIs, improving communication between frontend interfaces and backend services.</li>
-              <li>Collaborated with cross-functional teams to implement new features, optimize application performance, and resolve production issues.</li>
-            </ul>
-          </div>
-
-          <!-- Skidev -->
-          <div style="margin-bottom: 1.2rem;">
-            <div style="display: flex; justify-content: space-between; font-weight: 700; color: var(--text-primary);">
-              <span>Business Development Intern — Skidev Inc</span>
-              <span>May 2025 – August 2025</span>
-            </div>
-            <ul style="padding-left: 1.2rem; margin-top: 0.4rem; display: flex; flex-direction: column; gap: 0.3rem;">
-              <li>Conducted market research and competitor analysis to identify strategic expansion opportunities and new client demographics.</li>
-              <li>Supported business outreach pipelines, prepared customized technical pitches, and engaged prospective partners.</li>
-              <li>Collaborated with product and engineering teams to translate client requirements into actionable development roadmaps.</li>
-            </ul>
-          </div>
-
-          <!-- Cyber Warrior Club -->
-          <div>
-            <div style="display: flex; justify-content: space-between; font-weight: 700; color: var(--text-primary);">
-              <span>President, Cyber Warrior Club — VIT Bhopal University</span>
-              <span>Jul 2024 – Jun 2025</span>
-            </div>
-            <ul style="padding-left: 1.2rem; margin-top: 0.4rem; display: flex; flex-direction: column; gap: 0.3rem;">
-              <li>Directed cybersecurity workshops and CTF competitions for 200+ students.</li>
-              <li>Mentored 30+ members through a structured onboarding program in ethical hacking &amp; digital forensics.</li>
-              <li>Managed technical events with 300+ participants and secured sponsorships.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Projects -->
-        <div>
-          <h4 style="color: var(--primary); font-size: 1.05rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.3rem; margin-bottom: 0.6rem;">
-            PROJECTS
-          </h4>
-          <div style="margin-bottom: 1rem;">
-            <strong style="color: var(--text-primary);">VoteChain – Blockchain-based Secure Voting Platform</strong>
-            <ul style="padding-left: 1.2rem; margin-top: 0.3rem; display: flex; flex-direction: column; gap: 0.3rem;">
-              <li>Built a decentralized voting platform using Solana, Next.js, and Phantom Wallet.</li>
-              <li>Implemented secure role-based authentication, audit logging, and cryptographic integrity.</li>
-              <li>Delivered technical documentation and user onboarding.</li>
-            </ul>
-          </div>
-
-          <div>
-            <strong style="color: var(--text-primary);">Cryptography Suite – Multi-Algorithm Encryption &amp; Decryption Tool</strong>
-            <ul style="padding-left: 1.2rem; margin-top: 0.3rem; display: flex; flex-direction: column; gap: 0.3rem;">
-              <li>Developed a Python toolkit implementing AES, DES, RSA, Diffie-Hellman, IDEA, HMAC, Rail Fence, Row Transposition, and ADFGVX algorithms.</li>
-              <li>Designed modular encryption and decryption workflows demonstrating symmetric and asymmetric cryptography.</li>
-              <li>Implemented secure communication, authentication, and confidentiality concepts through practical implementations.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Skills -->
-        <div>
-          <h4 style="color: var(--primary); font-size: 1.05rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.3rem; margin-bottom: 0.6rem;">
-            TECHNICAL SKILLS &amp; CERTIFICATIONS
-          </h4>
-          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-            <div><strong>Cybersecurity:</strong> Penetration Testing, Network Security, NIST Framework, Wireshark, Nmap, Metasploit, Burp Suite</div>
-            <div><strong>Languages:</strong> Python, C, C++, Java, JavaScript, PowerShell, Bash</div>
-            <div><strong>Web &amp; Frameworks:</strong> React.js, Next.js, Django, Flask, REST APIs, HTML, CSS</div>
-            <div><strong>Databases:</strong> PostgreSQL, MySQL</div>
-            <div><strong>Cloud &amp; DevOps:</strong> AWS (EC2, S3), Docker, GitHub Actions</div>
-            <div><strong>Certifications:</strong> Cybersecurity Analyst – IBM | MERN Full Stack – Ethnus | AWS Certified Cloud Practitioner (In Progress) | ISC2 Certified in Cybersecurity (CC) (In Progress) | CEH (In Progress)</div>
-          </div>
-        </div>
+      <div class="modal-body" style="padding: 0; background: #070c18; overflow: hidden;">
+        <iframe src="assets/Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" style="width: 100%; height: 80vh; min-height: 580px; border: none;" title="Atharva Dnyaneshwar Shastrakar Original PDF Resume"></iframe>
       </div>
     </div>
   </div>
@@ -1476,6 +1358,115 @@
       <div class="cmd-results-list" id="cmd-palette-results">
         <!-- Filterable results render dynamically -->
       </div>
+    </div>
+  </div>
+
+  <!-- Dedicated 1-Page Print Resume Container (Active only on window.print()) -->
+  <div id="print-resume-document" class="resume-paper-document">
+    <!-- Header -->
+    <div class="resume-paper-header">
+      <h1 class="resume-paper-name">Atharva Dnyaneshwar Shastrakar</h1>
+      <div class="resume-paper-contact">
+        <span>+91-7499074139</span> | 
+        <span>atharva.d.s.shastrakar@gmail.com</span> | 
+        <span>LinkedIn</span> | 
+        <span>GitHub</span> | 
+        <span>LeetCode</span>
+      </div>
+    </div>
+
+    <!-- Professional Summary -->
+    <div class="resume-paper-section">
+      <div class="resume-paper-section-title">PROFESSIONAL SUMMARY</div>
+      <p style="font-size: 9.5pt; text-align: justify; line-height: 1.35; margin: 0;">
+        Cybersecurity and Digital Forensics undergraduate with hands-on experience in full-stack web development, secure application design, and cloud technologies. Proficient in Python, JavaScript, React.js, Next.js, REST APIs, and AWS, with a strong foundation in cybersecurity and digital forensics. Passionate about building scalable, secure, and user-centric software solutions.
+      </p>
+    </div>
+
+    <!-- Education -->
+    <div class="resume-paper-section">
+      <div class="resume-paper-section-title">EDUCATION</div>
+      <div class="resume-paper-entry" style="margin-bottom: 3pt;">
+        <div class="resume-paper-row">
+          <span class="resume-paper-bold">VIT Bhopal University</span>
+          <span class="resume-paper-date">Bhopal, India</span>
+        </div>
+        <div class="resume-paper-row">
+          <span class="resume-paper-italic">B.Tech, Computer Science &amp; Engineering – Cyber Security and Digital Forensics</span>
+          <span class="resume-paper-date">Jun 2022 – Jun 2026</span>
+        </div>
+        <div style="font-size: 9.5pt;">CGPA: 7.3</div>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <div class="resume-paper-section">
+      <div class="resume-paper-section-title">EXPERIENCE</div>
+
+      <!-- Full Stack Developer -->
+      <div class="resume-paper-entry">
+        <div class="resume-paper-row">
+          <span class="resume-paper-bold">Full Stack Developer</span>
+          <span class="resume-paper-date">May 2025 – Aug 2025</span>
+        </div>
+        <div class="resume-paper-italic" style="font-size: 9.5pt;">Chrysadalus</div>
+        <ul class="resume-paper-bullets">
+          <li>Developed responsive web applications using modern frontend and backend technologies, delivering scalable and user-friendly solutions.</li>
+          <li>Built and integrated RESTful APIs, improving communication between frontend interfaces and backend services.</li>
+          <li>Collaborated with cross-functional teams to implement new features, optimize application performance, and resolve production issues.</li>
+        </ul>
+      </div>
+
+      <!-- President, Cyber Warrior Club -->
+      <div class="resume-paper-entry">
+        <div class="resume-paper-row">
+          <span class="resume-paper-bold">President, Cyber Warrior Club</span>
+          <span class="resume-paper-date">Jul 2024 – Jun 2025</span>
+        </div>
+        <div class="resume-paper-italic" style="font-size: 9.5pt;">VIT Bhopal University</div>
+        <ul class="resume-paper-bullets">
+          <li>Directed cybersecurity workshops and CTF competitions for 200+ students.</li>
+          <li>Mentored 30+ members through a structured onboarding program.</li>
+          <li>Managed technical events with 300+ participants and secured sponsorships.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="resume-paper-section">
+      <div class="resume-paper-section-title">PROJECTS</div>
+
+      <div class="resume-paper-entry">
+        <div class="resume-paper-bold" style="font-size: 9.8pt;">VoteChain – Blockchain-based Secure Voting Platform</div>
+        <ul class="resume-paper-bullets">
+          <li>Built a decentralized voting platform using Solana, Next.js and Phantom Wallet.</li>
+          <li>Implemented secure role-based authentication, audit logging and cryptographic integrity.</li>
+          <li>Delivered technical documentation and user onboarding.</li>
+        </ul>
+      </div>
+
+      <div class="resume-paper-entry">
+        <div class="resume-paper-bold" style="font-size: 9.8pt;">Cryptography Suite – Multi-Algorithm Encryption &amp; Decryption Tool</div>
+        <ul class="resume-paper-bullets">
+          <li>Developed a Python toolkit implementing AES, DES, RSA, Diffie-Hellman, IDEA, HMAC, Rail Fence, Row Transposition and ADFGVX algorithms.</li>
+          <li>Designed modular encryption and decryption workflows demonstrating symmetric and asymmetric cryptography.</li>
+          <li>Implemented secure communication, authentication and confidentiality concepts through practical cryptographic implementations.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Technical Skills -->
+    <div class="resume-paper-section">
+      <div class="resume-paper-section-title">TECHNICAL SKILLS</div>
+      <ul class="resume-paper-bullets">
+        <li><strong>Cybersecurity:</strong> Penetration Testing, Network Security, NIST Framework, Wireshark, Nmap, Metasploit, Burp Suite</li>
+        <li><strong>Languages:</strong> Python, C, C++, Java, JavaScript, PowerShell, Bash</li>
+        <li><strong>Web &amp; Frameworks:</strong> ReactJS, Next.js, Django, Flask, REST APIs, HTML, CSS</li>
+        <li><strong>Databases:</strong> PostgreSQL, MySQL</li>
+        <li><strong>Cloud &amp; DevOps:</strong> AWS (EC2, S3), Docker, GitHub Actions</li>
+        <li><strong>System Design:</strong> REST APIs, Software Architecture, Distributed Systems Fundamentals</li>
+        <li><strong>Certifications:</strong> Cybersecurity Analyst – IBM | MERN Full Stack – Ethnus | ISC2 Certified in Cybersecurity (CC) (In Progress) | CEH (In Progress)</li>
+      </ul>
     </div>
   </div>
 

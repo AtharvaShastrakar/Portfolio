@@ -292,7 +292,12 @@ PORT      STATE SERVICE       VERSION
         break;
 
       case 'resume':
-        this.appendLine('[+] Launching resume preview modal...', 'info');
+        this.appendLine(`
+[+] OFFICIAL RESUME (PDF DOCUMENT)
+    - Direct PDF: assets/Atharva_Dnyaneshwar_Shastrakar_Resume.pdf
+    - Standalone Viewer: resume.html
+[*] Launching interactive resume document viewer...
+        `, 'info');
         const resumeModalEl = document.getElementById('resume-modal');
         if (resumeModalEl) resumeModalEl.classList.add('open');
         break;

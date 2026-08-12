@@ -608,6 +608,16 @@ code, kbd, samp, pre {
   color: var(--text-primary);
 }
 
+.nav-resume-btn {
+  padding: 0.48rem 1.25rem !important;
+  font-weight: 600 !important;
+  font-size: 0.88rem !important;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-md) !important;
+  margin-left: 0.2rem;
+  white-space: nowrap;
+}
+
 /* Toast Notifications Container */
 #toast-container {
   position: fixed;

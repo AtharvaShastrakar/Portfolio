@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Atharva Dnyaneshwar Shastrakar - Cybersecurity Analyst, Digital Forensics Specialist, Full Stack Developer & AWS Cloud Engineer Portfolio.">
+  <meta name="keywords" content="Atharva Shastrakar, Cybersecurity Analyst, Full Stack Developer, AWS, React, Next.js, Cryptography, Penetration Testing, VIT Bhopal">
+  <meta name="author" content="Atharva Dnyaneshwar Shastrakar">
+  <meta property="og:title" content="Atharva Dnyaneshwar Shastrakar | Cybersecurity & Full Stack Portfolio">
+  <meta property="og:description" content="Cybersecurity Analyst and Full Stack Developer with AWS knowledge. Explore interactive cryptography tools, terminal CLI, and security projects.">
+  <meta property="og:type" content="website">
+  <title>Atharva Dnyaneshwar Shastrakar | Cybersecurity Analyst & Full Stack Developer</title>
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core & Component Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  <!-- ====================================================================
+       0. CYBER PORTAL LOADING SCREEN / PERIMETER GATEWAY
+       ==================================================================== -->
+  <div class="portal-overlay" id="portal-overlay" role="dialog" aria-modal="true" aria-label="Cyber Gateway Initialization">
+    <div class="portal-hud">
+      <div class="portal-header">
+        <div class="portal-title-wrapper">
+          <div class="portal-radar-icon">🛡️</div>
+          <div>
+            <h2>ZERO-TRUST PORTAL GATEWAY</h2>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">HOST: ATHARVA-SEC // MAINFRAME v3.6</div>
+          </div>
+        </div>
+        <span class="portal-status-badge">SECURE HANDSHAKE</span>
+      </div>
+
+      <!-- Live Client & Network Telemetry Grid -->
+      <div class="portal-telemetry-grid">
+        <div class="telemetry-item">
+          <span class="telemetry-label">CLIENT GATEWAY IP</span>
+          <span class="telemetry-value" id="tel-ip">103.21.244.78</span>
+        </div>
+        <div class="telemetry-item">
+          <span class="telemetry-label">HARDWARE INTERFACE (MAC)</span>
+          <span class="telemetry-value" id="tel-mac">5A:8E:4F:21:BC:07</span>
+        </div>
+        <div class="telemetry-item">
+          <span class="telemetry-label">CLIENT PLATFORM / ARCH</span>
+          <span class="telemetry-value" id="tel-platform">macOS / Apple Silicon</span>
+        </div>
+        <div class="telemetry-item">
+          <span class="telemetry-label">NETWORK PROVIDER / REGION</span>
+          <span class="telemetry-value" id="tel-isp">AWS CloudFront (AP-SOUTH-1)</span>
+        </div>
+        <div class="telemetry-item">
+          <span class="telemetry-label">CIPHER PROTOCOL</span>
+          <span class="telemetry-value" id="tel-protocol">TLS 1.3 / ChaCha20</span>
+        </div>
+        <div class="telemetry-item">
+          <span class="telemetry-label">DEFENSE PERIMETER</span>
+          <span class="telemetry-value" id="tel-firewall">STATEFUL (DEFCON 5)</span>
+        </div>
+      </div>
+
+      <!-- Dynamic Boot Log Box -->
+      <div class="portal-log-box" id="portal-log-box">
+        <!-- Streaming logs injected via app.js -->
+      </div>
+
+      <!-- Progress Track -->
+      <div class="portal-progress-wrapper">
+        <div class="portal-progress-info">
+          <span>INITIALIZING SECURE SESSION...</span>
+          <span id="portal-progress-percent">0%</span>
+        </div>
+        <div class="portal-progress-track">
+          <div class="portal-progress-fill" id="portal-progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="portal-actions-row">
+        <button class="portal-btn-enter" id="portal-btn-enter" style="display: none;">
+          ⚡ Enter Portfolio
+        </button>
+        <button class="portal-skip-btn" id="portal-btn-skip">Skip Intro &gt;&gt;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Canvas Matrix / Cyber Network Background -->
+  <canvas id="cyber-canvas" aria-hidden="true"></canvas>
+  <div class="scanline-overlay" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar" id="navbar" aria-label="Main Navigation">
+      <div class="container nav-container">
+        <a href="#hero" class="nav-brand" id="nav-brand-logo">
+          <div class="brand-icon">A</div>
+          <span class="brand-name">Atharva Shastrakar</span>
+        </a>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#terminal-section" class="nav-link">Terminal</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#playground" class="nav-link">Security Tools</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <!-- Sound Toggle -->
+          <button class="sound-toggle-btn" id="sound-toggle-btn" title="Toggle Cyber Audio FX" aria-label="Toggle Audio">
+            🔊
+          </button>
+
+          <!-- Command Palette Button -->
+          <button class="cmd-palette-btn btn-open-cmd" id="btn-open-cmd-nav" title="Open Command Palette (Cmd+K)">
+            <span class="label">CLI</span>
+            <kbd>⌘K</kbd>
+          </button>
+
+          <!-- Resume Button -->
+          <button class="btn btn-outline-cyber btn-sm btn-open-resume" id="btn-open-resume-nav">
+            Resume
+          </button>
+
+          <!-- Mobile Hamburger -->
+          <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Open Navigation Menu">
+            ☰
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ====================================================================
+         1. HERO & THREAT INTELLIGENCE STATUS DECK
+         ==================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal-on-scroll">
+          <!-- SOC Status Pill -->
+          <div class="soc-status-bar">
+            <div class="soc-item">
+              <span class="dot"></span>
+              <span>SYSTEM: <strong>ONLINE</strong></span>
+            </div>
+            <span class="soc-divider">|</span>
+            <div class="soc-item">
+              <span>SECURITY LEVEL: <strong>MAXIMAL</strong></span>
+            </div>
+            <span class="soc-divider">|</span>
+            <div class="soc-item">
+              <span>AWS REGION: <strong>AP-SOUTH-1</strong></span>
+            </div>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <br>
+            <span class="gradient-text glitch-text" data-text="Atharva Shastrakar">Atharva Shastrakar</span>
+          </h1>
+
+          <div class="hero-role-typing">
+            <span>&gt; </span>
+            <span id="hero-typed-text">Cybersecurity Analyst</span>
+            <span class="typing-cursor"></span>
+          </div>
+
+          <p class="hero-summary">
+            <strong>Cybersecurity & Digital Forensics</strong> undergraduate at <strong>VIT Bhopal University</strong> with hands-on expertise in full-stack web engineering, secure application architecture, and <strong>AWS Cloud Technologies</strong>. Dedicated to defending systems and architecting scalable, zero-trust digital infrastructure.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#playground" class="btn btn-primary">
+              <span>⚡ Security Playground</span>
+            </a>
+            <a href="#terminal-section" class="btn btn-secondary">
+              <span>💻 SOC Terminal</span>
+            </a>
+            <button class="btn btn-outline-cyber btn-open-resume" id="btn-hero-resume">
+              <span>📄 View Resume</span>
+            </button>
+            <a href="#contact" class="btn btn-secondary">
+              <span>✉ Contact</span>
+            </a>
+          </div>
+
+          <!-- Social Quick Links -->
+          <div class="hero-socials">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn Profile">
+              <span>LinkedIn</span> ↗
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub Profile">
+              <span>GitHub</span> ↗
+            </a>
+            <a href="https://leetcode.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LeetCode Profile">
+              <span>LeetCode</span> ↗
+            </a>
+            <a href="mailto:atharva.d.s.shastrakar@gmail.com" class="social-link" title="Send Email">
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Visual Deck / Stats -->
+        <div class="hero-visual reveal-on-scroll delay-2">
+          <div class="hero-card-deck">
+            <!-- Stat Card 1 -->
+            <div class="glass-card cyber-stat-card pulse-border">
+              <div class="stat-icon-wrapper">🛡️</div>
+              <div class="stat-info">
+                <div class="stat-number">200+</div>
+                <div class="stat-label">Students Mentored in CTF & Cyber Workshops</div>
+              </div>
+            </div>
+
+            <!-- Stat Card 2 -->
+            <div class="glass-card cyber-stat-card">
+              <div class="stat-icon-wrapper">🔑</div>
+              <div class="stat-info">
+                <div class="stat-number">9+</div>
+                <div class="stat-label">Cryptographic Ciphers & Algorithms Built</div>
+              </div>
+            </div>
+
+            <!-- Stat Card 3 -->
+            <div class="glass-card cyber-stat-card">
+              <div class="stat-icon-wrapper">☁️</div>
+              <div class="stat-info">
+                <div class="stat-number">AWS & Docker</div>
+                <div class="stat-label">Production Cloud Hardening & DevSecOps</div>
+              </div>
+            </div>
+
+            <!-- Stat Card 4 -->
+            <div class="glass-card cyber-stat-card">
+              <div class="stat-icon-wrapper">📜</div>
+              <div class="stat-info">
+                <div class="stat-number">5 Certs</div>
+                <div class="stat-label">AWS, IBM Security, Ethnus, ISC2, CEH</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         2. INTERACTIVE CYBER TERMINAL / CLI CONSOLE
+         ==================================================================== -->
+    <section id="terminal-section" class="terminal-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">Interactive Shell</div>
+          <h2 class="section-title">SOC Command <span class="gradient-text">Console</span></h2>
+          <p class="section-desc">
+            Interact with my portfolio directly through an authentic command-line interface. Run scans, inspect AWS topology, test cryptographic suites, and explore career logs.
+          </p>
+        </div>
+
+        <div class="terminal-wrapper reveal-on-scroll delay-1">
+          <div class="cyber-terminal">
+            <div class="terminal-header">
+              <div class="terminal-controls">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+              </div>
+              <div class="terminal-title">
+                <span>atharva@soc-defense-node:</span> <span class="user">~/portfolio</span>
+              </div>
+              <div class="terminal-actions">
+                <button class="terminal-action-btn chip-btn" data-cmd="clear" title="Clear Console">clear</button>
+              </div>
+            </div>
+
+            <div class="terminal-body" id="terminal-body">
+              <div class="terminal-output" id="terminal-output">
+                <!-- Terminal banner & messages will render here -->
+              </div>
+              <div class="terminal-input-row">
+                <span class="terminal-prompt">atharva@soc-terminal:~$</span>
+                <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" placeholder="Type 'help' or click quick chips below...">
+              </div>
+            </div>
+
+            <div class="terminal-quick-chips">
+              <span class="label">Quick Commands:</span>
+              <button class="chip-btn" data-cmd="help">help</button>
+              <button class="chip-btn" data-cmd="whoami">whoami</button>
+              <button class="chip-btn" data-cmd="education">education</button>
+              <button class="chip-btn" data-cmd="skills">skills</button>
+              <button class="chip-btn" data-cmd="projects">projects</button>
+              <button class="chip-btn" data-cmd="experience">experience</button>
+              <button class="chip-btn" data-cmd="scan">scan</button>
+              <button class="chip-btn" data-cmd="crypto">crypto</button>
+              <button class="chip-btn" data-cmd="aws">aws</button>
+              <button class="chip-btn" data-cmd="certifications">certifications</button>
+              <button class="chip-btn" data-cmd="contact">contact</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         3. ABOUT & DUAL COMPETENCY
+         ==================================================================== -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">Background & Vision</div>
+          <h2 class="section-title">Engineering Secure, <span class="gradient-text">Scalable Solutions</span></h2>
+          <p class="section-desc">
+            Combining rigorous digital forensics & offensive/defensive cybersecurity disciplines with modern full-stack web engineering and AWS cloud scalability.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="glass-card about-card reveal-on-scroll delay-1">
+            <h3>Academic Background & Philosophy</h3>
+            <p>
+              I am currently pursuing my <strong>B.Tech in Computer Science and Engineering with Specialization in Cyber Security and Digital Forensics</strong> at <strong>VIT Bhopal University</strong> (CGPA: 7.3).
+            </p>
+            <p>
+              In modern computing, security cannot be treated as an afterthought or bolted on at the end of a sprint. My engineering approach treats security as a foundational architecture principle—from threat modeling and cryptographic validation to automated CI/CD security pipelines on AWS.
+            </p>
+
+            <div class="about-highlight-box">
+              "Dedicated to helping organizations detect threats proactively, eliminate software vulnerabilities, and deploy resilient web systems built to scale."
+            </div>
+
+            <div class="about-meta-list">
+              <div class="about-meta-item">
+                <span class="label">University</span>
+                <span class="value">VIT Bhopal University</span>
+              </div>
+              <div class="about-meta-item">
+                <span class="label">Degree & Major</span>
+                <span class="value">B.Tech CSE (Cyber Security & Forensics)</span>
+              </div>
+              <div class="about-meta-item">
+                <span class="label">Timeline</span>
+                <span class="value">June 2022 – June 2026</span>
+              </div>
+              <div class="about-meta-item">
+                <span class="label">Cumulative GPA</span>
+                <span class="value">7.3 / 10.0</span>
+              </div>
+              <div class="about-meta-item">
+                <span class="label">Location</span>
+                <span class="value">Bhopal / Maharashtra, India</span>
+              </div>
+              <div class="about-meta-item">
+                <span class="label">Target Roles</span>
+                <span class="value">Cybersecurity Analyst | Full Stack Dev</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dual Pillars Deck -->
+          <div class="dual-pillar-deck reveal-on-scroll delay-2">
+            <!-- Pillar 1 -->
+            <div class="glass-card pillar-card cyber">
+              <div class="pillar-header">
+                <div class="pillar-icon">🛡️</div>
+                <div>
+                  <h3>Cybersecurity & Forensics</h3>
+                  <span class="badge badge-primary">Defense-in-Depth & Analysis</span>
+                </div>
+              </div>
+              <ul class="pillar-list">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Penetration Testing & Audits:</strong> Hands-on experience with Nmap, Wireshark, Metasploit, and Burp Suite.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>NIST Framework & Incident Response:</strong> Threat identification, vulnerability triage, and forensic analysis.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Cryptographic Protocols:</strong> Symmetric (AES/DES), Asymmetric (RSA/Diffie-Hellman), and HMAC authentication.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="glass-card pillar-card dev">
+              <div class="pillar-header">
+                <div class="pillar-icon">💻</div>
+                <div>
+                  <h3>Full Stack & AWS Cloud</h3>
+                  <span class="badge badge-secondary">Scalable Web Architecture</span>
+                </div>
+              </div>
+              <ul class="pillar-list">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Modern Frontend & Backend:</strong> React.js, Next.js, Django, Flask, RESTful APIs, Node.js.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>AWS Infrastructure:</strong> EC2 instance provisioning, S3 bucket encryption, IAM policy design.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>DevSecOps & CI/CD:</strong> Docker containerization and automated GitHub Actions delivery pipelines.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. INTERACTIVE CYBERSECURITY & CRYPTO PLAYGROUND
+         ==================================================================== -->
+    <section id="playground" class="playground-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">Interactive Security Suite</div>
+          <h2 class="section-title">Live Cryptography & <span class="gradient-text">Security Lab</span></h2>
+          <p class="section-desc">
+            Test real cryptographic transformations, compute Shannon entropy for password defense, and explore NIST Cybersecurity Framework capabilities in real-time.
+          </p>
+        </div>
+
+        <!-- Tool Navigation Tabs -->
+        <div class="playground-tabs reveal-on-scroll delay-1">
+          <button class="tab-btn active" data-tab="tab-crypto-suite">
+            <span>🔑</span> Multi-Algorithm Cipher Suite
+          </button>
+          <button class="tab-btn" data-tab="tab-pass-analyzer">
+            <span>🛡️</span> Password Entropy & Brute-Force Analyzer
+          </button>
+          <button class="tab-btn" data-tab="tab-nist-matrix">
+            <span>📊</span> NIST CSF Mapping Matrix
+          </button>
+        </div>
+
+        <!-- Tab 1: Multi-Algorithm Crypto Suite -->
+        <div class="tab-pane active" id="tab-crypto-suite">
+          <div class="glass-card crypto-playground-card reveal-on-scroll delay-2">
+            <div class="crypto-tool-grid">
+              <!-- Controls Panel -->
+              <div class="crypto-control-panel">
+                <div class="form-row">
+                  <div class="input-group">
+                    <label for="crypto-algo-select">Algorithm / Cipher:</label>
+                    <select id="crypto-algo-select" class="cyber-select">
+                      <option value="aes">AES-256-GCM (Authenticated Encryption)</option>
+                      <option value="hmac">HMAC-SHA256 (Message Authentication)</option>
+                      <option value="rsa">RSA-2048 (Keypair Generation Simulation)</option>
+                      <option value="caesar">Caesar Substitution Cipher</option>
+                      <option value="railfence">Rail Fence Transposition Cipher</option>
+                      <option value="base64">RFC 4648 Base64 Encoding</option>
+                    </select>
+                  </div>
+                  <div class="input-group">
+                    <label for="crypto-mode-select">Operation Mode:</label>
+                    <select id="crypto-mode-select" class="cyber-select">
+                      <option value="encrypt">Encrypt / Encode / Sign</option>
+                      <option value="decrypt">Decrypt / Decode / Verify</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="input-group" id="crypto-key-group">
+                  <label for="crypto-key-input">Secret Key / Passphrase:</label>
+                  <input type="text" id="crypto-key-input" class="cyber-input" placeholder="Enter secret passphrase...">
+                </div>
+
+                <div class="input-group" id="crypto-param-group" style="display: none;">
+                  <label for="crypto-param-input" id="crypto-param-label">Shift / Rails Parameter:</label>
+                  <input type="number" id="crypto-param-input" class="cyber-input" value="3">
+                </div>
+
+                <div class="input-group">
+                  <label for="crypto-input-text">Input Plaintext / Ciphertext Payload:</label>
+                  <textarea id="crypto-input-text" class="cyber-textarea" placeholder="Type or paste payload to encrypt or decrypt..."></textarea>
+                </div>
+
+                <div class="crypto-btn-row">
+                  <button class="btn btn-primary" id="crypto-btn-run">
+                    <span>⚡ Execute Transformation</span>
+                  </button>
+                  <button class="btn btn-secondary" id="crypto-btn-sample">
+                    <span>Load Sample Data</span>
+                  </button>
+                  <button class="btn btn-secondary" id="crypto-btn-clear">
+                    <span>Clear</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Output & Telemetry Panel -->
+              <div class="crypto-output-panel">
+                <div class="output-header">
+                  <div class="output-title">CRYPTOGRAPHIC TELEMETRY & OUTPUT</div>
+                  <button class="copy-btn" id="crypto-copy-btn" data-copy="" onclick="navigator.clipboard.writeText(document.getElementById('crypto-output-text').textContent); window.showToast('Output copied to clipboard!', 'success');">Copy Output</button>
+                </div>
+
+                <div class="output-box" id="crypto-output-text">// Output will be displayed here after computation...</div>
+
+                <div class="crypto-metadata">
+                  <div class="meta-row">
+                    <span class="label">Engine Status:</span>
+                    <span class="val" id="meta-status-text">IDLE</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="label">Algorithm:</span>
+                    <span class="val" id="meta-algo-name">AES</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="label">Execution Time:</span>
+                    <span class="val" id="meta-exec-time">--</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="label">Key Spec:</span>
+                    <span class="val" id="meta-key-len">--</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Password Entropy & Brute Force Analyzer -->
+        <div class="tab-pane" id="tab-pass-analyzer">
+          <div class="glass-card password-analyzer-card">
+            <div class="password-analyzer-grid">
+              <div class="analyzer-input-side">
+                <div class="input-group">
+                  <label for="pass-input">Enter Passphrase to Benchmark:</label>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <input type="password" id="pass-input" class="cyber-input" placeholder="Type a test password (e.g. Atharva#2026!SecSec)...">
+                    <button class="btn btn-secondary" id="pass-toggle-vis" type="button">👁 Show</button>
+                  </div>
+                </div>
+
+                <div class="entropy-meter-wrapper">
+                  <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-family: var(--font-mono);">
+                    <span>DEFENSE LEVEL:</span>
+                    <strong id="pass-strength-text" style="color: var(--text-muted);">ENTER PASSWORD</strong>
+                  </div>
+                  <div class="meter-track">
+                    <div class="meter-fill" id="pass-meter-fill"></div>
+                  </div>
+                </div>
+
+                <div class="entropy-stats-grid">
+                  <div class="entropy-stat-card">
+                    <div class="val" id="stat-entropy-bits">0 bits</div>
+                    <div class="lbl">Shannon Entropy</div>
+                  </div>
+                  <div class="entropy-stat-card">
+                    <div class="val" id="stat-crack-gpu">--</div>
+                    <div class="lbl">GPU Cluster Crack Time</div>
+                  </div>
+                  <div class="entropy-stat-card">
+                    <div class="val" id="stat-pool-size">0 symbols</div>
+                    <div class="lbl">Character Pool Size</div>
+                  </div>
+                  <div class="entropy-stat-card">
+                    <div class="val" id="stat-length">0 chars</div>
+                    <div class="lbl">Total Length</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- NIST Checklist Side -->
+              <div class="analyzer-checklist-side">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.5rem;">NIST SP 800-63B Compliance Checklist</h4>
+                <p style="font-size: 0.85rem; color: var(--text-secondary);">Validates password against National Institute of Standards guidelines:</p>
+                <ul class="nist-checklist">
+                  <li class="check-item" id="chk-len"><span class="icon">○</span> Minimum 12+ Characters Length</li>
+                  <li class="check-item" id="chk-upper"><span class="icon">○</span> Contains Uppercase Characters (A-Z)</li>
+                  <li class="check-item" id="chk-lower"><span class="icon">○</span> Contains Lowercase Characters (a-z)</li>
+                  <li class="check-item" id="chk-num"><span class="icon">○</span> Contains Numeric Digits (0-9)</li>
+                  <li class="check-item" id="chk-sym"><span class="icon">○</span> Contains Special Characters (!@#$%^&*)</li>
+                  <li class="check-item" id="chk-no-repeat"><span class="icon">○</span> No Obvious Sequential or Dictionary Patterns</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: NIST CSF Matrix -->
+        <div class="tab-pane" id="tab-nist-matrix">
+          <div class="nist-grid">
+            <div class="nist-card identify">
+              <span class="nist-tag">Identify (ID)</span>
+              <h4>Asset & Risk Governance</h4>
+              <ul>
+                <li>Network topology discovery & port profiling</li>
+                <li>Vulnerability assessment using Nmap & Burp</li>
+                <li>Risk mitigation & threat modeling</li>
+              </ul>
+            </div>
+
+            <div class="nist-card protect">
+              <span class="nist-tag">Protect (PR)</span>
+              <h4>Defensive Hardening</h4>
+              <ul>
+                <li>Zero-trust access control & role-based auth</li>
+                <li>AES-256-GCM & TLS 1.3 encryption</li>
+                <li>AWS IAM least-privilege policies</li>
+              </ul>
+            </div>
+
+            <div class="nist-card detect">
+              <span class="nist-tag">Detect (DE)</span>
+              <h4>Anomaly & Event Monitoring</h4>
+              <ul>
+                <li>Wireshark packet sniffing & packet analysis</li>
+                <li>Cryptographic audit log verification</li>
+                <li>Unauthorized access attempt monitoring</li>
+              </ul>
+            </div>
+
+            <div class="nist-card respond">
+              <span class="nist-tag">Respond (RS)</span>
+              <h4>Incident Response</h4>
+              <ul>
+                <li>Containment of compromised endpoints</li>
+                <li>Root cause forensic triage</li>
+                <li>Incident documentation & escalation</li>
+              </ul>
+            </div>
+
+            <div class="nist-card recover">
+              <span class="nist-tag">Recover (RC)</span>
+              <h4>Resilience & Continuity</h4>
+              <ul>
+                <li>AWS S3 versioned backups & recovery</li>
+                <li>Docker automated service restoration</li>
+                <li>Post-incident hardening reviews</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         5. FEATURED PROJECTS SECTION
+         ==================================================================== -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">Featured Works</div>
+          <h2 class="section-title">Engineered <span class="gradient-text">Projects</span></h2>
+          <p class="section-desc">
+            Production-grade cryptographic tools, blockchain security systems, and secure full-stack cloud architectures.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: VoteChain -->
+          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-1">
+            <div class="project-top">
+              <div class="project-header-bar">
+                <span class="project-category">Decentralized & Web3</span>
+                <span class="badge badge-primary">Solana Blockchain</span>
+              </div>
+
+              <h3 class="project-title">VoteChain – Blockchain-based Secure Voting Platform</h3>
+
+              <p class="project-desc">
+                A decentralized electronic voting application leveraging the Solana blockchain and Phantom Wallet to eliminate tampering and guarantee verifiable cryptographic election results.
+              </p>
+
+              <ul class="project-bullets">
+                <li>
+                  <span class="bullet-icon">▸</span>
+                  <span>Built decentralized voting platform with Solana, Next.js, and Phantom Wallet integration.</span>
+                </li>
+                <li>
+                  <span class="bullet-icon">▸</span>
+                  <span>Implemented secure role-based authentication, tamper-proof audit logging, and cryptographic integrity.</span>
+                </li>
+                <li>
+                  <span class="bullet-icon">▸</span>
+                  <span>Delivered technical documentation, smart contract verification, and seamless user onboarding.</span>
+                </li>
+              </ul>
+
+              <div class="project-tags">
+                <span class="badge">Solana</span>
+                <span class="badge">Next.js</span>
+                <span class="badge">Phantom Wallet</span>
+                <span class="badge">Audit Logging</span>
+                <span class="badge">Cryptography</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <button class="btn btn-outline-cyber btn-sm" onclick="window.openProjectModal('votechain')">
+                <span>🔍 Inspect Architecture</span>
+              </button>
+              <span class="status-indicator">
+                <span class="dot"></span>
+                <span>Verified Protocol</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Project 2: Cryptography Suite -->
+          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-2">
+            <div class="project-top">
+              <div class="project-header-bar">
+                <span class="project-category">Cryptographic Security</span>
+                <span class="badge badge-secondary">Python Toolkit</span>
+              </div>
+
+              <h3 class="project-title">Cryptography Suite – Multi-Algorithm Encryption & Decryption Tool</h3>
+
+              <p class="project-desc">
+                An extensible Python toolkit implementing symmetric and asymmetric cryptography workflows, key exchanges, message authentication, and classical cipher transpositions.
+              </p>
+
+              <ul class="project-bullets">
+                <li>
+                  <span class="bullet-icon">▸</span>
+                  <span>Developed a Python toolkit implementing AES, DES, RSA, Diffie-Hellman, IDEA, HMAC, Rail Fence, Row Transposition, and ADFGVX algorithms.</span>
+                </li>
+                <li>
+                  <span class="bullet-icon">▸</span>
+                  <span>Designed modular encryption and decryption workflows demonstrating symmetric and asymmetric cryptography.</span>
+                </li>
+                <li>
+                  <span class="bullet-icon">▸</span>
+                  <span>Implemented secure communication, authentication, and confidentiality concepts through practical implementations.</span>
+                </li>
+              </ul>
+
+              <div class="project-tags">
+                <span class="badge">Python</span>
+                <span class="badge">AES</span>
+                <span class="badge">RSA</span>
+                <span class="badge">Diffie-Hellman</span>
+                <span class="badge">HMAC</span>
+                <span class="badge">ADFGVX</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <button class="btn btn-outline-cyber btn-sm" onclick="window.openProjectModal('cryptosuite')">
+                <span>🔍 Inspect Architecture</span>
+              </button>
+              <span class="status-indicator">
+                <span class="dot"></span>
+                <span>9+ Ciphers</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Project 3: AWS DevSecOps Architecture -->
+          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-3">
+            <div class="project-top">
+              <div class="project-header-bar">
+                <span class="project-category">Cloud & DevSecOps</span>
+                <span class="badge badge-purple">AWS & Docker</span>
+              </div>
+
+              <h3 class="project-title">AWS DevSecOps & Cloud Hardening Pipeline</h3>
+
+              <p class="project-desc">
+                Production-ready cloud architecture built on AWS EC2, S3, and Docker, featuring automated GitHub Actions CI/CD pipelines with integrated static vulnerability scanning and IAM least privilege.
+              </p>
+
+              <ul class="project-bullets">
+                <li>
+                  <span class="bullet-icon">▸</span>
+                  <span>Provisioned scalable AWS EC2 compute instances and encrypted S3 storage buckets with KMS keys.</span>
+                </li>
+                <li>
+                  <span class="bullet-icon">▸</span>
+                  <span>Containerized full-stack microservices with Docker and orchestrated automated CI/CD deployments.</span>
+                </li>
+                <li>
+                  <span class="bullet-icon">▸</span>
+                  <span>Enforced least-privilege IAM policies, security group ingress filtering, and TLS 1.3 termination.</span>
+                </li>
+              </ul>
+
+              <div class="project-tags">
+                <span class="badge">AWS EC2</span>
+                <span class="badge">AWS S3</span>
+                <span class="badge">Docker</span>
+                <span class="badge">GitHub Actions</span>
+                <span class="badge">IAM Policies</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <button class="btn btn-outline-cyber btn-sm" onclick="window.openProjectModal('awscloud')">
+                <span>🔍 Inspect Architecture</span>
+              </button>
+              <span class="status-indicator">
+                <span class="dot"></span>
+                <span>Cloud Hardened</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         6. EXPERIENCE & LEADERSHIP TIMELINE (UPDATED 4 POSITIONS)
+         ==================================================================== -->
+    <section id="experience" class="experience-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">Career History</div>
+          <h2 class="section-title">Experience & <span class="gradient-text">Leadership</span></h2>
+          <p class="section-desc">
+            Professional track record spanning customer operations, full-stack engineering, business development, and collegiate cybersecurity leadership.
+          </p>
+        </div>
+
+        <div class="timeline-container">
+          <!-- Experience 1: Offcomfrt Apparels LLP (July 2026 – Present) -->
+          <div class="timeline-item reveal-on-scroll delay-1">
+            <div class="timeline-marker current"></div>
+            <div class="glass-card timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Customer Support Executive</h3>
+                  <div class="timeline-company">Offcomfrt Apparels LLP</div>
+                </div>
+                <div class="timeline-date present">July 2026 – Present</div>
+              </div>
+
+              <ul class="timeline-bullets">
+                <li>
+                  <span class="arrow">▸</span>
+                  <span>Managing high-priority client communications, dispute resolution, and cross-channel support workflows.</span>
+                </li>
+                <li>
+                  <span class="arrow">▸</span>
+                  <span>Streamlining service workflows and CRM ticketing systems, ensuring prompt escalations and high customer satisfaction scores.</span>
+                </li>
+                <li>
+                  <span class="arrow">▸</span>
+                  <span>Collaborating with operational teams to analyze client feedback, identify recurring service bottlenecks, and optimize processes.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 2: Chrysadalus (Nov 2025 – March 2026) -->
+          <div class="timeline-item reveal-on-scroll delay-2">
+            <div class="timeline-marker"></div>
+            <div class="glass-card timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Full Stack Developer</h3>
+                  <div class="timeline-company">Chrysadalus</div>
+                </div>
+                <div class="timeline-date">Nov 2025 – March 2026</div>
+              </div>
+
+              <ul class="timeline-bullets">
+                <li>
+                  <span class="arrow">▸</span>
+                  <span>Developed responsive web applications using modern frontend and backend technologies, delivering scalable and user-friendly solutions.</span>
+                </li>
+                <li>
+                  <span class="arrow">▸</span>
+                  <span>Built and integrated RESTful APIs, improving communication between frontend interfaces and backend services.</span>
+                </li>
+                <li>
+                  <span class="arrow">▸</span>
+                  <span>Collaborated with cross-functional teams to implement new features, optimize application performance, and resolve production issues.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 3: Skidev Inc (May 2025 – August 2025) -->
+          <div class="timeline-item reveal-on-scroll delay-3">
+            <div class="timeline-marker"></div>
+            <div class="glass-card timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Business Development Intern</h3>
+                  <div class="timeline-company">Skidev Inc</div>
+                </div>
+                <div class="timeline-date">May 2025 – August 2025</div>
+              </div>
+
+              <ul class="timeline-bullets">
+                <li>
+                  <span class="arrow">▸</span>
+                  <span>Conducted market research and competitor analysis to identify strategic expansion opportunities and new client demographics.</span>
+                </li>
+                <li>
+                  <span class="arrow">▸</span>
+                  <span>Supported business outreach pipelines, prepared customized technical pitches, and engaged prospective partners.</span>
+                </li>
+                <li>
+                  <span class="arrow">▸</span>
+                  <span>Collaborated with product and engineering teams to translate client requirements into actionable development roadmaps.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 4: President, Cyber Warrior Club (Jul 2024 – Jun 2025) -->
+          <div class="timeline-item reveal-on-scroll delay-4">
+            <div class="timeline-marker"></div>
+            <div class="glass-card timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">President, Cyber Warrior Club</h3>
+                  <div class="timeline-company">VIT Bhopal University</div>
+                </div>
+                <div class="timeline-date">Jul 2024 – Jun 2025</div>
+              </div>
+
+              <ul class="timeline-bullets">
+                <li>
+                  <span class="arrow">▸</span>
+                  <span>Directed cybersecurity workshops and CTF (Capture The Flag) competitions for 200+ students.</span>
+                </li>
+                <li>
+                  <span class="arrow">▸</span>
+                  <span>Mentored 30+ members through a structured onboarding program in ethical hacking, penetration testing, and digital forensics.</span>
+                </li>
+                <li>
+                  <span class="arrow">▸</span>
+                  <span>Managed technical events with 300+ participants and secured industry sponsorships.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         7. TECHNICAL ARSENAL & SKILLS GRID
+         ==================================================================== -->
+    <section id="skills" class="skills-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">Technical Competencies</div>
+          <h2 class="section-title">Technical <span class="gradient-text">Arsenal</span></h2>
+          <p class="section-desc">
+            A comprehensive matrix of offensive & defensive security tools, programming languages, web frameworks, and cloud systems.
+          </p>
+        </div>
+
+        <div class="skills-deck-grid">
+          <!-- Category 1: Cybersecurity -->
+          <div class="glass-card skill-category-card reveal-on-scroll delay-1">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">🛡️</div>
+              <h3 class="skill-cat-title">Cybersecurity & Forensics</h3>
+            </div>
+            <div class="skill-chips-container">
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Penetration Testing</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Network Security</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> NIST Framework</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Wireshark</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Nmap</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Metasploit</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Burp Suite</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Digital Forensics</div>
+            </div>
+          </div>
+
+          <!-- Category 2: Programming Languages -->
+          <div class="glass-card skill-category-card reveal-on-scroll delay-2">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">⚡</div>
+              <h3 class="skill-cat-title">Programming Languages</h3>
+            </div>
+            <div class="skill-chips-container">
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Python</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> JavaScript (ES6+)</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> C / C++</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Java</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> PowerShell</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Bash Scripting</div>
+            </div>
+          </div>
+
+          <!-- Category 3: Web & Frameworks -->
+          <div class="glass-card skill-category-card reveal-on-scroll delay-3">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">🌐</div>
+              <h3 class="skill-cat-title">Web & Frameworks</h3>
+            </div>
+            <div class="skill-chips-container">
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> React.js</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Next.js</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Django</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Flask</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> RESTful APIs</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> HTML5 / CSS3</div>
+            </div>
+          </div>
+
+          <!-- Category 4: Cloud & DevOps -->
+          <div class="glass-card skill-category-card reveal-on-scroll delay-1">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">☁️</div>
+              <h3 class="skill-cat-title">Cloud & DevOps (AWS)</h3>
+            </div>
+            <div class="skill-chips-container">
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> AWS EC2</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> AWS S3</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Docker</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> GitHub Actions CI/CD</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> AWS IAM Security</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> VPC & Subnets</div>
+            </div>
+          </div>
+
+          <!-- Category 5: Databases & Architecture -->
+          <div class="glass-card skill-category-card reveal-on-scroll delay-2">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">🗄️</div>
+              <h3 class="skill-cat-title">Databases & Systems</h3>
+            </div>
+            <div class="skill-chips-container">
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> PostgreSQL</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> MySQL</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Software Architecture</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Distributed Systems Fundamentals</div>
+              <div class="skill-badge-tag"><span class="skill-level-dot"></span> REST API Design</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         8. CERTIFICATIONS SHOWCASE
+         ==================================================================== -->
+    <section id="certifications" class="certifications-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">Verified Credentials</div>
+          <h2 class="section-title">Certifications & <span class="gradient-text">Badges</span></h2>
+          <p class="section-desc">
+            Industry recognized certifications spanning cybersecurity analysis, ethical hacking, and full stack engineering.
+          </p>
+        </div>
+
+        <div class="certifications-grid">
+          <!-- Cert 1: IBM -->
+          <div class="glass-card cert-card cyber-shimmer reveal-on-scroll delay-1">
+            <div class="cert-top">
+              <div class="cert-badge-row">
+                <div class="cert-issuer-logo">IBM</div>
+                <span class="cert-status-badge verified">Verified</span>
+              </div>
+              <h3 class="cert-name">Cybersecurity Analyst</h3>
+              <div class="cert-issuer">IBM Professional Certification</div>
+              <p class="cert-topics">
+                Threat intelligence, SIEM tools, network defense, incident response methodologies, and forensic discovery.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cert 2: Ethnus MERN -->
+          <div class="glass-card cert-card cyber-shimmer reveal-on-scroll delay-2">
+            <div class="cert-top">
+              <div class="cert-badge-row">
+                <div class="cert-issuer-logo">ETH</div>
+                <span class="cert-status-badge verified">Verified</span>
+              </div>
+              <h3 class="cert-name">MERN Full Stack</h3>
+              <div class="cert-issuer">Ethnus Training</div>
+              <p class="cert-topics">
+                MongoDB, Express.js, React.js, Node.js full-stack web architecture, API integration, and scalable UI engineering.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cert 3: AWS Cloud Practitioner -->
+          <div class="glass-card cert-card cyber-shimmer reveal-on-scroll delay-3">
+            <div class="cert-top">
+              <div class="cert-badge-row">
+                <div class="cert-issuer-logo">AWS</div>
+                <span class="cert-status-badge in-progress">In Progress</span>
+              </div>
+              <h3 class="cert-name">AWS Certified Cloud Practitioner</h3>
+              <div class="cert-issuer">Amazon Web Services (AWS)</div>
+              <p class="cert-topics">
+                Cloud infrastructure fundamentals, AWS shared responsibility security model, IAM identity management, VPC networking, EC2, and S3 architecture.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cert 4: ISC2 CC -->
+          <div class="glass-card cert-card cyber-shimmer reveal-on-scroll delay-4">
+            <div class="cert-top">
+              <div class="cert-badge-row">
+                <div class="cert-issuer-logo">ISC²</div>
+                <span class="cert-status-badge in-progress">In Progress</span>
+              </div>
+              <h3 class="cert-name">Certified in Cybersecurity (CC)</h3>
+              <div class="cert-issuer">ISC2 Global Security Standard</div>
+              <p class="cert-topics">
+                Security principles, business continuity, disaster recovery, access control, network security, and operations.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cert 5: CEH -->
+          <div class="glass-card cert-card cyber-shimmer reveal-on-scroll delay-5">
+            <div class="cert-top">
+              <div class="cert-badge-row">
+                <div class="cert-issuer-logo">CEH</div>
+                <span class="cert-status-badge in-progress">In Progress</span>
+              </div>
+              <h3 class="cert-name">Certified Ethical Hacker (CEH)</h3>
+              <div class="cert-issuer">EC-Council</div>
+              <p class="cert-topics">
+                Advanced attack vectors, vulnerability scanning, social engineering, web application penetration testing, and cryptography.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         9. INTERACTIVE CONTACT & ENCRYPTED DISPATCH
+         ==================================================================== -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">Direct Comms</div>
+          <h2 class="section-title">Encrypted <span class="gradient-text">Dispatch Console</span></h2>
+          <p class="section-desc">
+            Initiate contact for Cybersecurity Analyst roles, Full-Stack engineering opportunities, or technical collaboration.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left: Direct Details -->
+          <div class="contact-info-deck reveal-on-scroll delay-1">
+            <!-- Email -->
+            <div class="glass-card contact-card-item">
+              <div class="contact-left">
+                <div class="contact-icon">✉</div>
+                <div class="contact-detail">
+                  <div class="lbl">EMAIL ADDRESS</div>
+                  <div class="val">atharva.d.s.shastrakar@gmail.com</div>
+                </div>
+              </div>
+              <button class="copy-btn" data-copy="atharva.d.s.shastrakar@gmail.com">Copy</button>
+            </div>
+
+            <!-- Phone -->
+            <div class="glass-card contact-card-item">
+              <div class="contact-left">
+                <div class="contact-icon">📱</div>
+                <div class="contact-detail">
+                  <div class="lbl">DIRECT PHONE</div>
+                  <div class="val">+91-7499074139</div>
+                </div>
+              </div>
+              <button class="copy-btn" data-copy="+917499074139">Copy</button>
+            </div>
+
+            <!-- LinkedIn -->
+            <div class="glass-card contact-card-item">
+              <div class="contact-left">
+                <div class="contact-icon">🔗</div>
+                <div class="contact-detail">
+                  <div class="lbl">LINKEDIN</div>
+                  <div class="val">linkedin.com/in/atharva-shastrakar</div>
+                </div>
+              </div>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Visit ↗</a>
+            </div>
+
+            <!-- GitHub -->
+            <div class="glass-card contact-card-item">
+              <div class="contact-left">
+                <div class="contact-icon">🐙</div>
+                <div class="contact-detail">
+                  <div class="lbl">GITHUB</div>
+                  <div class="val">github.com/AtharvaShastrakar</div>
+                </div>
+              </div>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Visit ↗</a>
+            </div>
+
+            <!-- LeetCode -->
+            <div class="glass-card contact-card-item">
+              <div class="contact-left">
+                <div class="contact-icon">🧩</div>
+                <div class="contact-detail">
+                  <div class="lbl">LEETCODE</div>
+                  <div class="val">leetcode.com/AtharvaShastrakar</div>
+                </div>
+              </div>
+              <a href="https://leetcode.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Visit ↗</a>
+            </div>
+          </div>
+
+          <!-- Right: Encrypted Message Form -->
+          <div class="glass-card contact-form-card reveal-on-scroll delay-2">
+            <div class="form-header">
+              <h3>Send Secure Transmission</h3>
+              <div class="encryption-status-bar" id="dispatch-status">
+                <span>✓ TLS 1.3 End-to-End Encrypted Tunnel Ready</span>
+              </div>
+            </div>
+
+            <form class="contact-form" id="contact-form">
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="contact-name">Your Full Name *</label>
+                  <input type="text" id="contact-name" class="cyber-input" placeholder="e.g., Alex Vance" required>
+                </div>
+                <div class="input-group">
+                  <label for="contact-email">Your Work Email *</label>
+                  <input type="email" id="contact-email" class="cyber-input" placeholder="e.g., alex@company.com" required>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="contact-subject">Transmission Subject</label>
+                <input type="text" id="contact-subject" class="cyber-input" placeholder="e.g., Cybersecurity Analyst Role / Full Stack Opportunity">
+              </div>
+
+              <div class="input-group">
+                <label for="contact-message">Encrypted Payload Message *</label>
+                <textarea id="contact-message" class="cyber-textarea" placeholder="Write your message here..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" id="contact-submit-btn">
+                <span>🔒 Transmit Encrypted Message</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span>Atharva Dnyaneshwar Shastrakar</span>
+        <div class="footer-credit">Cybersecurity Analyst & Full Stack Developer (AWS)</div>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#terminal-section">Terminal</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="footer-credit">
+        © 2026 Atharva Shastrakar. Built with Zero Dependencies &amp; Secure Architecture.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================================================================
+       MODALS & OVERLAYS
+       ==================================================================== -->
+
+  <!-- 1. Project Deep Dive Modal -->
+  <div class="modal-backdrop" id="project-modal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <span class="badge badge-primary" id="modal-project-category">Category</span>
+          <h3 id="modal-project-title" style="margin-top: 0.4rem; font-size: 1.35rem;">Project Title</h3>
+        </div>
+        <button class="modal-close-btn" id="project-modal-close" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div>
+          <h4 style="margin-bottom: 0.5rem;">Executive Overview</h4>
+          <p id="modal-project-desc" style="color: var(--text-secondary); line-height: 1.65;"></p>
+        </div>
+
+        <div>
+          <h4 style="margin-bottom: 0.5rem;">Architecture &amp; Data Flow Diagram</h4>
+          <div class="architecture-diagram" id="modal-project-architecture"></div>
+        </div>
+
+        <div>
+          <h4 style="margin-bottom: 0.6rem;">Key Security Controls &amp; Engineering Highlights</h4>
+          <ul class="project-bullets" id="modal-project-highlights"></ul>
+        </div>
+
+        <div>
+          <h4 style="margin-bottom: 0.6rem;">Technologies Applied</h4>
+          <div class="project-tags" id="modal-project-tags"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Formatted Printable Resume Modal -->
+  <div class="modal-backdrop" id="resume-modal" role="dialog" aria-modal="true">
+    <div class="modal-card" style="max-width: 860px;">
+      <div class="modal-header">
+        <div>
+          <h3 style="font-size: 1.3rem;">Atharva Dnyaneshwar Shastrakar — Resume</h3>
+          <div style="font-size: 0.85rem; color: var(--text-secondary); font-family: var(--font-mono);">
+            Cybersecurity Analyst &amp; Full Stack Developer
+          </div>
+        </div>
+        <div style="display: flex; gap: 0.6rem;">
+          <button class="btn btn-primary btn-sm" onclick="window.print()">🖨️ Print / Save PDF</button>
+          <button class="modal-close-btn" id="resume-modal-close" aria-label="Close resume">✕</button>
+        </div>
+      </div>
+
+      <div class="modal-body" style="font-size: 0.92rem; color: var(--text-secondary);">
+        <!-- Summary -->
+        <div>
+          <h4 style="color: var(--primary); font-size: 1.05rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.3rem; margin-bottom: 0.6rem;">
+            PROFESSIONAL SUMMARY
+          </h4>
+          <p>
+            Cybersecurity and Digital Forensics undergraduate with hands-on experience in full-stack web development, secure application design, and cloud technologies. Proficient in Python, JavaScript, React.js, Next.js, REST APIs, and AWS, with a strong foundation in cybersecurity and digital forensics. Passionate about building scalable, secure, and user-centric software solutions.
+          </p>
+        </div>
+
+        <!-- Education -->
+        <div>
+          <h4 style="color: var(--primary); font-size: 1.05rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.3rem; margin-bottom: 0.6rem;">
+            EDUCATION
+          </h4>
+          <div style="display: flex; justify-content: space-between; font-weight: 700; color: var(--text-primary);">
+            <span>VIT Bhopal University</span>
+            <span>Bhopal, India</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-style: italic; margin-bottom: 0.3rem;">
+            <span>B.Tech, Computer Science &amp; Engineering – Cyber Security and Digital Forensics</span>
+            <span>Jun 2022 – Jun 2026</span>
+          </div>
+          <div><strong>CGPA:</strong> 7.3 / 10.0</div>
+        </div>
+
+        <!-- Experience -->
+        <div>
+          <h4 style="color: var(--primary); font-size: 1.05rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.3rem; margin-bottom: 0.6rem;">
+            EXPERIENCE
+          </h4>
+
+          <!-- Offcomfrt -->
+          <div style="margin-bottom: 1.2rem;">
+            <div style="display: flex; justify-content: space-between; font-weight: 700; color: var(--text-primary);">
+              <span>Customer Support Executive — Offcomfrt Apparels LLP</span>
+              <span style="color: #34d399;">July 2026 – Present</span>
+            </div>
+            <ul style="padding-left: 1.2rem; margin-top: 0.4rem; display: flex; flex-direction: column; gap: 0.3rem;">
+              <li>Managing high-priority client communications, dispute resolution, and cross-channel support workflows.</li>
+              <li>Streamlining service workflows and CRM ticketing systems, ensuring prompt escalations and high customer satisfaction scores.</li>
+              <li>Collaborating with operational teams to analyze client feedback, identify recurring service bottlenecks, and optimize processes.</li>
+            </ul>
+          </div>
+
+          <!-- Chrysadalus -->
+          <div style="margin-bottom: 1.2rem;">
+            <div style="display: flex; justify-content: space-between; font-weight: 700; color: var(--text-primary);">
+              <span>Full Stack Developer — Chrysadalus</span>
+              <span>Nov 2025 – March 2026</span>
+            </div>
+            <ul style="padding-left: 1.2rem; margin-top: 0.4rem; display: flex; flex-direction: column; gap: 0.3rem;">
+              <li>Developed responsive web applications using modern frontend and backend technologies, delivering scalable and user-friendly solutions.</li>
+              <li>Built and integrated RESTful APIs, improving communication between frontend interfaces and backend services.</li>
+              <li>Collaborated with cross-functional teams to implement new features, optimize application performance, and resolve production issues.</li>
+            </ul>
+          </div>
+
+          <!-- Skidev -->
+          <div style="margin-bottom: 1.2rem;">
+            <div style="display: flex; justify-content: space-between; font-weight: 700; color: var(--text-primary);">
+              <span>Business Development Intern — Skidev Inc</span>
+              <span>May 2025 – August 2025</span>
+            </div>
+            <ul style="padding-left: 1.2rem; margin-top: 0.4rem; display: flex; flex-direction: column; gap: 0.3rem;">
+              <li>Conducted market research and competitor analysis to identify strategic expansion opportunities and new client demographics.</li>
+              <li>Supported business outreach pipelines, prepared customized technical pitches, and engaged prospective partners.</li>
+              <li>Collaborated with product and engineering teams to translate client requirements into actionable development roadmaps.</li>
+            </ul>
+          </div>
+
+          <!-- Cyber Warrior Club -->
+          <div>
+            <div style="display: flex; justify-content: space-between; font-weight: 700; color: var(--text-primary);">
+              <span>President, Cyber Warrior Club — VIT Bhopal University</span>
+              <span>Jul 2024 – Jun 2025</span>
+            </div>
+            <ul style="padding-left: 1.2rem; margin-top: 0.4rem; display: flex; flex-direction: column; gap: 0.3rem;">
+              <li>Directed cybersecurity workshops and CTF competitions for 200+ students.</li>
+              <li>Mentored 30+ members through a structured onboarding program in ethical hacking &amp; digital forensics.</li>
+              <li>Managed technical events with 300+ participants and secured sponsorships.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div>
+          <h4 style="color: var(--primary); font-size: 1.05rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.3rem; margin-bottom: 0.6rem;">
+            PROJECTS
+          </h4>
+          <div style="margin-bottom: 1rem;">
+            <strong style="color: var(--text-primary);">VoteChain – Blockchain-based Secure Voting Platform</strong>
+            <ul style="padding-left: 1.2rem; margin-top: 0.3rem; display: flex; flex-direction: column; gap: 0.3rem;">
+              <li>Built a decentralized voting platform using Solana, Next.js, and Phantom Wallet.</li>
+              <li>Implemented secure role-based authentication, audit logging, and cryptographic integrity.</li>
+              <li>Delivered technical documentation and user onboarding.</li>
+            </ul>
+          </div>
+
+          <div>
+            <strong style="color: var(--text-primary);">Cryptography Suite – Multi-Algorithm Encryption &amp; Decryption Tool</strong>
+            <ul style="padding-left: 1.2rem; margin-top: 0.3rem; display: flex; flex-direction: column; gap: 0.3rem;">
+              <li>Developed a Python toolkit implementing AES, DES, RSA, Diffie-Hellman, IDEA, HMAC, Rail Fence, Row Transposition, and ADFGVX algorithms.</li>
+              <li>Designed modular encryption and decryption workflows demonstrating symmetric and asymmetric cryptography.</li>
+              <li>Implemented secure communication, authentication, and confidentiality concepts through practical implementations.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div>
+          <h4 style="color: var(--primary); font-size: 1.05rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.3rem; margin-bottom: 0.6rem;">
+            TECHNICAL SKILLS &amp; CERTIFICATIONS
+          </h4>
+          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+            <div><strong>Cybersecurity:</strong> Penetration Testing, Network Security, NIST Framework, Wireshark, Nmap, Metasploit, Burp Suite</div>
+            <div><strong>Languages:</strong> Python, C, C++, Java, JavaScript, PowerShell, Bash</div>
+            <div><strong>Web &amp; Frameworks:</strong> React.js, Next.js, Django, Flask, REST APIs, HTML, CSS</div>
+            <div><strong>Databases:</strong> PostgreSQL, MySQL</div>
+            <div><strong>Cloud &amp; DevOps:</strong> AWS (EC2, S3), Docker, GitHub Actions</div>
+            <div><strong>Certifications:</strong> Cybersecurity Analyst – IBM | MERN Full Stack – Ethnus | AWS Certified Cloud Practitioner (In Progress) | ISC2 Certified in Cybersecurity (CC) (In Progress) | CEH (In Progress)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Command Palette Modal (Cmd+K) -->
+  <div class="cmd-palette-modal" id="cmd-palette-modal" role="dialog" aria-modal="true">
+    <div class="cmd-palette-box">
+      <div class="cmd-input-wrapper">
+        <span style="color: var(--primary); font-weight: bold;">&gt;</span>
+        <input type="text" id="cmd-palette-input" class="cmd-input" placeholder="Type a command or jump to section (e.g. projects, scan, tools)...">
+        <kbd>ESC to exit</kbd>
+      </div>
+      <div class="cmd-results-list" id="cmd-palette-results">
+        <!-- Filterable results render dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/sound-fx.js"></script>
+  <script src="js/matrix-bg.js"></script>
+  <script src="js/crypto-tools.js"></script>
+  <script src="js/password-analyzer.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

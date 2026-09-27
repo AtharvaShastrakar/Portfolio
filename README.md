@@ -161,16 +161,15 @@ To run this portfolio locally on your computer:
 - [✔] **Cybersecurity Analyst Professional Certificate** — *IBM*
 - [✔] **MERN Full Stack Web Development** — *Ethnus*
 - [⏳] **AWS Certified Cloud Practitioner** — *Amazon Web Services (In Progress)*
-- [⏳] **Certified in Cybersecurity (CC)** — *ISC2 (In Progress)*
 - [⏳] **Certified Ethical Hacker (CEH)** — *EC-Council (In Progress)*
 
 ---
 
 ## 📬 Connect with Atharva
 
-- 💼 **LinkedIn:** [linkedin.com/in/atharva-shastrakar](https://linkedin.com)
+- 💼 **LinkedIn:** [linkedin.com/in/atharva-shastrakar](https://www.linkedin.com/in/atharva-shastrakar/)
 - 🐙 **GitHub:** [github.com/AtharvaShastrakar](https://github.com/AtharvaShastrakar)
-- 💻 **LeetCode:** [leetcode.com/AtharvaShastrakar](https://leetcode.com)
+- 💻 **LeetCode:** [leetcode.com/AtharvaShastrakar](https://leetcode.com/u/atharvashastrakar/)
 - 📧 **Email:** [atharva.d.s.shastrakar@gmail.com](mailto:atharva.d.s.shastrakar@gmail.com)
 - 📱 **Phone:** `+91-7499074139`
 

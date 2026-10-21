@@ -91,7 +91,7 @@
 
   function getThemeHue() {
     const rawHue = getComputedStyle(document.documentElement).getPropertyValue('--primary-hue').trim();
-    return rawHue ? parseInt(rawHue, 10) : 187;
+    return rawHue ? parseInt(rawHue, 10) : 278;
   }
 
   function animate() {

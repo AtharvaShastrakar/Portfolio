@@ -5,8 +5,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
-:root, [data-theme="cyberpunk"] {
-  /* Default Cyberpunk Neon Theme (Violet & Hot Pink) */
+:root {
+  /* Permanent Cyberpunk Neon Theme (Violet & Hot Pink) */
   --primary-hue: 278;
   --primary-sat: 100%;
   --primary-lit: 56%;
@@ -72,98 +72,6 @@
   --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Toxic Matrix Theme (Neon Green & Emerald) */
-[data-theme="matrix"] {
-  --primary-hue: 144;
-  --primary-sat: 100%;
-  --primary-lit: 50%;
-  
-  --primary: #00ff66;
-  --primary-glow: rgba(0, 255, 102, 0.45);
-  --primary-subtle: rgba(0, 255, 102, 0.14);
-  --primary-border: rgba(0, 255, 102, 0.38);
-  
-  --secondary: #10b981;
-  --secondary-glow: rgba(16, 185, 129, 0.45);
-  --secondary-subtle: rgba(16, 185, 129, 0.14);
-
-  --accent-purple: #a855f7;
-  --accent-purple-glow: rgba(168, 85, 247, 0.35);
-  
-  --accent-amber: #f59e0b;
-  --accent-amber-glow: rgba(245, 158, 11, 0.35);
-  
-  --accent-rose: #f43f5e;
-  --accent-rose-glow: rgba(244, 63, 94, 0.35);
-
-  --bg-darker: #030704;
-  --bg-dark: #060d08;
-  --bg-card: rgba(10, 22, 14, 0.78);
-  --bg-card-hover: rgba(15, 34, 22, 0.90);
-  --bg-card-solid: #0d1e13;
-  --bg-input: rgba(8, 18, 12, 0.85);
-  --bg-terminal: rgba(4, 10, 6, 0.96);
-
-  --border-card: rgba(0, 255, 102, 0.22);
-  --border-glow: rgba(0, 255, 102, 0.48);
-  --glass-card: rgba(10, 22, 14, 0.68);
-
-  --ambient-glow-1: rgba(0, 255, 102, 0.15);
-  --ambient-glow-2: rgba(16, 185, 129, 0.13);
-  --ambient-glow-3: rgba(245, 158, 11, 0.08);
-
-  --text-primary: #f0fdf4;
-  --text-secondary: #86efac;
-  --text-muted: #5e8d7e;
-  --text-code: #4ade80;
-}
-
-/* Red Team Crimson Theme (Blood Dragon & Amber) */
-[data-theme="crimson"] {
-  --primary-hue: 340;
-  --primary-sat: 100%;
-  --primary-lit: 50%;
-  
-  --primary: #ff0055;
-  --primary-glow: rgba(255, 0, 85, 0.45);
-  --primary-subtle: rgba(255, 0, 85, 0.14);
-  --primary-border: rgba(255, 0, 85, 0.38);
-  
-  --secondary: #ff7700;
-  --secondary-glow: rgba(255, 119, 0, 0.45);
-  --secondary-subtle: rgba(255, 119, 0, 0.14);
-
-  --accent-purple: #c084fc;
-  --accent-purple-glow: rgba(192, 132, 252, 0.35);
-  
-  --accent-amber: #f59e0b;
-  --accent-amber-glow: rgba(245, 158, 11, 0.35);
-  
-  --accent-rose: #ff0055;
-  --accent-rose-glow: rgba(255, 0, 85, 0.35);
-
-  --bg-darker: #090406;
-  --bg-dark: #0f060a;
-  --bg-card: rgba(26, 12, 18, 0.78);
-  --bg-card-hover: rgba(38, 16, 26, 0.90);
-  --bg-card-solid: #1a0c14;
-  --bg-input: rgba(20, 9, 14, 0.85);
-  --bg-terminal: rgba(12, 5, 8, 0.96);
-
-  --border-card: rgba(255, 0, 85, 0.22);
-  --border-glow: rgba(255, 0, 85, 0.48);
-  --glass-card: rgba(26, 12, 18, 0.68);
-
-  --ambient-glow-1: rgba(255, 0, 85, 0.16);
-  --ambient-glow-2: rgba(255, 119, 0, 0.14);
-  --ambient-glow-3: rgba(168, 85, 247, 0.08);
-
-  --text-primary: #fff1f2;
-  --text-secondary: #fda4af;
-  --text-muted: #9c606e;
-  --text-code: #fb7185;
 }
 
 /* CSS Reset & Base */
@@ -636,47 +544,6 @@ code, kbd, samp, pre {
   align-items: center;
   gap: 0.85rem;
   flex-shrink: 0;
-}
-
-/* Theme Switcher in Navbar */
-.theme-switcher {
-  display: inline-flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-full);
-  padding: 3px 5px;
-  gap: 4px;
-}
-
-.theme-btn {
-  background: transparent;
-  border: none;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  font-size: 0.82rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  opacity: 0.5;
-  filter: grayscale(40%);
-}
-
-.theme-btn:hover {
-  opacity: 1;
-  filter: grayscale(0%);
-  transform: scale(1.15);
-}
-
-.theme-btn.active {
-  opacity: 1;
-  filter: grayscale(0%);
-  background: rgba(255, 255, 255, 0.16);
-  box-shadow: 0 0 12px var(--primary-glow);
-  transform: scale(1.1);
 }
 
 /* Mobile Toggle */

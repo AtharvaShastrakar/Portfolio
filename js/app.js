@@ -136,30 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (portalBtnSkip) portalBtnSkip.addEventListener('click', dismissPortal);
 
   // ------------------------------------------------------------------------
-  // 1. Theme Switcher Controller (Cyberpunk, Matrix, Crimson)
-  // ------------------------------------------------------------------------
-  const themeBtns = document.querySelectorAll('.theme-btn');
-  const savedTheme = localStorage.getItem('atharva_theme') || 'cyberpunk';
-
-  function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('atharva_theme', theme);
-    themeBtns.forEach(btn => {
-      btn.classList.toggle('active', btn.getAttribute('data-theme-set') === theme);
-    });
-  }
-
-  applyTheme(savedTheme);
-
-  themeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const theme = btn.getAttribute('data-theme-set');
-      applyTheme(theme);
-    });
-  });
-
-  // ------------------------------------------------------------------------
-  // 2. Navbar Sticky & Scroll Spy
+  // 1. Navbar Sticky & Scroll Spy
   // ------------------------------------------------------------------------
   const navbar = document.querySelector('.navbar');
   const sections = document.querySelectorAll('section[id]');

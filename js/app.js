@@ -621,22 +621,22 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ------------------------------------------------------------------------
-  // 12. Contact Form Submission & Encrypted Dispatch Simulation
+  // 12. Contact Form Submission & Encrypted Real Transmission
   // ------------------------------------------------------------------------
   const contactForm = document.getElementById('contact-form');
   const dispatchStatus = document.getElementById('dispatch-status');
   const submitBtn = document.getElementById('contact-submit-btn');
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const name = document.getElementById('contact-name').value.trim();
       const email = document.getElementById('contact-email').value.trim();
+      const subject = (document.getElementById('contact-subject')?.value || '').trim() || 'New Transmission from Portfolio Website';
       const message = document.getElementById('contact-message').value.trim();
 
       if (!name || !email || !message) {
         showToast('Please fill out all required fields.', 'warning');
-        if (window.soundFX) window.soundFX.playAlert();
         return;
       }
 
@@ -644,25 +644,46 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.innerHTML = '<span class="typing-cursor"></span> Encrypting Payload...';
       dispatchStatus.innerHTML = '<span style="color:#38bdf8;">[1/3] Generating Ephemeral 256-bit AES Session Key...</span>';
 
-      if (window.soundFX) window.soundFX.playCommandExecute();
+      await new Promise(resolve => setTimeout(resolve, 600));
+      dispatchStatus.innerHTML = '<span style="color:#f59e0b;">[2/3] Performing TLS Handshake & Transmitting to Mail Server...</span>';
 
-      setTimeout(() => {
-        dispatchStatus.innerHTML = '<span style="color:#f59e0b;">[2/3] Performing TLS Handshake & HMAC Integrity Check...</span>';
-      }, 700);
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/atharva.d.s.shastrakar@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            _subject: `[Portfolio Contact] ${subject} - from ${name}`,
+            message: message,
+            _template: 'table',
+            _captcha: 'false'
+          })
+        });
 
-      setTimeout(() => {
-        dispatchStatus.innerHTML = '<span style="color:#10b981;">[3/3] Secure Packet Transmitted (200 OK: Delivered).</span>';
-        submitBtn.innerHTML = '✓ Dispatched Securely';
-        submitBtn.disabled = false;
-        showToast(`Thank you, ${name}! Your encrypted message has been received.`, 'success');
-        if (window.soundFX) window.soundFX.playSuccess();
-        contactForm.reset();
-
+        if (response.ok) {
+          dispatchStatus.innerHTML = '<span style="color:#10b981;">[3/3] Secure Packet Transmitted (Delivered to atharva.d.s.shastrakar@gmail.com).</span>';
+          submitBtn.innerHTML = '✓ Dispatched to Atharva';
+          showToast(`Thank you, ${name}! Your transmission has been delivered to Atharva.`, 'success');
+          contactForm.reset();
+        } else {
+          throw new Error('Server returned non-200 response');
+        }
+      } catch (err) {
+        // Fallback: If network issue or blocked, provide direct mailto link
+        dispatchStatus.innerHTML = '<span style="color:#38bdf8;">[Fallback] Opening Direct Mail Client...</span>';
+        window.location.href = `mailto:atharva.d.s.shastrakar@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
+        showToast('Direct mail client opened as backup.', 'info');
+      } finally {
         setTimeout(() => {
+          submitBtn.disabled = false;
           submitBtn.innerHTML = '<span>🔒 Transmit Encrypted Message</span>';
           dispatchStatus.innerHTML = '<span style="color:#10b981;">✓ TLS 1.3 End-to-End Encrypted Tunnel Ready</span>';
         }, 4000);
-      }, 1500);
+      }
     });
   }
 });

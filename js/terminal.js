@@ -182,7 +182,7 @@ AVAILABLE COMMANDS:
       case 'experience':
       case 'work':
         this.appendLine(`
-1. CUSTOMER SUPPORT EXECUTIVE @ Offcomfrt Apparels LLP (Jul 2026 – Present)
+1. CUSTOMER SUPPORT EXECUTIVE @ Offcomfrt Apparels LLP (Jul 2026 – Aug 2026)
    - Managed high-priority customer workflows, ticket escalation resolution, and client communications.
    - Streamlined support ticketing protocols and ensured high client retention & service satisfaction.
 

@@ -163,7 +163,7 @@ To run this portfolio locally on your computer:
 
 ## 💼 Career History & Experience
 
-- **Customer Support Executive** — *Offcomfrt Apparels LLP* (`July 2026 – Present`)
+- **Customer Support Executive** — *Offcomfrt Apparels LLP* (`July 2026 – August 2026`)
 - **Full Stack Developer** — *Chrysadalus* (`May 2025 – Aug 2025`)
 - **Business Development Intern** — *Skidev Inc* (`May 2025 – Aug 2025`)
 - **President, Cyber Warrior Club** — *VIT Bhopal University* (`Jul 2024 – Jun 2025`)

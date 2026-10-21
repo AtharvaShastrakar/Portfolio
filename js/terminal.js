@@ -304,9 +304,8 @@ PORT      STATE SERVICE       VERSION
         this.appendLine(`
 [+] PHONE: +91-7499074139
 [+] EMAIL: atharva.d.s.shastrakar@gmail.com
-[+] LINKEDIN: https://linkedin.com/in/atharva-shastrakar
+[+] LINKEDIN: https://www.linkedin.com/in/atharva-shastrakar/
 [+] GITHUB: https://github.com/AtharvaShastrakar
-[+] LEETCODE: https://leetcode.com/AtharvaShastrakar
         `, 'success');
         break;
 

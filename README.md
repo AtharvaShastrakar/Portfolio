@@ -183,7 +183,6 @@ To run this portfolio locally on your computer:
 
 - 💼 **LinkedIn:** [linkedin.com/in/atharva-shastrakar](https://www.linkedin.com/in/atharva-shastrakar/)
 - 🐙 **GitHub:** [github.com/AtharvaShastrakar](https://github.com/AtharvaShastrakar)
-- 💻 **LeetCode:** [leetcode.com/AtharvaShastrakar](https://leetcode.com/u/atharvashastrakar/)
 - 📧 **Email:** [atharva.d.s.shastrakar@gmail.com](mailto:atharva.d.s.shastrakar@gmail.com)
 - 📱 **Phone:** `+91-7499074139`
 

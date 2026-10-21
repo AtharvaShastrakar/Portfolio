@@ -117,17 +117,6 @@
         </ul>
 
         <div class="nav-actions">
-          <!-- Sound Toggle -->
-          <button class="sound-toggle-btn" id="sound-toggle-btn" title="Toggle Cyber Audio FX" aria-label="Toggle Audio">
-            🔊
-          </button>
-
-          <!-- Command Palette Button -->
-          <button class="cmd-palette-btn btn-open-cmd" id="btn-open-cmd-nav" title="Open Command Palette (Cmd+K)">
-            <span class="label">CLI</span>
-            <kbd>⌘K</kbd>
-          </button>
-
           <!-- Resume Button -->
           <a href="assets/Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-cyber btn-sm nav-resume-btn" id="btn-open-resume-nav">
             Resume
@@ -1409,25 +1398,10 @@
     </div>
   </div>
 
-  <!-- 3. Command Palette Modal (Cmd+K) -->
-  <div class="cmd-palette-modal" id="cmd-palette-modal" role="dialog" aria-modal="true">
-    <div class="cmd-palette-box">
-      <div class="cmd-input-wrapper">
-        <span style="color: var(--primary); font-weight: bold;">&gt;</span>
-        <input type="text" id="cmd-palette-input" class="cmd-input" placeholder="Type a command or jump to section (e.g. projects, scan, tools)...">
-        <kbd>ESC to exit</kbd>
-      </div>
-      <div class="cmd-results-list" id="cmd-palette-results">
-        <!-- Filterable results render dynamically -->
-      </div>
-    </div>
-  </div>
-
   <!-- Toast Notification Container -->
   <div id="toast-container" aria-live="polite"></div>
 
   <!-- Scripts -->
-  <script src="js/sound-fx.js"></script>
   <script src="js/matrix-bg.js"></script>
   <script src="js/crypto-tools.js"></script>
   <script src="js/password-analyzer.js"></script>

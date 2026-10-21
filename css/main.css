@@ -557,57 +557,6 @@ code, kbd, samp, pre {
   padding: 0.4rem;
 }
 
-/* Audio FX Toggle Button */
-.sound-toggle-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.sound-toggle-btn.active {
-  color: var(--primary);
-  border-color: var(--primary-border);
-  background: var(--primary-subtle);
-}
-
-/* Command Palette trigger hint */
-.cmd-palette-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 0.85rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.cmd-palette-btn:hover {
-  border-color: var(--primary-border);
-  color: var(--primary);
-  background: var(--primary-subtle);
-}
-
-.cmd-palette-btn kbd {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.15rem 0.35rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  color: var(--text-primary);
-}
-
 .nav-resume-btn {
   padding: 0.48rem 1.25rem !important;
   font-weight: 600 !important;
@@ -685,10 +634,6 @@ code, kbd, samp, pre {
 
   .mobile-toggle {
     display: block;
-  }
-
-  .cmd-palette-btn span.label {
-    display: none;
   }
 }
 

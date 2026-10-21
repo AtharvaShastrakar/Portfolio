@@ -72,12 +72,6 @@ Built from the ground up with **Pure Vanilla HTML5, CSS3, and Modern ES6+ JavaSc
 - **Direct PDF Download**: Immediate 1-click download of the official `Atharva_Dnyaneshwar_Shastrakar_Resume.pdf`.
 - **In-Browser Embed Viewer**: Built-in modal and standalone page (`resume.html`) displaying the original document.
 
-### 6. ⌨️ Command Palette (`Cmd + K` / `Ctrl + K`)
-- Instant keyboard-driven navigation to search sections, inspect projects, or trigger tools from anywhere on the page.
-
-### 7. 🔊 Dynamic Web Audio Synthesizer
-- Synthesizes retro terminal keystrokes, radar blips, and security tones on-the-fly using the **Web Audio API** without loading external `.mp3` files.
-
 ---
 
 ## 🌟 Featured Open-Source Projects (GitHub)
@@ -103,7 +97,6 @@ Built from the ground up with **Pure Vanilla HTML5, CSS3, and Modern ES6+ JavaSc
 | **Logic & State** | Modern Vanilla JavaScript (ES6+ Modules, Async/Await) |
 | **Cryptography** | Client-Side Web Crypto API (`crypto.subtle`) |
 | **Visual Effects** | HTML5 Canvas Particle Grid (`matrix-bg.js`) |
-| **Sound Synthesis** | Web Audio API (`AudioContext`, `sound-fx.js`) |
 | **Hosting & CI/CD** | GitHub Pages & GitHub Actions |
 | **Dependencies** | **0 External Frameworks / Zero NPM packages** (100% lightweight & fast) |
 
@@ -128,7 +121,6 @@ Portfolio/
     ├── terminal.js         # Interactive SOC command-line shell engine
     ├── crypto-tools.js     # Web Crypto API engine (AES-GCM, HMAC, Caesar, Rail Fence)
     ├── password-analyzer.js# Shannon entropy calculator & NIST compliance evaluator
-    ├── sound-fx.js         # Web Audio API retro acoustic synthesizer
     └── matrix-bg.js        # Dynamic HTML5 Canvas background particle system
 ```
 

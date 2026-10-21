@@ -136,21 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (portalBtnSkip) portalBtnSkip.addEventListener('click', dismissPortal);
 
   // ------------------------------------------------------------------------
-  // 1. Sound Toggle Init
-  // ------------------------------------------------------------------------
-  const soundBtn = document.getElementById('sound-toggle-btn');
-  if (soundBtn) {
-    const isSoundOn = localStorage.getItem('cyber_sound_enabled') === 'true';
-    if (isSoundOn) soundBtn.classList.add('active');
-    soundBtn.addEventListener('click', () => {
-      const enabled = window.soundFX ? window.soundFX.toggle() : false;
-      soundBtn.classList.toggle('active', enabled);
-      showToast(`Audio feedback ${enabled ? 'ENABLED' : 'MUTED'}`, 'info');
-    });
-  }
-
-  // ------------------------------------------------------------------------
-  // 2. Navbar Sticky & Scroll Spy
+  // 1. Navbar Sticky & Scroll Spy
   // ------------------------------------------------------------------------
   const navbar = document.querySelector('.navbar');
   const sections = document.querySelectorAll('section[id]');
@@ -625,109 +611,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ------------------------------------------------------------------------
-  // 11. Command Palette (Cmd+K / Ctrl+K)
+  // 11. Global Keyboard Listeners (Escape to close modals)
   // ------------------------------------------------------------------------
-  const cmdModal = document.getElementById('cmd-palette-modal');
-  const cmdInput = document.getElementById('cmd-palette-input');
-  const cmdResults = document.getElementById('cmd-palette-results');
-  const openCmdBtns = document.querySelectorAll('.btn-open-cmd');
-
-  const paletteItems = [
-    { label: 'Go to Hero & SOC Deck', section: 'hero', badge: 'Section' },
-    { label: 'Open Interactive Terminal Shell', section: 'terminal-section', badge: 'CLI' },
-    { label: 'Explore About & Education (VIT Bhopal)', section: 'about', badge: 'Bio' },
-    { label: 'Launch Security & Crypto Playground', section: 'playground', badge: 'Tool' },
-    { label: 'View Pass-Vault (Zero-Knowledge CLI Password Manager)', action: () => window.openProjectModal('passvault'), badge: 'Project' },
-    { label: 'View File Integrity Checker (SHA-256 FIM)', action: () => window.openProjectModal('fileintegrity'), badge: 'Project' },
-    { label: 'View StoreRatings Platform (React 19 & Express 5)', action: () => window.openProjectModal('storeratings'), badge: 'Project' },
-    { label: 'View OrangeChat (Real-Time Next.js & Supabase RLS)', action: () => window.openProjectModal('orangechat'), badge: 'Project' },
-    { label: 'View VoteChain Project', action: () => window.openProjectModal('votechain'), badge: 'Project' },
-    { label: 'View Cryptography Suite Project', action: () => window.openProjectModal('cryptosuite'), badge: 'Project' },
-    { label: 'View AWS DevSecOps Architecture', action: () => window.openProjectModal('awscloud'), badge: 'Project' },
-    { label: 'View Experience (Offcomfrt, Chrysadalus, Skidev, Club)', section: 'experience', badge: 'Timeline' },
-    { label: 'View Technical Arsenal & Skills', section: 'skills', badge: 'Skills' },
-    { label: 'View Certifications (AWS, IBM, Ethnus, CEH)', section: 'certifications', badge: 'Certs' },
-    { label: 'Open Contact & Dispatch Console', section: 'contact', badge: 'Dispatch' },
-    { label: 'View / Download Full Resume', action: () => { if (resumeModal) resumeModal.classList.add('open'); }, badge: 'Resume' }
-  ];
-
-  function openPalette() {
-    if (!cmdModal) return;
-    cmdModal.classList.add('open');
-    cmdInput.value = '';
-    renderPaletteItems(paletteItems);
-    setTimeout(() => cmdInput.focus(), 50);
-    if (window.soundFX) window.soundFX.playKeyClick();
-  }
-
-  function closePalette() {
-    if (!cmdModal) return;
-    cmdModal.classList.remove('open');
-    if (window.soundFX) window.soundFX.playKeyClick();
-  }
-
-  function renderPaletteItems(items) {
-    if (!cmdResults) return;
-    cmdResults.innerHTML = '';
-
-    if (items.length === 0) {
-      cmdResults.innerHTML = '<div style="padding:1rem;color:var(--text-muted);font-family:var(--font-mono);font-size:0.85rem;text-align:center;">No matching actions found.</div>';
-      return;
-    }
-
-    items.forEach((item, index) => {
-      const div = document.createElement('div');
-      div.className = `cmd-item ${index === 0 ? 'selected' : ''}`;
-      div.innerHTML = `
-        <div class="cmd-item-left">
-          <span style="color:var(--primary)">▸</span>
-          <span>${item.label}</span>
-        </div>
-        <span class="cmd-badge">${item.badge}</span>
-      `;
-      div.addEventListener('click', () => {
-        closePalette();
-        if (item.section) {
-          const target = document.getElementById(item.section);
-          if (target) target.scrollIntoView({ behavior: 'smooth' });
-        } else if (item.action) {
-          item.action();
-        }
-      });
-      cmdResults.appendChild(div);
-    });
-  }
-
-  openCmdBtns.forEach(btn => btn.addEventListener('click', openPalette));
-
-  if (cmdInput) {
-    cmdInput.addEventListener('input', () => {
-      const query = cmdInput.value.toLowerCase().trim();
-      const filtered = paletteItems.filter(i => i.label.toLowerCase().includes(query) || i.badge.toLowerCase().includes(query));
-      renderPaletteItems(filtered);
-    });
-  }
-
   window.addEventListener('keydown', (e) => {
-    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-      e.preventDefault();
-      if (cmdModal && cmdModal.classList.contains('open')) {
-        closePalette();
-      } else {
-        openPalette();
-      }
-    } else if (e.key === 'Escape') {
-      if (cmdModal && cmdModal.classList.contains('open')) closePalette();
+    if (e.key === 'Escape') {
       if (projectModal && projectModal.classList.contains('open')) projectModal.classList.remove('open');
       if (resumeModal && resumeModal.classList.contains('open')) resumeModal.classList.remove('open');
     }
   });
-
-  if (cmdModal) {
-    cmdModal.addEventListener('click', (e) => {
-      if (e.target === cmdModal) closePalette();
-    });
-  }
 
   // ------------------------------------------------------------------------
   // 12. Contact Form Submission & Encrypted Dispatch Simulation

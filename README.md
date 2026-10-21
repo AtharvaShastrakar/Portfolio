@@ -80,6 +80,20 @@ Built from the ground up with **Pure Vanilla HTML5, CSS3, and Modern ES6+ JavaSc
 
 ---
 
+## 🌟 Featured Open-Source Projects (GitHub)
+
+| Project | Category | Tech Stack | Highlights | Repository |
+|---|---|---|---|---|
+| **[Pass-Vault (`pv`)](https://github.com/AtharvaShastrakar/Pass-Vault)** | Cryptographic Engineering | Python 3, Argon2id, AES-256-GCM | Zero-knowledge architecture, anti-oracle tamper resistance, crash-safe atomic fsync pipeline, 71 tests (88% coverage). | [GitHub ↗](https://github.com/AtharvaShastrakar/Pass-Vault) |
+| **[File Integrity Checker](https://github.com/AtharvaShastrakar/File-Integrity-Checker)** | Security Tooling & Forensics | Python, SHA-256, POSIX 0600 | Recursive directory crawling, cryptographic baseline database, automated tamper discrepancy detection. | [GitHub ↗](https://github.com/AtharvaShastrakar/File-Integrity-Checker) |
+| **[StoreRatings](https://github.com/AtharvaShastrakar/Store-Rating-Platform)** | Full-Stack Enterprise | React 19, TypeScript, Express 5, PostgreSQL, Prisma, Vitest | Multi-role RBAC (Admin, Store Owner, User), JWT sessions, layered Controller-Service architecture, analytics dashboards. | [GitHub ↗](https://github.com/AtharvaShastrakar/Store-Rating-Platform) |
+| **[OrangeChat](https://github.com/AtharvaShastrakar/orangeChat)** | Real-Time Web & Cloud | Next.js, Supabase Realtime, PostgreSQL RLS, WebSockets | Sub-millisecond messaging via Phoenix channels, database-layer cryptographic isolation via RLS, Next.js Edge Middleware. | [GitHub ↗](https://github.com/AtharvaShastrakar/orangeChat) |
+| **VoteChain** | Decentralized & Web3 | Solana, Next.js, Phantom Wallet, Rust | Decentralized voting architecture, Ed25519 cryptographic validation, tamper-proof audit trails. | [Profile ↗](https://github.com/AtharvaShastrakar) |
+| **Cryptography Suite** | Cryptographic Engineering | Python 3, AES, RSA, Diffie-Hellman, HMAC | Unified Python cryptography engine implementing 9+ symmetric, asymmetric, and classical ciphers. | [Profile ↗](https://github.com/AtharvaShastrakar) |
+| **AWS DevSecOps Pipeline** | Cloud & DevSecOps | AWS EC2, S3, Docker, GitHub Actions | Zero-trust AWS architecture, automated CI/CD security scanning, least-privilege IAM policies. | [Profile ↗](https://github.com/AtharvaShastrakar) |
+
+---
+
 ## 🛠️ Technology Stack
 
 | Layer | Technology |

@@ -204,17 +204,37 @@ AVAILABLE COMMANDS:
 
       case 'projects':
         this.appendLine(`
-1. VOTECHAIN — Decentralized Blockchain-based Secure Voting Platform
-   - Stack: Solana, Next.js, Phantom Wallet, Rust smart contract bindings
-   - Highlights: Role-based auth, cryptographic audit logging, tamper-proof voting ledger.
+1. PASS-VAULT (pv) — Zero-Knowledge Encrypted Password Manager
+   - Repo: https://github.com/AtharvaShastrakar/Pass-Vault
+   - Stack: Python 3, Argon2id, AES-256-GCM, Atomic Storage, POSIX Locks
+   - Highlights: OWASP-aligned memory-hard derivation (64MB, 3 passes), anti-oracle resistance, 71 tests (88% coverage).
 
-2. CRYPTOGRAPHY SUITE — Multi-Algorithm Encryption & Decryption Toolkit
+2. FILE INTEGRITY CHECKER — Cryptographic Log Tamper Detection
+   - Repo: https://github.com/AtharvaShastrakar/File-Integrity-Checker
+   - Stack: Python, SHA-256 Hashing, File Integrity Monitoring, POSIX 0600
+   - Highlights: Recursive directory scanning, protected baseline database, instant tamper mismatch detection.
+
+3. STORERATINGS — Enterprise Full-Stack Rating & Review Platform
+   - Repo: https://github.com/AtharvaShastrakar/Store-Rating-Platform
+   - Stack: React 19, TypeScript, Express 5, PostgreSQL, Prisma ORM, Zod, Vitest
+   - Highlights: Decoupled Controller-Service-Schema architecture, multi-role RBAC, JWT auth, analytics dashboards.
+
+4. ORANGECHAT — Real-Time Secure Messaging & Group Platform
+   - Repo: https://github.com/AtharvaShastrakar/orangeChat
+   - Stack: Next.js App Router, TypeScript, Supabase Realtime, PostgreSQL RLS
+   - Highlights: Database-layer cryptographic tenant isolation (RLS), sub-ms Phoenix channels, Next.js middleware.
+
+5. VOTECHAIN — Decentralized Blockchain-based Secure Voting Platform
+   - Stack: Solana Blockchain, Next.js, Phantom Wallet, Rust Anchor Smart Contracts
+   - Highlights: Cryptographic role-based auth, tamper-proof audit logging, immutable election ledger.
+
+6. CRYPTOGRAPHY SUITE — Multi-Algorithm Encryption & Decryption Toolkit
    - Stack: Python, AES, DES, RSA, Diffie-Hellman, IDEA, HMAC, Rail Fence, ADFGVX
-   - Highlights: Modular symmetric/asymmetric workflows, secure key negotiation.
+   - Highlights: Modular symmetric/asymmetric workflows, mathematical validation, secure key negotiation.
 
-3. AWS DEVSECOPS PIPELINE — Cloud Hardening & Container Deployment
-   - Stack: AWS EC2, S3, Docker, GitHub Actions, IAM Least Privilege
-   - Highlights: Automated CI/CD build, image vulnerability scanning, security groups.
+7. AWS DEVSECOPS PIPELINE — Cloud Hardening & Container Deployment
+   - Stack: AWS EC2, S3, Docker, GitHub Actions, IAM Least Privilege, TLS 1.3
+   - Highlights: Automated CI/CD pipeline, container vulnerability scanning, zero-trust security policies.
         `, 'success');
         break;
 

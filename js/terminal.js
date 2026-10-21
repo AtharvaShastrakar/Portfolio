@@ -140,7 +140,7 @@ AVAILABLE COMMANDS:
   experience       - Full-stack developer & club presidency roles
   projects         - VoteChain, Cryptography Suite & AWS projects
   skills           - Categorized technical stack (Cyber, Cloud, Web)
-  certifications   - IBM, Ethnus, ISC2, CEH credentials
+  certifications   - IBM, Ethnus, AWS, CEH credentials
   scan             - Execute simulated threat & vulnerability scan
   crypto           - Run cryptographic algorithms check
   aws              - AWS cloud infrastructure & DevSecOps status
@@ -235,7 +235,6 @@ AVAILABLE COMMANDS:
 [✔] Cybersecurity Analyst — IBM (Verified)
 [✔] MERN Full Stack — Ethnus (Verified)
 [⏳] AWS Certified Cloud Practitioner — In Progress
-[⏳] ISC2 Certified in Cybersecurity (CC) — In Progress
 [⏳] Certified Ethical Hacker (CEH) — In Progress
         `, 'success');
         break;
@@ -287,7 +286,7 @@ PORT      STATE SERVICE       VERSION
 [+] EMAIL: atharva.d.s.shastrakar@gmail.com
 [+] LINKEDIN: https://linkedin.com/in/atharva-shastrakar
 [+] GITHUB: https://github.com/AtharvaShastrakar
-[+] LEETCODE: https://leetcode.com/atharva_shastrakar
+[+] LEETCODE: https://leetcode.com/AtharvaShastrakar
         `, 'success');
         break;
 

@@ -223,7 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const roles = [
       'Cybersecurity Analyst',
       'Full Stack Web Developer',
-      'AWS Cloud & DevSecOps Engineer',
       'Digital Forensics Investigator',
       'CTF Organizer & Mentor'
     ];
@@ -498,7 +497,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { label: 'View AWS DevSecOps Architecture', action: () => window.openProjectModal('awscloud'), badge: 'Project' },
     { label: 'View Experience (Offcomfrt, Chrysadalus, Skidev, Club)', section: 'experience', badge: 'Timeline' },
     { label: 'View Technical Arsenal & Skills', section: 'skills', badge: 'Skills' },
-    { label: 'View Certifications (AWS, IBM, Ethnus, ISC2, CEH)', section: 'certifications', badge: 'Certs' },
+    { label: 'View Certifications (AWS, IBM, Ethnus, CEH)', section: 'certifications', badge: 'Certs' },
     { label: 'Open Contact & Dispatch Console', section: 'contact', badge: 'Dispatch' },
     { label: 'View / Download Full Resume', action: () => { if (resumeModal) resumeModal.classList.add('open'); }, badge: 'Resume' }
   ];

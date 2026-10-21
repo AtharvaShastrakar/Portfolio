@@ -42,7 +42,7 @@ Built from the ground up with **Pure Vanilla HTML5, CSS3, and Modern ES6+ JavaSc
   - `skills` — Full technical arsenal across security, programming, frameworks, and cloud.
   - `projects` — Deep-dive into decentralized systems and cryptographic toolkits.
   - `experience` — Career timeline and leadership logs.
-  - `certifications` — Credentials across IBM, Ethnus, AWS, ISC2, and CEH.
+  - `certifications` — Credentials across IBM, Ethnus, AWS, and CEH.
   - `scan` — Simulated Nmap SYN stealth port scanner on defense perimeters.
   - `crypto` — Inline encryption/decryption execution.
   - `aws` — DevSecOps pipeline & cloud topology view.

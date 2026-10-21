@@ -665,108 +665,71 @@
         </div>
 
         <div class="projects-grid">
-          <!-- Project: Pass-Vault (CLI Password Manager) -->
-          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-1">
+          <!-- Project 1: Pass-Vault (CLI Password Manager) -->
+          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-1" onclick="window.openProjectModal('passvault')" role="button" tabindex="0" aria-label="Inspect Pass-Vault Architecture">
             <div class="project-top">
               <div class="project-header-bar">
                 <span class="project-category">Cryptographic Engineering</span>
-                <span class="badge badge-primary">Argon2id &amp; AES-GCM</span>
+                <a href="https://github.com/AtharvaShastrakar/Pass-Vault" target="_blank" rel="noopener noreferrer" class="project-github-pill" onclick="event.stopPropagation();" title="View Source on GitHub">
+                  <span>GitHub ↗</span>
+                </a>
               </div>
 
-              <h3 class="project-title">Pass-Vault (pv) – Zero-Knowledge Encrypted Password Manager</h3>
+              <h3 class="project-title">
+                <span>Pass-Vault (pv)</span>
+                <span class="project-card-arrow">↗</span>
+              </h3>
 
               <p class="project-desc">
-                A modern, zero-knowledge, encrypted command-line password manager engineered with defense-in-depth, Argon2id memory-hard key derivation, AES-256-GCM authenticated encryption, and crash-resilient atomic storage.
+                Zero-knowledge encrypted CLI password manager engineered with Argon2id memory-hard key derivation, AES-256-GCM, and crash-resilient atomic storage.
               </p>
 
-              <ul class="project-bullets">
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>Zero-knowledge architecture ensuring master credentials never touch disk, memory leaks, or shell history.</span>
-                </li>
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>Memory-hard Argon2id key derivation (64 MiB RAM, 3 passes, 4 lanes) thwarting GPU/ASIC brute-force attacks.</span>
-                </li>
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>Crash-safe atomic persistence pipeline (tmp write → fsync → atomic replace → parent fsync) with 71 passing tests.</span>
-                </li>
-              </ul>
-
               <div class="project-tags">
-                <span class="badge">Python 3</span>
+                <span class="badge badge-primary">Python 3</span>
                 <span class="badge">Argon2id</span>
                 <span class="badge">AES-256-GCM</span>
                 <span class="badge">Zero-Knowledge</span>
-                <span class="badge">Atomic Storage</span>
-                <span class="badge">CLI</span>
               </div>
             </div>
 
             <div class="project-footer">
-              <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
-                <button class="btn btn-outline-cyber btn-sm" onclick="window.openProjectModal('passvault')">
-                  <span>🔍 Inspect Architecture</span>
-                </button>
-                <a href="https://github.com/AtharvaShastrakar/Pass-Vault" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" title="View Source on GitHub">
-                  <span>🐙 GitHub ↗</span>
-                </a>
-              </div>
+              <span class="project-action-cta">Inspect Architecture <span>→</span></span>
               <span class="status-indicator">
                 <span class="dot"></span>
-                <span>Argon2id + AES-GCM</span>
+                <span>Argon2id + AES</span>
               </span>
             </div>
           </div>
 
-          <!-- Project: File Integrity Checker -->
-          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-2">
+          <!-- Project 2: File Integrity Checker -->
+          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-2" onclick="window.openProjectModal('fileintegrity')" role="button" tabindex="0" aria-label="Inspect File Integrity Checker Architecture">
             <div class="project-top">
               <div class="project-header-bar">
-                <span class="project-category">Security Tooling &amp; Forensics</span>
-                <span class="badge badge-secondary">SHA-256 &amp; FIM</span>
+                <span class="project-category">Forensics &amp; FIM</span>
+                <a href="https://github.com/AtharvaShastrakar/File-Integrity-Checker" target="_blank" rel="noopener noreferrer" class="project-github-pill" onclick="event.stopPropagation();" title="View Source on GitHub">
+                  <span>GitHub ↗</span>
+                </a>
               </div>
 
-              <h3 class="project-title">File Integrity Checker – Cryptographic Log Tamper Detection</h3>
+              <h3 class="project-title">
+                <span>File Integrity Checker</span>
+                <span class="project-card-arrow">↗</span>
+              </h3>
 
               <p class="project-desc">
-                A command-line security tool that verifies the cryptographic integrity of log files to detect tampering and unauthorized modifications using SHA-256 hashing and protected baseline stores.
+                Cryptographic log tamper detection CLI featuring recursive directory crawling, SHA-256 digests, and protected POSIX 0600 baseline stores.
               </p>
 
-              <ul class="project-bullets">
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>Accepts individual files or recursively scans nested directories to calculate SHA-256 cryptographic digests.</span>
-                </li>
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>Secures baseline hashes in a protected database file with restricted POSIX 0600 owner permissions.</span>
-                </li>
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>Clear discrepancy reporting flagging hash mismatches, unauthorized modifications, and integrity audits.</span>
-                </li>
-              </ul>
-
               <div class="project-tags">
-                <span class="badge">Python</span>
+                <span class="badge badge-secondary">Python</span>
                 <span class="badge">SHA-256</span>
-                <span class="badge">File Integrity Monitoring</span>
+                <span class="badge">FIM</span>
                 <span class="badge">POSIX 0600</span>
-                <span class="badge">CLI Security</span>
               </div>
             </div>
 
             <div class="project-footer">
-              <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
-                <button class="btn btn-outline-cyber btn-sm" onclick="window.openProjectModal('fileintegrity')">
-                  <span>🔍 Inspect Architecture</span>
-                </button>
-                <a href="https://github.com/AtharvaShastrakar/File-Integrity-Checker" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" title="View Source on GitHub">
-                  <span>🐙 GitHub ↗</span>
-                </a>
-              </div>
+              <span class="project-action-cta">Inspect Architecture <span>→</span></span>
               <span class="status-indicator">
                 <span class="dot"></span>
                 <span>SHA-256 Verified</span>
@@ -774,55 +737,36 @@
             </div>
           </div>
 
-          <!-- Project: Store-Rating-Platform -->
-          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-3">
+          <!-- Project 3: StoreRatings Platform -->
+          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-3" onclick="window.openProjectModal('storeratings')" role="button" tabindex="0" aria-label="Inspect StoreRatings Architecture">
             <div class="project-top">
               <div class="project-header-bar">
                 <span class="project-category">Full-Stack Enterprise</span>
-                <span class="badge badge-purple">React 19 &amp; Express 5</span>
+                <a href="https://github.com/AtharvaShastrakar/Store-Rating-Platform" target="_blank" rel="noopener noreferrer" class="project-github-pill" onclick="event.stopPropagation();" title="View Source on GitHub">
+                  <span>GitHub ↗</span>
+                </a>
               </div>
 
-              <h3 class="project-title">StoreRatings – Enterprise Full-Stack Rating &amp; Review Platform</h3>
+              <h3 class="project-title">
+                <span>StoreRatings Platform</span>
+                <span class="project-card-arrow">↗</span>
+              </h3>
 
               <p class="project-desc">
-                A production-grade, multi-role full-stack web application built to allow platform users to search, review, and rate registered stores with interactive analytics and strict role-based access control.
+                Production-grade rating &amp; review platform with Controller-Service-Schema layered architecture, multi-role RBAC, and analytics dashboards.
               </p>
 
-              <ul class="project-bullets">
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>Decoupled Controller-Service-Schema layered architecture with Zod schema validation and Axios token interceptors.</span>
-                </li>
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>Multi-role RBAC (System Admin, Store Owner, User) with secure JWT authentication and Helmet security headers.</span>
-                </li>
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>PostgreSQL &amp; Prisma ORM relational database layer with automated Vitest integration test suite.</span>
-                </li>
-              </ul>
-
               <div class="project-tags">
-                <span class="badge">React 19</span>
+                <span class="badge badge-purple">React 19</span>
                 <span class="badge">TypeScript</span>
                 <span class="badge">Express 5</span>
                 <span class="badge">PostgreSQL</span>
-                <span class="badge">Prisma ORM</span>
-                <span class="badge">Zod</span>
-                <span class="badge">Tailwind CSS</span>
+                <span class="badge">Prisma</span>
               </div>
             </div>
 
             <div class="project-footer">
-              <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
-                <button class="btn btn-outline-cyber btn-sm" onclick="window.openProjectModal('storeratings')">
-                  <span>🔍 Inspect Architecture</span>
-                </button>
-                <a href="https://github.com/AtharvaShastrakar/Store-Rating-Platform" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" title="View Source on GitHub">
-                  <span>🐙 GitHub ↗</span>
-                </a>
-              </div>
+              <span class="project-action-cta">Inspect Architecture <span>→</span></span>
               <span class="status-indicator">
                 <span class="dot"></span>
                 <span>Full-Stack RBAC</span>
@@ -830,54 +774,35 @@
             </div>
           </div>
 
-          <!-- Project: OrangeChat -->
-          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-1">
+          <!-- Project 4: OrangeChat -->
+          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-1" onclick="window.openProjectModal('orangechat')" role="button" tabindex="0" aria-label="Inspect OrangeChat Architecture">
             <div class="project-top">
               <div class="project-header-bar">
                 <span class="project-category">Real-Time Cloud &amp; Security</span>
-                <span class="badge badge-primary">Next.js &amp; Supabase</span>
+                <a href="https://github.com/AtharvaShastrakar/orangeChat" target="_blank" rel="noopener noreferrer" class="project-github-pill" onclick="event.stopPropagation();" title="View Source on GitHub">
+                  <span>GitHub ↗</span>
+                </a>
               </div>
 
-              <h3 class="project-title">OrangeChat – Real-Time Secure Messaging &amp; Group Platform</h3>
+              <h3 class="project-title">
+                <span>OrangeChat</span>
+                <span class="project-card-arrow">↗</span>
+              </h3>
 
               <p class="project-desc">
-                A robust, minimalist group messaging platform built for sub-millisecond latency and cryptographic data isolation powered by Next.js App Router and Supabase Realtime with database-level Row Level Security.
+                Real-time group messaging platform powered by Next.js App Router and Supabase Realtime with database-level Row Level Security (RLS).
               </p>
 
-              <ul class="project-bullets">
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>Database-layer PostgreSQL Row Level Security (RLS) guaranteeing cryptographic tenant isolation across rooms.</span>
-                </li>
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>Sub-millisecond latency messaging and instant presence powered by Supabase Realtime Phoenix channels.</span>
-                </li>
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>Next.js Edge Middleware route guarding, verified email authentication, and strict room governance.</span>
-                </li>
-              </ul>
-
               <div class="project-tags">
-                <span class="badge">Next.js</span>
+                <span class="badge badge-primary">Next.js</span>
                 <span class="badge">TypeScript</span>
                 <span class="badge">Supabase Realtime</span>
                 <span class="badge">PostgreSQL RLS</span>
-                <span class="badge">WebSockets</span>
-                <span class="badge">Tailwind CSS</span>
               </div>
             </div>
 
             <div class="project-footer">
-              <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
-                <button class="btn btn-outline-cyber btn-sm" onclick="window.openProjectModal('orangechat')">
-                  <span>🔍 Inspect Architecture</span>
-                </button>
-                <a href="https://github.com/AtharvaShastrakar/orangeChat" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" title="View Source on GitHub">
-                  <span>🐙 GitHub ↗</span>
-                </a>
-              </div>
+              <span class="project-action-cta">Inspect Architecture <span>→</span></span>
               <span class="status-indicator">
                 <span class="dot"></span>
                 <span>Supabase RLS</span>
@@ -885,53 +810,35 @@
             </div>
           </div>
 
-          <!-- Project: VoteChain -->
-          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-2">
+          <!-- Project 5: VoteChain -->
+          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-2" onclick="window.openProjectModal('votechain')" role="button" tabindex="0" aria-label="Inspect VoteChain Architecture">
             <div class="project-top">
               <div class="project-header-bar">
                 <span class="project-category">Decentralized &amp; Web3</span>
-                <span class="badge badge-primary">Solana Blockchain</span>
+                <a href="https://github.com/AtharvaShastrakar" target="_blank" rel="noopener noreferrer" class="project-github-pill" onclick="event.stopPropagation();" title="View GitHub Profile">
+                  <span>GitHub ↗</span>
+                </a>
               </div>
 
-              <h3 class="project-title">VoteChain – Blockchain-based Secure Voting Platform</h3>
+              <h3 class="project-title">
+                <span>VoteChain</span>
+                <span class="project-card-arrow">↗</span>
+              </h3>
 
               <p class="project-desc">
-                A decentralized electronic voting application leveraging the Solana blockchain and Phantom Wallet to eliminate tampering and guarantee verifiable cryptographic election results.
+                Decentralized electronic voting application leveraging the Solana blockchain and Phantom Wallet for verifiable cryptographic election results.
               </p>
 
-              <ul class="project-bullets">
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>Built decentralized voting platform with Solana, Next.js, and Phantom Wallet integration.</span>
-                </li>
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>Implemented secure role-based authentication, tamper-proof audit logging, and cryptographic integrity.</span>
-                </li>
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>Delivered technical documentation, smart contract verification, and seamless user onboarding.</span>
-                </li>
-              </ul>
-
               <div class="project-tags">
-                <span class="badge">Solana</span>
+                <span class="badge badge-primary">Solana</span>
                 <span class="badge">Next.js</span>
                 <span class="badge">Phantom Wallet</span>
-                <span class="badge">Audit Logging</span>
-                <span class="badge">Cryptography</span>
+                <span class="badge">Rust / Anchor</span>
               </div>
             </div>
 
             <div class="project-footer">
-              <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
-                <button class="btn btn-outline-cyber btn-sm" onclick="window.openProjectModal('votechain')">
-                  <span>🔍 Inspect Architecture</span>
-                </button>
-                <a href="https://github.com/AtharvaShastrakar" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" title="View GitHub Profile">
-                  <span>🐙 GitHub ↗</span>
-                </a>
-              </div>
+              <span class="project-action-cta">Inspect Architecture <span>→</span></span>
               <span class="status-indicator">
                 <span class="dot"></span>
                 <span>Verified Protocol</span>
@@ -939,54 +846,35 @@
             </div>
           </div>
 
-          <!-- Project: Cryptography Suite -->
-          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-3">
+          <!-- Project 6: Cryptography Suite -->
+          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-3" onclick="window.openProjectModal('cryptosuite')" role="button" tabindex="0" aria-label="Inspect Cryptography Suite Architecture">
             <div class="project-top">
               <div class="project-header-bar">
                 <span class="project-category">Cryptographic Security</span>
-                <span class="badge badge-secondary">Python Toolkit</span>
+                <a href="https://github.com/AtharvaShastrakar" target="_blank" rel="noopener noreferrer" class="project-github-pill" onclick="event.stopPropagation();" title="View GitHub Profile">
+                  <span>GitHub ↗</span>
+                </a>
               </div>
 
-              <h3 class="project-title">Cryptography Suite – Multi-Algorithm Encryption &amp; Decryption Tool</h3>
+              <h3 class="project-title">
+                <span>Cryptography Suite</span>
+                <span class="project-card-arrow">↗</span>
+              </h3>
 
               <p class="project-desc">
-                An extensible Python toolkit implementing symmetric and asymmetric cryptography workflows, key exchanges, message authentication, and classical cipher transpositions.
+                Modular Python cryptography framework providing unified APIs for 9+ symmetric, asymmetric, and classical transposition algorithms.
               </p>
 
-              <ul class="project-bullets">
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>Developed a Python toolkit implementing AES, DES, RSA, Diffie-Hellman, IDEA, HMAC, Rail Fence, Row Transposition, and ADFGVX algorithms.</span>
-                </li>
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>Designed modular encryption and decryption workflows demonstrating symmetric and asymmetric cryptography.</span>
-                </li>
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>Implemented secure communication, authentication, and confidentiality concepts through practical implementations.</span>
-                </li>
-              </ul>
-
               <div class="project-tags">
-                <span class="badge">Python</span>
-                <span class="badge">AES</span>
-                <span class="badge">RSA</span>
+                <span class="badge badge-secondary">Python</span>
+                <span class="badge">AES-256</span>
+                <span class="badge">RSA-2048</span>
                 <span class="badge">Diffie-Hellman</span>
-                <span class="badge">HMAC</span>
-                <span class="badge">ADFGVX</span>
               </div>
             </div>
 
             <div class="project-footer">
-              <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
-                <button class="btn btn-outline-cyber btn-sm" onclick="window.openProjectModal('cryptosuite')">
-                  <span>🔍 Inspect Architecture</span>
-                </button>
-                <a href="https://github.com/AtharvaShastrakar" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" title="View GitHub Profile">
-                  <span>🐙 GitHub ↗</span>
-                </a>
-              </div>
+              <span class="project-action-cta">Inspect Architecture <span>→</span></span>
               <span class="status-indicator">
                 <span class="dot"></span>
                 <span>9+ Ciphers</span>
@@ -994,38 +882,27 @@
             </div>
           </div>
 
-          <!-- Project: AWS DevSecOps Architecture -->
-          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-1">
+          <!-- Project 7: AWS DevSecOps Architecture -->
+          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-1" onclick="window.openProjectModal('awscloud')" role="button" tabindex="0" aria-label="Inspect AWS DevSecOps Architecture">
             <div class="project-top">
               <div class="project-header-bar">
                 <span class="project-category">Cloud &amp; DevSecOps</span>
-                <span class="badge badge-purple">AWS &amp; Docker</span>
+                <a href="https://github.com/AtharvaShastrakar" target="_blank" rel="noopener noreferrer" class="project-github-pill" onclick="event.stopPropagation();" title="View GitHub Profile">
+                  <span>GitHub ↗</span>
+                </a>
               </div>
 
-              <h3 class="project-title">AWS DevSecOps &amp; Cloud Hardening Pipeline</h3>
+              <h3 class="project-title">
+                <span>AWS DevSecOps Pipeline</span>
+                <span class="project-card-arrow">↗</span>
+              </h3>
 
               <p class="project-desc">
-                Production-ready cloud architecture built on AWS EC2, S3, and Docker, featuring automated GitHub Actions CI/CD pipelines with integrated static vulnerability scanning and IAM least privilege.
+                Zero-trust cloud architecture deploying containerized microservices on AWS EC2 &amp; S3 with automated GitHub Actions CI/CD vulnerability scanning.
               </p>
 
-              <ul class="project-bullets">
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>Provisioned scalable AWS EC2 compute instances and encrypted S3 storage buckets with KMS keys.</span>
-                </li>
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>Containerized full-stack microservices with Docker and orchestrated automated CI/CD deployments.</span>
-                </li>
-                <li>
-                  <span class="bullet-icon">▸</span>
-                  <span>Enforced least-privilege IAM policies, security group ingress filtering, and TLS 1.3 termination.</span>
-                </li>
-              </ul>
-
               <div class="project-tags">
-                <span class="badge">AWS EC2</span>
-                <span class="badge">AWS S3</span>
+                <span class="badge badge-purple">AWS EC2</span>
                 <span class="badge">Docker</span>
                 <span class="badge">GitHub Actions</span>
                 <span class="badge">IAM Policies</span>
@@ -1033,14 +910,7 @@
             </div>
 
             <div class="project-footer">
-              <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
-                <button class="btn btn-outline-cyber btn-sm" onclick="window.openProjectModal('awscloud')">
-                  <span>🔍 Inspect Architecture</span>
-                </button>
-                <a href="https://github.com/AtharvaShastrakar" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" title="View GitHub Profile">
-                  <span>🐙 GitHub ↗</span>
-                </a>
-              </div>
+              <span class="project-action-cta">Inspect Architecture <span>→</span></span>
               <span class="status-indicator">
                 <span class="dot"></span>
                 <span>Cloud Hardened</span>

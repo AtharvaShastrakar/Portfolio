@@ -585,6 +585,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Keyboard accessibility for interactive project cards
+  document.querySelectorAll('.project-card[role="button"]').forEach(card => {
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.click();
+      }
+    });
+  });
+
   // ------------------------------------------------------------------------
   // 10. Resume Viewer Modal Handlers
   // ------------------------------------------------------------------------

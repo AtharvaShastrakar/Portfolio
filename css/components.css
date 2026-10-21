@@ -181,7 +181,7 @@
 .portal-progress-fill {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #0284c7 0%, var(--primary) 100%);
+  background: linear-gradient(90deg, #64748b 0%, var(--primary) 100%);
   box-shadow: 0 0 12px var(--primary-glow);
   transition: width 0.15s ease;
   border-radius: var(--radius-full);
@@ -200,8 +200,8 @@
   gap: 0.5rem;
   padding: 0.75rem 1.6rem;
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, var(--primary) 0%, #0284c7 100%);
-  color: #040711;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
+  color: #08090b;
   font-weight: 700;
   font-size: 0.9rem;
   cursor: pointer;

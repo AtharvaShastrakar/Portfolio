@@ -146,7 +146,7 @@ AVAILABLE COMMANDS:
   aws              - AWS cloud infrastructure & DevSecOps status
   contact          - Direct contact details & social channels
   resume           - View & download printable resume
-  theme <name>     - Change accent: cyan, emerald, violet, amber
+  theme            - Display active aesthetic profile
   sound <on/off>   - Toggle terminal sound effects
   clear / cls      - Clear terminal window
         `, 'info');
@@ -321,18 +321,7 @@ PORT      STATE SERVICE       VERSION
         break;
 
       case 'theme':
-        if (args[0]) {
-          const t = args[0].toLowerCase();
-          if (['cyan', 'emerald', 'violet', 'amber'].includes(t)) {
-            document.documentElement.setAttribute('data-theme', t === 'cyan' ? '' : t);
-            localStorage.setItem('portfolio_theme', t);
-            this.appendLine(`[+] Theme accent switched to '${t}'.`, 'success');
-          } else {
-            this.appendLine(`[!] Unknown theme '${args[0]}'. Choose from: cyan, emerald, violet, amber`, 'error');
-          }
-        } else {
-          this.appendLine(`[!] Usage: theme <cyan|emerald|violet|amber>`, 'warning');
-        }
+        this.appendLine(`[+] Active Theme: Stealth Carbon & Ice Silver (Platinum Monochrome Edition)`, 'success');
         break;
 
       case 'sound':

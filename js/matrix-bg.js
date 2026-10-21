@@ -72,8 +72,8 @@
     draw(themeHue) {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `hsla(${themeHue}, 100%, 55%, ${this.baseAlpha})`;
-      ctx.shadowColor = `hsla(${themeHue}, 100%, 50%, 0.8)`;
+      ctx.fillStyle = `hsla(${themeHue}, 15%, 85%, ${this.baseAlpha})`;
+      ctx.shadowColor = `hsla(${themeHue}, 20%, 95%, 0.8)`;
       ctx.shadowBlur = 8;
       ctx.fill();
       ctx.shadowBlur = 0;
@@ -91,7 +91,7 @@
 
   function getThemeHue() {
     const rawHue = getComputedStyle(document.documentElement).getPropertyValue('--primary-hue').trim();
-    return rawHue ? parseInt(rawHue, 10) : 278;
+    return rawHue ? parseInt(rawHue, 10) : 215;
   }
 
   function animate() {
@@ -106,11 +106,11 @@
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (dist < maxDistance) {
-          const opacity = (1 - dist / maxDistance) * 0.18;
+          const opacity = (1 - dist / maxDistance) * 0.16;
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `hsla(${themeHue}, 100%, 50%, ${opacity})`;
+          ctx.strokeStyle = `hsla(${themeHue}, 15%, 80%, ${opacity})`;
           ctx.lineWidth = 1;
           ctx.stroke();
         }
@@ -125,11 +125,11 @@
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (dist < mouse.radius) {
-          const opacity = (1 - dist / mouse.radius) * 0.35;
+          const opacity = (1 - dist / mouse.radius) * 0.32;
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(mouse.x, mouse.y);
-          ctx.strokeStyle = `hsla(${themeHue}, 100%, 50%, ${opacity})`;
+          ctx.strokeStyle = `hsla(${themeHue}, 20%, 90%, ${opacity})`;
           ctx.lineWidth = 1.2;
           ctx.stroke();
         }

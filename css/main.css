@@ -6,22 +6,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Permanent Cyberpunk Neon Theme (Violet & Hot Pink) */
-  --primary-hue: 278;
-  --primary-sat: 100%;
-  --primary-lit: 56%;
+  /* Permanent Stealth Carbon & Ice Silver Theme */
+  --primary-hue: 215;
+  --primary-sat: 20%;
+  --primary-lit: 92%;
   
-  --primary: #b026ff;
-  --primary-glow: rgba(176, 38, 255, 0.45);
-  --primary-subtle: rgba(176, 38, 255, 0.14);
-  --primary-border: rgba(176, 38, 255, 0.38);
+  --primary: #f1f5f9;                 /* Radiant Platinum Silver */
+  --primary-glow: rgba(241, 245, 249, 0.40);
+  --primary-subtle: rgba(241, 245, 249, 0.10);
+  --primary-border: rgba(241, 245, 249, 0.32);
   
-  --secondary: #ff007f;
-  --secondary-glow: rgba(255, 0, 127, 0.45);
-  --secondary-subtle: rgba(255, 0, 127, 0.14);
+  --secondary: #94a3b8;               /* Brushed Titanium / Gunmetal */
+  --secondary-glow: rgba(148, 163, 184, 0.35);
+  --secondary-subtle: rgba(148, 163, 184, 0.12);
 
-  --accent-purple: #c084fc;
-  --accent-purple-glow: rgba(192, 132, 252, 0.35);
+  --accent-purple: #cbd5e1;           /* Ice Chrome Accent */
+  --accent-purple-glow: rgba(203, 213, 225, 0.30);
   
   --accent-amber: #f59e0b;
   --accent-amber-glow: rgba(245, 158, 11, 0.35);
@@ -29,32 +29,32 @@
   --accent-rose: #f43f5e;
   --accent-rose-glow: rgba(244, 63, 94, 0.35);
 
-  /* Deep Obsidian Void Background & Surfaces */
-  --bg-darker: #06050a;
-  --bg-dark: #0a0812;
-  --bg-card: rgba(18, 14, 28, 0.78);
-  --bg-card-hover: rgba(28, 20, 44, 0.90);
-  --bg-card-solid: #120e1e;
-  --bg-input: rgba(14, 10, 24, 0.85);
-  --bg-terminal: rgba(8, 6, 14, 0.96);
+  /* Deep Stealth Carbon Void Background & Surfaces */
+  --bg-darker: #08090b;               /* Deep stealth carbon obsidian */
+  --bg-dark: #0d0f12;                 /* Matte carbon surface */
+  --bg-card: rgba(16, 18, 23, 0.78);  /* Carbon glassmorphism card */
+  --bg-card-hover: rgba(26, 29, 36, 0.92);
+  --bg-card-solid: #111318;
+  --bg-input: rgba(13, 15, 19, 0.88);
+  --bg-terminal: rgba(9, 10, 13, 0.97);
 
   /* Borders & Glass */
   --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-card: rgba(176, 38, 255, 0.22);
-  --border-glow: rgba(176, 38, 255, 0.48);
+  --border-card: rgba(241, 245, 249, 0.14);
+  --border-glow: rgba(241, 245, 249, 0.35);
   --glass-blur: blur(16px);
-  --glass-card: rgba(18, 14, 28, 0.68);
+  --glass-card: rgba(16, 18, 23, 0.70);
 
-  /* Ambient Glow Layers */
-  --ambient-glow-1: rgba(176, 38, 255, 0.16);
-  --ambient-glow-2: rgba(255, 0, 127, 0.14);
-  --ambient-glow-3: rgba(16, 185, 129, 0.08);
+  /* Ambient Glow Layers (Sleek Moonlight Silver & Titanium Halo) */
+  --ambient-glow-1: rgba(241, 245, 249, 0.05);
+  --ambient-glow-2: rgba(148, 163, 184, 0.04);
+  --ambient-glow-3: rgba(255, 255, 255, 0.02);
 
   /* Typography Colors */
-  --text-primary: #faf5ff;
-  --text-secondary: #c4b5fd;
-  --text-muted: #8b7ca8;
-  --text-code: #d8b4fe;
+  --text-primary: #f8fafc;            /* Crisp Bright Silver/White */
+  --text-secondary: #94a3b8;          /* Brushed Slate Titanium */
+  --text-muted: #64748b;              /* Darker Steel */
+  --text-code: #e2e8f0;               /* Clean Code Silver */
 
   /* Typography Fonts */
   --font-sans: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -235,7 +235,7 @@ code, kbd, samp, pre {
 
 .section-title .gradient-text,
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 20%, var(--primary) 70%, var(--secondary) 100%);
+  background: linear-gradient(135deg, #ffffff 25%, #e2e8f0 65%, #94a3b8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -259,7 +259,7 @@ code, kbd, samp, pre {
 
 .glass-card:hover {
   border-color: var(--primary-border);
-  box-shadow: 0 12px 36px -10px rgba(0, 0, 0, 0.6), 0 0 24px var(--primary-subtle);
+  box-shadow: 0 12px 36px -10px rgba(0, 0, 0, 0.7), 0 0 24px var(--primary-subtle);
   transform: translateY(-4px);
 }
 
@@ -295,16 +295,17 @@ code, kbd, samp, pre {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 40%, #94a3b8 100%);
+  color: #08090b;
   font-weight: 700;
   box-shadow: 0 4px 20px var(--primary-glow);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 6px 28px var(--primary-glow), 0 0 16px var(--secondary-glow);
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+  box-shadow: 0 6px 28px rgba(241, 245, 249, 0.45), 0 0 16px rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
-  color: #ffffff;
+  color: #08090b;
 }
 
 .btn-primary:active {
@@ -400,8 +401,8 @@ code, kbd, samp, pre {
 }
 
 .badge-purple {
-  background: rgba(139, 92, 246, 0.12);
-  border-color: rgba(139, 92, 246, 0.3);
+  background: rgba(241, 245, 249, 0.08);
+  border-color: rgba(241, 245, 249, 0.22);
   color: var(--accent-purple);
 }
 
@@ -447,7 +448,7 @@ code, kbd, samp, pre {
   z-index: 900;
   display: flex;
   align-items: center;
-  background: rgba(6, 5, 10, 0.85);
+  background: rgba(8, 9, 11, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-subtle);
@@ -455,7 +456,7 @@ code, kbd, samp, pre {
 }
 
 .navbar.scrolled {
-  background: rgba(6, 5, 10, 0.96);
+  background: rgba(8, 9, 11, 0.96);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
   border-bottom: 1px solid var(--border-card);
 }
@@ -483,11 +484,11 @@ code, kbd, samp, pre {
   width: 38px;
   height: 38px;
   border-radius: var(--radius-sm);
-  background: linear-gradient(135deg, var(--primary) 0%, #0369a1 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #040711;
+  color: #08090b;
   font-size: 1.15rem;
   font-weight: 900;
   font-family: var(--font-mono);

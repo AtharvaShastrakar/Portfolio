@@ -3,406 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Atharva Dnyaneshwar Shastrakar - Cybersecurity Analyst, Digital Forensics Specialist, Full Stack Developer & AWS Cloud Engineer Portfolio.">
-  <meta name="keywords" content="Atharva Shastrakar, Cybersecurity Analyst, Full Stack Developer, AWS, React, Next.js, Cryptography, Penetration Testing, VIT Bhopal">
+  <title>Atharva Shastrakar | Cybersecurity Analyst & Full Stack Developer</title>
+  <meta name="description" content="Portfolio of Atharva Shastrakar, cybersecurity analyst and full stack developer. Security tooling, cryptography, full-stack web apps and AWS DevSecOps.">
   <meta name="author" content="Atharva Dnyaneshwar Shastrakar">
-  <meta property="og:title" content="Atharva Dnyaneshwar Shastrakar | Cybersecurity & Full Stack Portfolio">
-  <meta property="og:description" content="Cybersecurity Analyst and Full Stack Developer with AWS knowledge. Explore interactive cryptography tools, terminal CLI, and security projects.">
   <meta property="og:type" content="website">
-  <title>Atharva Dnyaneshwar Shastrakar | Cybersecurity Analyst & Full Stack Developer</title>
-
-  <!-- Google Fonts Preconnect -->
+  <meta property="og:title" content="Atharva Shastrakar | Cybersecurity Analyst & Full Stack Developer">
+  <meta property="og:description" content="Security tooling, cryptography, full-stack web apps and AWS DevSecOps, with a live terminal and crypto lab in the browser.">
+  <meta name="theme-color" content="#050707">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23050707'/><path d='M6 26 16 5l10 21' fill='none' stroke='%2300FF9C' stroke-width='3'/><path d='M10 19h12' stroke='%23FF3355' stroke-width='3'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=Fira+Code:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Core & Component Stylesheets -->
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="assets/css/site.css?v=3">
+  <noscript><style>.gate{display:none}body.is-loading{overflow:auto}</style></noscript>
 </head>
-<body>
-  <!-- ====================================================================
-       0. CYBER PORTAL LOADING SCREEN / PERIMETER GATEWAY
-       ==================================================================== -->
-  <div class="portal-overlay" id="portal-overlay" role="dialog" aria-modal="true" aria-label="Cyber Gateway Initialization">
-    <div class="portal-hud">
-      <div class="portal-header">
-        <div class="portal-title-wrapper">
-          <div class="portal-radar-icon">🛡️</div>
-          <div>
-            <h2>ZERO-TRUST PORTAL GATEWAY</h2>
-            <div style="font-size: 0.75rem; color: var(--text-muted);">HOST: ATHARVA-SEC // MAINFRAME v3.6</div>
-          </div>
-        </div>
-        <span class="portal-status-badge">SECURE HANDSHAKE</span>
-      </div>
+<body class="is-loading">
+  <a class="skip" href="#experience">Skip to experience</a>
 
-      <!-- Live Client & Network Telemetry Grid -->
-      <div class="portal-telemetry-grid">
-        <div class="telemetry-item">
-          <span class="telemetry-label">CLIENT GATEWAY IP</span>
-          <span class="telemetry-value" id="tel-ip">103.21.244.78</span>
-        </div>
-        <div class="telemetry-item">
-          <span class="telemetry-label">HARDWARE INTERFACE (MAC)</span>
-          <span class="telemetry-value" id="tel-mac">5A:8E:4F:21:BC:07</span>
-        </div>
-        <div class="telemetry-item">
-          <span class="telemetry-label">CLIENT PLATFORM / ARCH</span>
-          <span class="telemetry-value" id="tel-platform">macOS / Apple Silicon</span>
-        </div>
-        <div class="telemetry-item">
-          <span class="telemetry-label">NETWORK PROVIDER / REGION</span>
-          <span class="telemetry-value" id="tel-isp">AWS CloudFront (AP-SOUTH-1)</span>
-        </div>
-        <div class="telemetry-item">
-          <span class="telemetry-label">CIPHER PROTOCOL</span>
-          <span class="telemetry-value" id="tel-protocol">TLS 1.3 / ChaCha20</span>
-        </div>
-        <div class="telemetry-item">
-          <span class="telemetry-label">DEFENSE PERIMETER</span>
-          <span class="telemetry-value" id="tel-firewall">STATEFUL (DEFCON 5)</span>
-        </div>
-      </div>
-
-      <!-- Dynamic Boot Log Box -->
-      <div class="portal-log-box" id="portal-log-box">
-        <!-- Streaming logs injected via app.js -->
-      </div>
-
-      <!-- Progress Track -->
-      <div class="portal-progress-wrapper">
-        <div class="portal-progress-info">
-          <span>INITIALIZING SECURE SESSION...</span>
-          <span id="portal-progress-percent">0%</span>
-        </div>
-        <div class="portal-progress-track">
-          <div class="portal-progress-fill" id="portal-progress-fill"></div>
-        </div>
-      </div>
-
-      <div class="portal-actions-row">
-        <button class="portal-btn-enter" id="portal-btn-enter" style="display: none;">
-          ⚡ Enter Portfolio
-        </button>
-        <button class="portal-skip-btn" id="portal-btn-skip">Skip Intro &gt;&gt;</button>
-      </div>
+  <!-- Loading screen: boot log, then the gate doors open -->
+  <div class="gate" id="gate" role="status" aria-label="Loading portfolio">
+    <div class="gate-door top" aria-hidden="true"></div>
+    <div class="gate-door bot" aria-hidden="true"></div>
+    <div class="gate-core">
+      <div class="gate-head"><span class="led"></span>Zero-trust gateway<span class="gate-host">atharva-sec / node-01</span></div>
+      <div class="gate-log" id="gate-log" aria-hidden="true"></div>
+      <div class="gate-bar" aria-hidden="true"><span id="gate-fill"></span></div>
+      <div class="gate-row"><span id="gate-step">Initializing secure session</span><b id="gate-pct">0%</b></div>
+      <div class="gate-stamp" id="gate-stamp" aria-hidden="true">Access granted</div>
+      <button type="button" class="gate-skip" id="gate-skip">Skip intro</button>
     </div>
   </div>
 
-  <!-- Canvas Matrix / Cyber Network Background -->
-  <canvas id="cyber-canvas" aria-hidden="true"></canvas>
-  <div class="scanline-overlay" aria-hidden="true"></div>
+  <canvas id="rain" aria-hidden="true"></canvas>
 
-  <!-- Navigation Bar -->
-  <header>
-    <nav class="navbar" id="navbar" aria-label="Main Navigation">
-      <div class="container nav-container">
-        <a href="#hero" class="nav-brand" id="nav-brand-logo">
-          <div class="brand-icon">A</div>
-          <span class="brand-name">Atharva Shastrakar</span>
-        </a>
-
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="#hero" class="nav-link active">Home</a></li>
-          <li><a href="#terminal-section" class="nav-link">Terminal</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#playground" class="nav-link">Security Tools</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#certifications" class="nav-link">Certifications</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-
-        <div class="nav-actions">
-          <!-- Resume Button -->
-          <a href="assets/Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-cyber btn-sm nav-resume-btn" id="btn-open-resume-nav">
-            Resume
-          </a>
-
-          <!-- Mobile Hamburger -->
-          <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Open Navigation Menu">
-            ☰
-          </button>
-        </div>
-      </div>
+  <aside class="rail">
+    <a class="rail-logo" href="#top" aria-label="Atharva Shastrakar, back to top"><span>AS</span><b>Atharva<br>Shastrakar</b></a>
+    <nav class="rail-nav" aria-label="Sections">
+      <a href="#about">~/about</a>
+      <a href="#experience">~/experience</a>
+      <a href="#projects">~/projects</a>
+      <a href="#lab">~/security-lab</a>
+      <a href="#skills">~/skills</a>
+      <a href="#certs">~/certifications</a>
+      <a href="#contact">~/contact</a>
     </nav>
-  </header>
+    <div class="rail-foot">
+      <p><span class="led"></span>Open to work</p>
+      <a class="btn btn-fill" href="assets/documents/Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" download>Download resume</a>
+    </div>
+  </aside>
 
-  <main>
-    <!-- ====================================================================
-         1. HERO & THREAT INTELLIGENCE STATUS DECK
-         ==================================================================== -->
-    <section class="hero-section" id="hero">
-      <div class="container hero-grid">
-        <div class="hero-content reveal-on-scroll">
-          <!-- SOC Status Pill -->
-          <div class="soc-status-bar">
-            <div class="soc-item">
-              <span class="dot"></span>
-              <span>SYSTEM: <strong>ONLINE</strong></span>
-            </div>
-            <span class="soc-divider">|</span>
-            <div class="soc-item">
-              <span>SECURITY LEVEL: <strong>MAXIMAL</strong></span>
-            </div>
-            <span class="soc-divider">|</span>
-            <div class="soc-item">
-              <span>AWS REGION: <strong>AP-SOUTH-1</strong></span>
-            </div>
-          </div>
-
-          <h1 class="hero-title">
-            Hi, I'm <br>
-            <span class="gradient-text glitch-text" data-text="Atharva Shastrakar">Atharva Shastrakar</span>
-          </h1>
-
-          <div class="hero-role-typing">
-            <span>&gt; </span>
-            <span id="hero-typed-text">Cybersecurity Analyst</span>
-            <span class="typing-cursor"></span>
-          </div>
-
-          <p class="hero-summary">
-            <strong>Cybersecurity & Digital Forensics</strong> undergraduate at <strong>VIT Bhopal University</strong> with hands-on expertise in full-stack web engineering, secure application architecture, and <strong>AWS Cloud Technologies</strong>. Dedicated to defending systems and architecting scalable, zero-trust digital infrastructure.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#playground" class="btn btn-primary">
-              <span>⚡ Security Playground</span>
-            </a>
-            <a href="#terminal-section" class="btn btn-secondary">
-              <span>💻 SOC Terminal</span>
-            </a>
-            <a href="assets/Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" download="Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" class="btn btn-primary" id="btn-hero-resume-download" title="Download Official Resume PDF">
-              <span>📄 Resume</span>
-            </a>
-            <a href="#contact" class="btn btn-secondary">
-              <span>✉ Contact</span>
-            </a>
-          </div>
-
-          <!-- Social Quick Links -->
-          <div class="hero-socials">
-            <a href="https://www.linkedin.com/in/atharva-shastrakar/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn Profile">
-              <span>LinkedIn</span> ↗
-            </a>
-            <a href="https://github.com/AtharvaShastrakar" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub Profile">
-              <span>GitHub</span> ↗
-            </a>
-            <a href="mailto:atharva.d.s.shastrakar@gmail.com" class="social-link" title="Send Email">
-              <span>Email</span>
-            </a>
-          </div>
+  <main id="top">
+    <!-- Hero: name on the left, live terminal on the right -->
+    <section class="hero">
+      <div class="hero-l">
+        <p class="status"><span class="led"></span>System online, open to security and full-stack roles</p>
+        <h1 class="name" aria-label="Atharva Shastrakar">
+          <span class="glitch" data-text="Atharva" aria-hidden="true">Atharva</span>
+          <span class="glitch line2" data-text="Shastrakar" aria-hidden="true">Shastrakar</span>
+        </h1>
+        <p class="role"><span aria-hidden="true">&gt;</span> <span id="typed"></span><span class="caret" aria-hidden="true"></span></p>
+        <p class="lede" id="lede"></p>
+        <div class="actions">
+          <a class="btn btn-fill" href="assets/documents/Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" download>Download resume</a>
+          <a class="btn" href="#contact">Contact me</a>
+          <a class="btn" href="https://github.com/AtharvaShastrakar" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/atharva-shastrakar/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
-
-        <!-- Right Visual Deck / Stats -->
-        <div class="hero-visual reveal-on-scroll delay-2">
-          <div class="hero-card-deck">
-            <!-- Stat Card 1 -->
-            <div class="glass-card cyber-stat-card pulse-border">
-              <div class="stat-icon-wrapper">🛡️</div>
-              <div class="stat-info">
-                <div class="stat-number">200+</div>
-                <div class="stat-label">Students Mentored in CTF & Cyber Workshops</div>
-              </div>
-            </div>
-
-            <!-- Stat Card 2 -->
-            <div class="glass-card cyber-stat-card">
-              <div class="stat-icon-wrapper">🔑</div>
-              <div class="stat-info">
-                <div class="stat-number">9+</div>
-                <div class="stat-label">Cryptographic Ciphers & Algorithms Built</div>
-              </div>
-            </div>
-
-            <!-- Stat Card 3 -->
-            <div class="glass-card cyber-stat-card">
-              <div class="stat-icon-wrapper">☁️</div>
-              <div class="stat-info">
-                <div class="stat-number">AWS & Docker</div>
-                <div class="stat-label">Production Cloud Hardening & DevSecOps</div>
-              </div>
-            </div>
-
-            <!-- Stat Card 4 -->
-            <div class="glass-card cyber-stat-card">
-              <div class="stat-icon-wrapper">📜</div>
-              <div class="stat-info">
-                <div class="stat-number">4 Certs</div>
-                <div class="stat-label">AWS, IBM Security, Ethnus, CEH</div>
-              </div>
-            </div>
-          </div>
+      </div>
+      <div class="hero-r">
+        <div class="win term" id="term">
+          <div class="win-bar"><span class="win-title">atharva@soc-node: ~/portfolio</span><span class="tag">SOC terminal</span></div>
+          <div class="term-out" id="term-out" aria-live="polite"></div>
+          <form class="term-in" id="term-form" autocomplete="off">
+            <label for="term-input">$</label>
+            <input id="term-input" type="text" spellcheck="false" autocapitalize="off" aria-label="Terminal command" placeholder="type help and press Enter">
+          </form>
+          <div class="term-quick" id="term-quick"></div>
         </div>
       </div>
     </section>
 
-    <!-- ====================================================================
-         2. INTERACTIVE CYBER TERMINAL / CLI CONSOLE
-         ==================================================================== -->
-    <section id="terminal-section" class="terminal-section">
-      <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <div class="section-tag">Interactive Shell</div>
-          <h2 class="section-title">SOC Command <span class="gradient-text">Console</span></h2>
-          <p class="section-desc">
-            Interact with my portfolio directly through an authentic command-line interface. Run scans, inspect AWS topology, test cryptographic suites, and explore career logs.
-          </p>
+    <div class="stats" id="stats"></div>
+
+    <!-- About -->
+    <section class="sec" id="about">
+      <header class="sec-head"><span class="path">~/about</span><h2>Security first, then ship</h2></header>
+      <div class="about">
+        <div class="panel id-card reveal">
+          <div class="id-top"><span class="id-mark">AS</span><div><b>Atharva Dnyaneshwar Shastrakar</b><span>Cybersecurity Analyst and Full Stack Developer</span></div></div>
+          <dl class="id-fields" id="id-fields"></dl>
         </div>
-
-        <div class="terminal-wrapper reveal-on-scroll delay-1">
-          <div class="cyber-terminal">
-            <div class="terminal-header">
-              <div class="terminal-controls">
-                <span class="terminal-dot red"></span>
-                <span class="terminal-dot yellow"></span>
-                <span class="terminal-dot green"></span>
-              </div>
-              <div class="terminal-title">
-                <span>atharva@soc-defense-node:</span> <span class="user">~/portfolio</span>
-              </div>
-              <div class="terminal-actions">
-                <button class="terminal-action-btn chip-btn" data-cmd="clear" title="Clear Console">clear</button>
-              </div>
-            </div>
-
-            <div class="terminal-body" id="terminal-body">
-              <div class="terminal-output" id="terminal-output">
-                <!-- Terminal banner & messages will render here -->
-              </div>
-              <div class="terminal-input-row">
-                <span class="terminal-prompt">atharva@soc-terminal:~$</span>
-                <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" placeholder="Type 'help' or click quick chips below...">
-              </div>
-            </div>
-
-            <div class="terminal-quick-chips">
-              <span class="label">Quick Commands:</span>
-              <button class="chip-btn" data-cmd="help">help</button>
-              <button class="chip-btn" data-cmd="whoami">whoami</button>
-              <button class="chip-btn" data-cmd="education">education</button>
-              <button class="chip-btn" data-cmd="skills">skills</button>
-              <button class="chip-btn" data-cmd="projects">projects</button>
-              <button class="chip-btn" data-cmd="experience">experience</button>
-              <button class="chip-btn" data-cmd="scan">scan</button>
-              <button class="chip-btn" data-cmd="crypto">crypto</button>
-              <button class="chip-btn" data-cmd="aws">aws</button>
-              <button class="chip-btn" data-cmd="certifications">certifications</button>
-              <button class="chip-btn" data-cmd="contact">contact</button>
-            </div>
+        <div class="about-r">
+          <div class="panel reveal">
+            <p>I completed my B.Tech in Computer Science and Engineering, specializing in Cyber Security and Digital Forensics, at VIT Bhopal University.</p>
+            <p>Security cannot be treated as an afterthought or bolted on at the end of a sprint. My engineering approach treats it as a foundational architecture principle, from threat modeling and cryptographic validation to automated CI/CD security pipelines on AWS.</p>
+            <blockquote>Dedicated to helping organizations detect threats proactively, eliminate software vulnerabilities, and deploy resilient web systems built to scale.</blockquote>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====================================================================
-         3. ABOUT & DUAL COMPETENCY
-         ==================================================================== -->
-    <section id="about" class="about-section">
-      <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <div class="section-tag">Background & Vision</div>
-          <h2 class="section-title">Engineering Secure, <span class="gradient-text">Scalable Solutions</span></h2>
-          <p class="section-desc">
-            Combining rigorous digital forensics & offensive/defensive cybersecurity disciplines with modern full-stack web engineering and AWS cloud scalability.
-          </p>
-        </div>
-
-        <div class="about-grid">
-          <div class="glass-card about-card reveal-on-scroll delay-1">
-            <h3>Academic Background & Philosophy</h3>
-            <p>
-              I am currently pursuing my <strong>B.Tech in Computer Science and Engineering with Specialization in Cyber Security and Digital Forensics</strong> at <strong>VIT Bhopal University</strong> (CGPA: 7.3).
-            </p>
-            <p>
-              In modern computing, security cannot be treated as an afterthought or bolted on at the end of a sprint. My engineering approach treats security as a foundational architecture principle—from threat modeling and cryptographic validation to automated CI/CD security pipelines on AWS.
-            </p>
-
-            <div class="about-highlight-box">
-              "Dedicated to helping organizations detect threats proactively, eliminate software vulnerabilities, and deploy resilient web systems built to scale."
-            </div>
-
-            <div class="about-meta-list">
-              <div class="about-meta-item">
-                <span class="label">University</span>
-                <span class="value">VIT Bhopal University</span>
-              </div>
-              <div class="about-meta-item">
-                <span class="label">Degree & Major</span>
-                <span class="value">B.Tech CSE (Cyber Security & Forensics)</span>
-              </div>
-              <div class="about-meta-item">
-                <span class="label">Timeline</span>
-                <span class="value">June 2022 – June 2026</span>
-              </div>
-              <div class="about-meta-item">
-                <span class="label">Cumulative GPA</span>
-                <span class="value">7.3 / 10.0</span>
-              </div>
-              <div class="about-meta-item">
-                <span class="label">Location</span>
-                <span class="value">Bhopal / Maharashtra, India</span>
-              </div>
-              <div class="about-meta-item">
-                <span class="label">Target Roles</span>
-                <span class="value">Cybersecurity Analyst | Full Stack Dev</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dual Pillars Deck -->
-          <div class="dual-pillar-deck reveal-on-scroll delay-2">
-            <!-- Pillar 1 -->
-            <div class="glass-card pillar-card cyber">
-              <div class="pillar-header">
-                <div class="pillar-icon">🛡️</div>
-                <div>
-                  <h3>Cybersecurity & Forensics</h3>
-                  <span class="badge badge-primary">Defense-in-Depth & Analysis</span>
-                </div>
-              </div>
-              <ul class="pillar-list">
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>Penetration Testing & Audits:</strong> Hands-on experience with Nmap, Wireshark, Metasploit, and Burp Suite.</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>NIST Framework & Incident Response:</strong> Threat identification, vulnerability triage, and forensic analysis.</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>Cryptographic Protocols:</strong> Symmetric (AES/DES), Asymmetric (RSA/Diffie-Hellman), and HMAC authentication.</span>
-                </li>
+          <div class="duo">
+            <div class="panel reveal">
+              <h3><span class="dot g"></span>Cybersecurity and forensics</h3>
+              <ul class="ticks">
+                <li><b>Penetration testing and audits.</b> Hands-on with Nmap, Wireshark, Metasploit and Burp Suite.</li>
+                <li><b>NIST framework and incident response.</b> Threat identification, vulnerability triage and forensic analysis.</li>
+                <li><b>Cryptographic protocols.</b> AES and DES, RSA and Diffie-Hellman, HMAC authentication.</li>
               </ul>
             </div>
-
-            <!-- Pillar 2 -->
-            <div class="glass-card pillar-card dev">
-              <div class="pillar-header">
-                <div class="pillar-icon">💻</div>
-                <div>
-                  <h3>Full Stack & AWS Cloud</h3>
-                  <span class="badge badge-secondary">Scalable Web Architecture</span>
-                </div>
-              </div>
-              <ul class="pillar-list">
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>Modern Frontend & Backend:</strong> React.js, Next.js, Django, Flask, RESTful APIs, Node.js.</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>AWS Infrastructure:</strong> EC2 instance provisioning, S3 bucket encryption, IAM policy design.</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>DevSecOps & CI/CD:</strong> Docker containerization and automated GitHub Actions delivery pipelines.</span>
-                </li>
+            <div class="panel reveal">
+              <h3><span class="dot r"></span>Full stack and AWS cloud</h3>
+              <ul class="ticks">
+                <li><b>Front end and back end.</b> React.js, Next.js, Django, Flask, RESTful APIs, Node.js.</li>
+                <li><b>AWS infrastructure.</b> EC2 provisioning, S3 bucket encryption, IAM policy design.</li>
+                <li><b>DevSecOps and CI/CD.</b> Docker containers and automated GitHub Actions pipelines.</li>
               </ul>
             </div>
           </div>
@@ -410,1002 +122,152 @@
       </div>
     </section>
 
-    <!-- ====================================================================
-         4. INTERACTIVE CYBERSECURITY & CRYPTO PLAYGROUND
-         ==================================================================== -->
-    <section id="playground" class="playground-section">
-      <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <div class="section-tag">Interactive Security Suite</div>
-          <h2 class="section-title">Live Cryptography & <span class="gradient-text">Security Lab</span></h2>
-          <p class="section-desc">
-            Test real cryptographic transformations, compute Shannon entropy for password defense, and explore NIST Cybersecurity Framework capabilities in real-time.
-          </p>
+    <!-- Experience: pick a role on the left, read it on the right -->
+    <section class="sec" id="experience">
+      <header class="sec-head"><span class="path">~/experience</span><h2>Experience and leadership</h2><p>Select a role to read what I did there.</p></header>
+      <div class="xp reveal">
+        <div class="xp-list" id="xp-list" role="tablist" aria-label="Roles"></div>
+        <div class="xp-pane panel" id="xp-pane" role="tabpanel" tabindex="0"></div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="sec" id="projects">
+      <header class="sec-head"><span class="path">~/projects</span><h2>Engineered projects</h2><p>Cryptographic tools, zero-knowledge security systems, real-time cloud platforms and full-stack applications. Open one to see its architecture.</p></header>
+      <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+      <div class="proj" id="proj"></div>
+    </section>
+
+    <!-- Security lab -->
+    <section class="sec" id="lab">
+      <header class="sec-head"><span class="path">~/security-lab</span><h2>Live security lab</h2><p>Real cryptography running in your browser through the Web Crypto API. Nothing you type leaves this page.</p></header>
+      <div class="win lab reveal">
+        <div class="win-bar tabs" role="tablist" aria-label="Lab tools">
+          <button type="button" role="tab" class="tab" data-pane="cipher" aria-selected="true">Cipher suite</button>
+          <button type="button" role="tab" class="tab" data-pane="password" aria-selected="false">Password analyzer</button>
+          <button type="button" role="tab" class="tab" data-pane="nist" aria-selected="false">NIST CSF map</button>
         </div>
 
-        <!-- Tool Navigation Tabs -->
-        <div class="playground-tabs reveal-on-scroll delay-1">
-          <button class="tab-btn active" data-tab="tab-crypto-suite">
-            <span>🔑</span> Multi-Algorithm Cipher Suite
-          </button>
-          <button class="tab-btn" data-tab="tab-pass-analyzer">
-            <span>🛡️</span> Password Entropy & Brute-Force Analyzer
-          </button>
-          <button class="tab-btn" data-tab="tab-nist-matrix">
-            <span>📊</span> NIST CSF Mapping Matrix
-          </button>
-        </div>
-
-        <!-- Tab 1: Multi-Algorithm Crypto Suite -->
-        <div class="tab-pane active" id="tab-crypto-suite">
-          <div class="glass-card crypto-playground-card reveal-on-scroll delay-2">
-            <div class="crypto-tool-grid">
-              <!-- Controls Panel -->
-              <div class="crypto-control-panel">
-                <div class="form-row">
-                  <div class="input-group">
-                    <label for="crypto-algo-select">Algorithm / Cipher:</label>
-                    <select id="crypto-algo-select" class="cyber-select">
-                      <option value="aes">AES-256-GCM (Authenticated Encryption)</option>
-                      <option value="hmac">HMAC-SHA256 (Message Authentication)</option>
-                      <option value="rsa">RSA-2048 (Keypair Generation Simulation)</option>
-                      <option value="caesar">Caesar Substitution Cipher</option>
-                      <option value="railfence">Rail Fence Transposition Cipher</option>
-                      <option value="base64">RFC 4648 Base64 Encoding</option>
-                    </select>
-                  </div>
-                  <div class="input-group">
-                    <label for="crypto-mode-select">Operation Mode:</label>
-                    <select id="crypto-mode-select" class="cyber-select">
-                      <option value="encrypt">Encrypt / Encode / Sign</option>
-                      <option value="decrypt">Decrypt / Decode / Verify</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="input-group" id="crypto-key-group">
-                  <label for="crypto-key-input">Secret Key / Passphrase:</label>
-                  <input type="text" id="crypto-key-input" class="cyber-input" placeholder="Enter secret passphrase...">
-                </div>
-
-                <div class="input-group" id="crypto-param-group" style="display: none;">
-                  <label for="crypto-param-input" id="crypto-param-label">Shift / Rails Parameter:</label>
-                  <input type="number" id="crypto-param-input" class="cyber-input" value="3">
-                </div>
-
-                <div class="input-group">
-                  <label for="crypto-input-text">Input Plaintext / Ciphertext Payload:</label>
-                  <textarea id="crypto-input-text" class="cyber-textarea" placeholder="Type or paste payload to encrypt or decrypt..."></textarea>
-                </div>
-
-                <div class="crypto-btn-row">
-                  <button class="btn btn-primary" id="crypto-btn-run">
-                    <span>⚡ Execute Transformation</span>
-                  </button>
-                  <button class="btn btn-secondary" id="crypto-btn-sample">
-                    <span>Load Sample Data</span>
-                  </button>
-                  <button class="btn btn-secondary" id="crypto-btn-clear">
-                    <span>Clear</span>
-                  </button>
-                </div>
-              </div>
-
-              <!-- Output & Telemetry Panel -->
-              <div class="crypto-output-panel">
-                <div class="output-header">
-                  <div class="output-title">CRYPTOGRAPHIC TELEMETRY & OUTPUT</div>
-                  <button class="copy-btn" id="crypto-copy-btn" data-copy="" onclick="navigator.clipboard.writeText(document.getElementById('crypto-output-text').textContent); window.showToast('Output copied to clipboard!', 'success');">Copy Output</button>
-                </div>
-
-                <div class="output-box" id="crypto-output-text">// Output will be displayed here after computation...</div>
-
-                <div class="crypto-metadata">
-                  <div class="meta-row">
-                    <span class="label">Engine Status:</span>
-                    <span class="val" id="meta-status-text">IDLE</span>
-                  </div>
-                  <div class="meta-row">
-                    <span class="label">Algorithm:</span>
-                    <span class="val" id="meta-algo-name">AES</span>
-                  </div>
-                  <div class="meta-row">
-                    <span class="label">Execution Time:</span>
-                    <span class="val" id="meta-exec-time">--</span>
-                  </div>
-                  <div class="meta-row">
-                    <span class="label">Key Spec:</span>
-                    <span class="val" id="meta-key-len">--</span>
-                  </div>
-                </div>
-              </div>
+        <div class="pane" id="pane-cipher">
+          <form class="cx" onsubmit="return false">
+            <label>Algorithm
+              <select id="cx-algo">
+                <option value="aes">AES-256-GCM (authenticated encryption)</option>
+                <option value="hmac">HMAC-SHA256 (message authentication)</option>
+                <option value="sha">SHA-256 (hash digest)</option>
+                <option value="caesar">Caesar substitution cipher</option>
+                <option value="rail">Rail Fence transposition cipher</option>
+                <option value="b64">Base64 encoding</option>
+              </select>
+            </label>
+            <label id="cx-mode-wrap">Operation
+              <select id="cx-mode"><option value="enc">Encrypt / encode</option><option value="dec">Decrypt / decode</option></select>
+            </label>
+            <label id="cx-key-wrap">Secret key or passphrase
+              <input type="text" id="cx-key" value="correct horse battery staple" autocomplete="off" spellcheck="false">
+            </label>
+            <label id="cx-n-wrap" hidden><span class="row"><span id="cx-n-label">Shift</span><output id="cx-n-out">3</output></span>
+              <input type="range" id="cx-n" min="1" max="25" step="1" value="3">
+            </label>
+            <label>Input
+              <textarea id="cx-in" rows="4" spellcheck="false">Security is architecture, not an afterthought.</textarea>
+            </label>
+            <div class="actions">
+              <button type="button" class="btn btn-fill" id="cx-run">Run cipher</button>
+              <button type="button" class="btn" id="cx-swap">Use output as input</button>
             </div>
+          </form>
+          <div class="cx-res">
+            <div class="row"><h3>Output</h3><button type="button" class="btn btn-sm" id="cx-copy" data-label="Copy output">Copy output</button></div>
+            <pre class="cx-out" id="cx-out" aria-live="polite">Press "Run cipher" to see the result.</pre>
+            <dl class="readouts">
+              <div><dt>Algorithm</dt><dd id="ro-algo">–</dd></div>
+              <div><dt>Key</dt><dd id="ro-key">–</dd></div>
+              <div><dt>Time</dt><dd id="ro-time">–</dd></div>
+              <div><dt>Status</dt><dd id="ro-status">Idle</dd></div>
+            </dl>
           </div>
         </div>
 
-        <!-- Tab 2: Password Entropy & Brute Force Analyzer -->
-        <div class="tab-pane" id="tab-pass-analyzer">
-          <div class="glass-card password-analyzer-card">
-            <div class="password-analyzer-grid">
-              <div class="analyzer-input-side">
-                <div class="input-group">
-                  <label for="pass-input">Enter Passphrase to Benchmark:</label>
-                  <div style="display: flex; gap: 0.5rem;">
-                    <input type="password" id="pass-input" class="cyber-input" placeholder="Type a test password (e.g. Atharva#2026!SecSec)...">
-                    <button class="btn btn-secondary" id="pass-toggle-vis" type="button">👁 Show</button>
-                  </div>
-                </div>
-
-                <div class="entropy-meter-wrapper">
-                  <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-family: var(--font-mono);">
-                    <span>DEFENSE LEVEL:</span>
-                    <strong id="pass-strength-text" style="color: var(--text-muted);">ENTER PASSWORD</strong>
-                  </div>
-                  <div class="meter-track">
-                    <div class="meter-fill" id="pass-meter-fill"></div>
-                  </div>
-                </div>
-
-                <div class="entropy-stats-grid">
-                  <div class="entropy-stat-card">
-                    <div class="val" id="stat-entropy-bits">0 bits</div>
-                    <div class="lbl">Shannon Entropy</div>
-                  </div>
-                  <div class="entropy-stat-card">
-                    <div class="val" id="stat-crack-gpu">--</div>
-                    <div class="lbl">GPU Cluster Crack Time</div>
-                  </div>
-                  <div class="entropy-stat-card">
-                    <div class="val" id="stat-pool-size">0 symbols</div>
-                    <div class="lbl">Character Pool Size</div>
-                  </div>
-                  <div class="entropy-stat-card">
-                    <div class="val" id="stat-length">0 chars</div>
-                    <div class="lbl">Total Length</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- NIST Checklist Side -->
-              <div class="analyzer-checklist-side">
-                <h4 style="font-size: 1.05rem; margin-bottom: 0.5rem;">NIST SP 800-63B Compliance Checklist</h4>
-                <p style="font-size: 0.85rem; color: var(--text-secondary);">Validates password against National Institute of Standards guidelines:</p>
-                <ul class="nist-checklist">
-                  <li class="check-item" id="chk-len"><span class="icon">○</span> Minimum 12+ Characters Length</li>
-                  <li class="check-item" id="chk-upper"><span class="icon">○</span> Contains Uppercase Characters (A-Z)</li>
-                  <li class="check-item" id="chk-lower"><span class="icon">○</span> Contains Lowercase Characters (a-z)</li>
-                  <li class="check-item" id="chk-num"><span class="icon">○</span> Contains Numeric Digits (0-9)</li>
-                  <li class="check-item" id="chk-sym"><span class="icon">○</span> Contains Special Characters (!@#$%^&*)</li>
-                  <li class="check-item" id="chk-no-repeat"><span class="icon">○</span> No Obvious Sequential or Dictionary Patterns</li>
-                </ul>
-              </div>
-            </div>
+        <div class="pane" id="pane-password" hidden>
+          <div class="pw-l">
+            <label>Password to test
+              <input type="text" id="pw" autocomplete="off" spellcheck="false" placeholder="Type a password">
+            </label>
+            <p class="pw-score"><strong id="pw-bits">0 bits</strong><span id="pw-level" class="pill lvl-mid">Enter a password</span></p>
+            <dl class="readouts three">
+              <div><dt>Crack time at 100 billion guesses/s</dt><dd id="pw-time">–</dd></div>
+              <div><dt>Character pool</dt><dd id="pw-pool">0 symbols</dd></div>
+              <div><dt>Length</dt><dd id="pw-len">0 characters</dd></div>
+            </dl>
+          </div>
+          <div class="pw-r">
+            <h3>NIST SP 800-63B checklist</h3>
+            <ul class="pw-checks" id="pw-checks"></ul>
           </div>
         </div>
 
-        <!-- Tab 3: NIST CSF Matrix -->
-        <div class="tab-pane" id="tab-nist-matrix">
-          <div class="nist-grid">
-            <div class="nist-card identify">
-              <span class="nist-tag">Identify (ID)</span>
-              <h4>Asset & Risk Governance</h4>
-              <ul>
-                <li>Network topology discovery & port profiling</li>
-                <li>Vulnerability assessment using Nmap & Burp</li>
-                <li>Risk mitigation & threat modeling</li>
-              </ul>
-            </div>
-
-            <div class="nist-card protect">
-              <span class="nist-tag">Protect (PR)</span>
-              <h4>Defensive Hardening</h4>
-              <ul>
-                <li>Zero-trust access control & role-based auth</li>
-                <li>AES-256-GCM & TLS 1.3 encryption</li>
-                <li>AWS IAM least-privilege policies</li>
-              </ul>
-            </div>
-
-            <div class="nist-card detect">
-              <span class="nist-tag">Detect (DE)</span>
-              <h4>Anomaly & Event Monitoring</h4>
-              <ul>
-                <li>Wireshark packet sniffing & packet analysis</li>
-                <li>Cryptographic audit log verification</li>
-                <li>Unauthorized access attempt monitoring</li>
-              </ul>
-            </div>
-
-            <div class="nist-card respond">
-              <span class="nist-tag">Respond (RS)</span>
-              <h4>Incident Response</h4>
-              <ul>
-                <li>Containment of compromised endpoints</li>
-                <li>Root cause forensic triage</li>
-                <li>Incident documentation & escalation</li>
-              </ul>
-            </div>
-
-            <div class="nist-card recover">
-              <span class="nist-tag">Recover (RC)</span>
-              <h4>Resilience & Continuity</h4>
-              <ul>
-                <li>AWS S3 versioned backups & recovery</li>
-                <li>Docker automated service restoration</li>
-                <li>Post-incident hardening reviews</li>
-              </ul>
-            </div>
-          </div>
+        <div class="pane" id="pane-nist" hidden>
+          <div class="nist" id="nist-list"></div>
         </div>
       </div>
     </section>
 
-    <!-- ====================================================================
-         5. FEATURED PROJECTS SECTION
-         ==================================================================== -->
-    <section id="projects" class="projects-section">
-      <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <div class="section-tag">Featured Works</div>
-          <h2 class="section-title">Engineered <span class="gradient-text">Projects</span></h2>
-          <p class="section-desc">
-            Production-grade cryptographic tools, zero-knowledge security systems, real-time cloud platforms, and full-stack enterprise architectures.
-          </p>
+    <!-- Skills -->
+    <section class="sec" id="skills">
+      <header class="sec-head"><span class="path">~/skills</span><h2>Technical arsenal</h2></header>
+      <div class="arsenal" id="arsenal"></div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="sec" id="certs">
+      <header class="sec-head"><span class="path">~/certifications</span><h2>Certifications</h2></header>
+      <div class="certs" id="cert-list"></div>
+    </section>
+
+    <!-- Contact -->
+    <section class="sec" id="contact">
+      <header class="sec-head"><span class="path">~/contact</span><h2>Open a channel</h2><p>For cybersecurity analyst, SOC, penetration testing and full stack developer roles, or a project you want secured.</p></header>
+      <div class="contact">
+        <div class="lines reveal">
+          <div class="line"><span>Email</span><a href="mailto:atharva.d.s.shastrakar@gmail.com">atharva.d.s.shastrakar@gmail.com</a><button type="button" class="btn btn-sm" data-copy="atharva.d.s.shastrakar@gmail.com" data-label="Copy">Copy</button></div>
+          <div class="line"><span>Phone</span><a href="tel:+917499074139">+91-7499074139</a><button type="button" class="btn btn-sm" data-copy="+91-7499074139" data-label="Copy">Copy</button></div>
+          <div class="line"><span>LinkedIn</span><a href="https://www.linkedin.com/in/atharva-shastrakar/" target="_blank" rel="noopener">linkedin.com/in/atharva-shastrakar</a></div>
+          <div class="line"><span>GitHub</span><a href="https://github.com/AtharvaShastrakar" target="_blank" rel="noopener">github.com/AtharvaShastrakar</a></div>
+          <div class="line"><span>Location</span><b>Maharashtra, India</b></div>
         </div>
-
-        <div class="projects-grid">
-          <!-- Project 1: Pass-Vault (CLI Password Manager) -->
-          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-1" onclick="window.openProjectModal('passvault')" role="button" tabindex="0" aria-label="Inspect Pass-Vault Architecture">
-            <div class="project-top">
-              <div class="project-header-bar">
-                <span class="project-category">Cryptographic Engineering</span>
-                <a href="https://github.com/AtharvaShastrakar/Pass-Vault" target="_blank" rel="noopener noreferrer" class="project-github-pill" onclick="event.stopPropagation();" title="View Source on GitHub">
-                  <span>GitHub ↗</span>
-                </a>
-              </div>
-
-              <h3 class="project-title">
-                <span>Pass-Vault (pv)</span>
-                <span class="project-card-arrow">↗</span>
-              </h3>
-
-              <p class="project-desc">
-                Zero-knowledge encrypted CLI password manager engineered with Argon2id memory-hard key derivation, AES-256-GCM, and crash-resilient atomic storage.
-              </p>
-
-              <div class="project-tags">
-                <span class="badge badge-primary">Python 3</span>
-                <span class="badge">Argon2id</span>
-                <span class="badge">AES-256-GCM</span>
-                <span class="badge">Zero-Knowledge</span>
-              </div>
-            </div>
-
-            <div class="project-footer">
-              <span class="project-action-cta">Inspect Architecture <span>→</span></span>
-              <span class="status-indicator">
-                <span class="dot"></span>
-                <span>Argon2id + AES</span>
-              </span>
-            </div>
-          </div>
-
-          <!-- Project 2: File Integrity Checker -->
-          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-2" onclick="window.openProjectModal('fileintegrity')" role="button" tabindex="0" aria-label="Inspect File Integrity Checker Architecture">
-            <div class="project-top">
-              <div class="project-header-bar">
-                <span class="project-category">Forensics &amp; FIM</span>
-                <a href="https://github.com/AtharvaShastrakar/File-Integrity-Checker" target="_blank" rel="noopener noreferrer" class="project-github-pill" onclick="event.stopPropagation();" title="View Source on GitHub">
-                  <span>GitHub ↗</span>
-                </a>
-              </div>
-
-              <h3 class="project-title">
-                <span>File Integrity Checker</span>
-                <span class="project-card-arrow">↗</span>
-              </h3>
-
-              <p class="project-desc">
-                Cryptographic log tamper detection CLI featuring recursive directory crawling, SHA-256 digests, and protected POSIX 0600 baseline stores.
-              </p>
-
-              <div class="project-tags">
-                <span class="badge badge-secondary">Python</span>
-                <span class="badge">SHA-256</span>
-                <span class="badge">FIM</span>
-                <span class="badge">POSIX 0600</span>
-              </div>
-            </div>
-
-            <div class="project-footer">
-              <span class="project-action-cta">Inspect Architecture <span>→</span></span>
-              <span class="status-indicator">
-                <span class="dot"></span>
-                <span>SHA-256 Verified</span>
-              </span>
-            </div>
-          </div>
-
-          <!-- Project 3: StoreRatings Platform -->
-          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-3" onclick="window.openProjectModal('storeratings')" role="button" tabindex="0" aria-label="Inspect StoreRatings Architecture">
-            <div class="project-top">
-              <div class="project-header-bar">
-                <span class="project-category">Full-Stack Enterprise</span>
-                <a href="https://github.com/AtharvaShastrakar/Store-Rating-Platform" target="_blank" rel="noopener noreferrer" class="project-github-pill" onclick="event.stopPropagation();" title="View Source on GitHub">
-                  <span>GitHub ↗</span>
-                </a>
-              </div>
-
-              <h3 class="project-title">
-                <span>StoreRatings Platform</span>
-                <span class="project-card-arrow">↗</span>
-              </h3>
-
-              <p class="project-desc">
-                Production-grade rating &amp; review platform with Controller-Service-Schema layered architecture, multi-role RBAC, and analytics dashboards.
-              </p>
-
-              <div class="project-tags">
-                <span class="badge badge-purple">React 19</span>
-                <span class="badge">TypeScript</span>
-                <span class="badge">Express 5</span>
-                <span class="badge">PostgreSQL</span>
-                <span class="badge">Prisma</span>
-              </div>
-            </div>
-
-            <div class="project-footer">
-              <span class="project-action-cta">Inspect Architecture <span>→</span></span>
-              <span class="status-indicator">
-                <span class="dot"></span>
-                <span>Full-Stack RBAC</span>
-              </span>
-            </div>
-          </div>
-
-          <!-- Project 4: OrangeChat -->
-          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-1" onclick="window.openProjectModal('orangechat')" role="button" tabindex="0" aria-label="Inspect OrangeChat Architecture">
-            <div class="project-top">
-              <div class="project-header-bar">
-                <span class="project-category">Real-Time Cloud &amp; Security</span>
-                <a href="https://github.com/AtharvaShastrakar/orangeChat" target="_blank" rel="noopener noreferrer" class="project-github-pill" onclick="event.stopPropagation();" title="View Source on GitHub">
-                  <span>GitHub ↗</span>
-                </a>
-              </div>
-
-              <h3 class="project-title">
-                <span>OrangeChat</span>
-                <span class="project-card-arrow">↗</span>
-              </h3>
-
-              <p class="project-desc">
-                Real-time group messaging platform powered by Next.js App Router and Supabase Realtime with database-level Row Level Security (RLS).
-              </p>
-
-              <div class="project-tags">
-                <span class="badge badge-primary">Next.js</span>
-                <span class="badge">TypeScript</span>
-                <span class="badge">Supabase Realtime</span>
-                <span class="badge">PostgreSQL RLS</span>
-              </div>
-            </div>
-
-            <div class="project-footer">
-              <span class="project-action-cta">Inspect Architecture <span>→</span></span>
-              <span class="status-indicator">
-                <span class="dot"></span>
-                <span>Supabase RLS</span>
-              </span>
-            </div>
-          </div>
-
-          <!-- Project 5: VoteChain -->
-          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-2" onclick="window.openProjectModal('votechain')" role="button" tabindex="0" aria-label="Inspect VoteChain Architecture">
-            <div class="project-top">
-              <div class="project-header-bar">
-                <span class="project-category">Decentralized &amp; Web3</span>
-                <a href="https://github.com/AtharvaShastrakar" target="_blank" rel="noopener noreferrer" class="project-github-pill" onclick="event.stopPropagation();" title="View GitHub Profile">
-                  <span>GitHub ↗</span>
-                </a>
-              </div>
-
-              <h3 class="project-title">
-                <span>VoteChain</span>
-                <span class="project-card-arrow">↗</span>
-              </h3>
-
-              <p class="project-desc">
-                Decentralized electronic voting application leveraging the Solana blockchain and Phantom Wallet for verifiable cryptographic election results.
-              </p>
-
-              <div class="project-tags">
-                <span class="badge badge-primary">Solana</span>
-                <span class="badge">Next.js</span>
-                <span class="badge">Phantom Wallet</span>
-                <span class="badge">Rust / Anchor</span>
-              </div>
-            </div>
-
-            <div class="project-footer">
-              <span class="project-action-cta">Inspect Architecture <span>→</span></span>
-              <span class="status-indicator">
-                <span class="dot"></span>
-                <span>Verified Protocol</span>
-              </span>
-            </div>
-          </div>
-
-          <!-- Project 6: Cryptography Suite -->
-          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-3" onclick="window.openProjectModal('cryptosuite')" role="button" tabindex="0" aria-label="Inspect Cryptography Suite Architecture">
-            <div class="project-top">
-              <div class="project-header-bar">
-                <span class="project-category">Cryptographic Security</span>
-                <a href="https://github.com/AtharvaShastrakar" target="_blank" rel="noopener noreferrer" class="project-github-pill" onclick="event.stopPropagation();" title="View GitHub Profile">
-                  <span>GitHub ↗</span>
-                </a>
-              </div>
-
-              <h3 class="project-title">
-                <span>Cryptography Suite</span>
-                <span class="project-card-arrow">↗</span>
-              </h3>
-
-              <p class="project-desc">
-                Modular Python cryptography framework providing unified APIs for 9+ symmetric, asymmetric, and classical transposition algorithms.
-              </p>
-
-              <div class="project-tags">
-                <span class="badge badge-secondary">Python</span>
-                <span class="badge">AES-256</span>
-                <span class="badge">RSA-2048</span>
-                <span class="badge">Diffie-Hellman</span>
-              </div>
-            </div>
-
-            <div class="project-footer">
-              <span class="project-action-cta">Inspect Architecture <span>→</span></span>
-              <span class="status-indicator">
-                <span class="dot"></span>
-                <span>9+ Ciphers</span>
-              </span>
-            </div>
-          </div>
-
-          <!-- Project 7: AWS DevSecOps Architecture -->
-          <div class="glass-card project-card cyber-shimmer reveal-on-scroll delay-1" onclick="window.openProjectModal('awscloud')" role="button" tabindex="0" aria-label="Inspect AWS DevSecOps Architecture">
-            <div class="project-top">
-              <div class="project-header-bar">
-                <span class="project-category">Cloud &amp; DevSecOps</span>
-                <a href="https://github.com/AtharvaShastrakar" target="_blank" rel="noopener noreferrer" class="project-github-pill" onclick="event.stopPropagation();" title="View GitHub Profile">
-                  <span>GitHub ↗</span>
-                </a>
-              </div>
-
-              <h3 class="project-title">
-                <span>AWS DevSecOps Pipeline</span>
-                <span class="project-card-arrow">↗</span>
-              </h3>
-
-              <p class="project-desc">
-                Zero-trust cloud architecture deploying containerized microservices on AWS EC2 &amp; S3 with automated GitHub Actions CI/CD vulnerability scanning.
-              </p>
-
-              <div class="project-tags">
-                <span class="badge badge-purple">AWS EC2</span>
-                <span class="badge">Docker</span>
-                <span class="badge">GitHub Actions</span>
-                <span class="badge">IAM Policies</span>
-              </div>
-            </div>
-
-            <div class="project-footer">
-              <span class="project-action-cta">Inspect Architecture <span>→</span></span>
-              <span class="status-indicator">
-                <span class="dot"></span>
-                <span>Cloud Hardened</span>
-              </span>
-            </div>
-          </div>
-        </div>
+        <form class="panel form reveal" id="contact-form">
+          <h3>Send a message</h3>
+          <label>Your name or organization<input type="text" id="contact-name" required autocomplete="name"></label>
+          <label>Your email<input type="email" id="contact-email" required autocomplete="email" placeholder="name@company.com"></label>
+          <label>Subject
+            <select id="contact-topic">
+              <option>Cybersecurity Analyst Role / Hiring</option>
+              <option>Full Stack Developer Role / Hiring</option>
+              <option>Security Assessment or Penetration Test</option>
+              <option>Project Collaboration</option>
+              <option>CTF, Workshop or Speaking</option>
+              <option>General Inquiry</option>
+            </select>
+          </label>
+          <label>Message<textarea id="contact-message" rows="4" required></textarea></label>
+          <button type="submit" class="btn btn-fill">Send message</button>
+          <p class="form-note" id="form-note" role="status"></p>
+        </form>
       </div>
     </section>
 
-    <!-- ====================================================================
-         6. EXPERIENCE & LEADERSHIP TIMELINE (UPDATED 4 POSITIONS)
-         ==================================================================== -->
-    <section id="experience" class="experience-section">
-      <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <div class="section-tag">Career History</div>
-          <h2 class="section-title">Experience & <span class="gradient-text">Leadership</span></h2>
-          <p class="section-desc">
-            Professional track record spanning customer operations, full-stack engineering, business development, and collegiate cybersecurity leadership.
-          </p>
-        </div>
-
-        <div class="timeline-container">
-          <!-- Experience 1: Offcomfrt Apparels LLP (July 2026 – August 2026) -->
-          <div class="timeline-item reveal-on-scroll delay-1">
-            <div class="timeline-marker"></div>
-            <div class="glass-card timeline-card">
-              <div class="timeline-header">
-                <div>
-                  <h3 class="timeline-role">Customer Support Executive</h3>
-                  <div class="timeline-company">Offcomfrt Apparels LLP</div>
-                </div>
-                <div class="timeline-date">July 2026 – August 2026</div>
-              </div>
-
-              <ul class="timeline-bullets">
-                <li>
-                  <span class="arrow">▸</span>
-                  <span>Managed high-priority client communications, dispute resolution, and cross-channel support workflows.</span>
-                </li>
-                <li>
-                  <span class="arrow">▸</span>
-                  <span>Streamlined service workflows and CRM ticketing systems, ensuring prompt escalations and high customer satisfaction scores.</span>
-                </li>
-                <li>
-                  <span class="arrow">▸</span>
-                  <span>Collaborated with operational teams to analyze client feedback, identify recurring service bottlenecks, and optimize processes.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Experience 2: Chrysadalus (Nov 2025 – March 2026) -->
-          <div class="timeline-item reveal-on-scroll delay-2">
-            <div class="timeline-marker"></div>
-            <div class="glass-card timeline-card">
-              <div class="timeline-header">
-                <div>
-                  <h3 class="timeline-role">Full Stack Developer</h3>
-                  <div class="timeline-company">Chrysadalus</div>
-                </div>
-                <div class="timeline-date">Nov 2025 – March 2026</div>
-              </div>
-
-              <ul class="timeline-bullets">
-                <li>
-                  <span class="arrow">▸</span>
-                  <span>Developed responsive web applications using modern frontend and backend technologies, delivering scalable and user-friendly solutions.</span>
-                </li>
-                <li>
-                  <span class="arrow">▸</span>
-                  <span>Built and integrated RESTful APIs, improving communication between frontend interfaces and backend services.</span>
-                </li>
-                <li>
-                  <span class="arrow">▸</span>
-                  <span>Collaborated with cross-functional teams to implement new features, optimize application performance, and resolve production issues.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Experience 3: Skidev Inc (May 2025 – August 2025) -->
-          <div class="timeline-item reveal-on-scroll delay-3">
-            <div class="timeline-marker"></div>
-            <div class="glass-card timeline-card">
-              <div class="timeline-header">
-                <div>
-                  <h3 class="timeline-role">Business Development Intern</h3>
-                  <div class="timeline-company">Skidev Inc</div>
-                </div>
-                <div class="timeline-date">May 2025 – August 2025</div>
-              </div>
-
-              <ul class="timeline-bullets">
-                <li>
-                  <span class="arrow">▸</span>
-                  <span>Conducted market research and competitor analysis to identify strategic expansion opportunities and new client demographics.</span>
-                </li>
-                <li>
-                  <span class="arrow">▸</span>
-                  <span>Supported business outreach pipelines, prepared customized technical pitches, and engaged prospective partners.</span>
-                </li>
-                <li>
-                  <span class="arrow">▸</span>
-                  <span>Collaborated with product and engineering teams to translate client requirements into actionable development roadmaps.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Experience 4: President, Cyber Warrior Club (Jul 2024 – Jun 2025) -->
-          <div class="timeline-item reveal-on-scroll delay-4">
-            <div class="timeline-marker"></div>
-            <div class="glass-card timeline-card">
-              <div class="timeline-header">
-                <div>
-                  <h3 class="timeline-role">President, Cyber Warrior Club</h3>
-                  <div class="timeline-company">VIT Bhopal University</div>
-                </div>
-                <div class="timeline-date">Jul 2024 – Jun 2025</div>
-              </div>
-
-              <ul class="timeline-bullets">
-                <li>
-                  <span class="arrow">▸</span>
-                  <span>Directed cybersecurity workshops and CTF (Capture The Flag) competitions for 200+ students.</span>
-                </li>
-                <li>
-                  <span class="arrow">▸</span>
-                  <span>Mentored 30+ members through a structured onboarding program in ethical hacking, penetration testing, and digital forensics.</span>
-                </li>
-                <li>
-                  <span class="arrow">▸</span>
-                  <span>Managed technical events with 300+ participants and secured industry sponsorships.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====================================================================
-         7. TECHNICAL ARSENAL & SKILLS GRID
-         ==================================================================== -->
-    <section id="skills" class="skills-section">
-      <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <div class="section-tag">Technical Competencies</div>
-          <h2 class="section-title">Technical <span class="gradient-text">Arsenal</span></h2>
-          <p class="section-desc">
-            A comprehensive matrix of offensive & defensive security tools, programming languages, web frameworks, and cloud systems.
-          </p>
-        </div>
-
-        <div class="skills-deck-grid">
-          <!-- Category 1: Cybersecurity -->
-          <div class="glass-card skill-category-card reveal-on-scroll delay-1">
-            <div class="skill-cat-header">
-              <div class="skill-cat-icon">🛡️</div>
-              <h3 class="skill-cat-title">Cybersecurity & Forensics</h3>
-            </div>
-            <div class="skill-chips-container">
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Penetration Testing</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Network Security</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> NIST Framework</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Wireshark</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Nmap</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Metasploit</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Burp Suite</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Digital Forensics</div>
-            </div>
-          </div>
-
-          <!-- Category 2: Programming Languages -->
-          <div class="glass-card skill-category-card reveal-on-scroll delay-2">
-            <div class="skill-cat-header">
-              <div class="skill-cat-icon">⚡</div>
-              <h3 class="skill-cat-title">Programming Languages</h3>
-            </div>
-            <div class="skill-chips-container">
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Python</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> JavaScript (ES6+)</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> C / C++</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Java</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> PowerShell</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Bash Scripting</div>
-            </div>
-          </div>
-
-          <!-- Category 3: Web & Frameworks -->
-          <div class="glass-card skill-category-card reveal-on-scroll delay-3">
-            <div class="skill-cat-header">
-              <div class="skill-cat-icon">🌐</div>
-              <h3 class="skill-cat-title">Web & Frameworks</h3>
-            </div>
-            <div class="skill-chips-container">
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> React.js</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Next.js</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Django</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Flask</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> RESTful APIs</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> HTML5 / CSS3</div>
-            </div>
-          </div>
-
-          <!-- Category 4: Cloud & DevOps -->
-          <div class="glass-card skill-category-card reveal-on-scroll delay-1">
-            <div class="skill-cat-header">
-              <div class="skill-cat-icon">☁️</div>
-              <h3 class="skill-cat-title">Cloud & DevOps (AWS)</h3>
-            </div>
-            <div class="skill-chips-container">
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> AWS EC2</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> AWS S3</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> Docker</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> GitHub Actions CI/CD</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> AWS IAM Security</div>
-              <div class="skill-badge-tag"><span class="skill-level-dot"></span> VPC & Subnets</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====================================================================
-         8. CERTIFICATIONS SHOWCASE
-         ==================================================================== -->
-    <section id="certifications" class="certifications-section">
-      <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <div class="section-tag">Verified Credentials</div>
-          <h2 class="section-title">Certifications & <span class="gradient-text">Badges</span></h2>
-          <p class="section-desc">
-            Industry recognized certifications spanning cybersecurity analysis, ethical hacking, and full stack engineering.
-          </p>
-        </div>
-
-        <div class="certifications-grid">
-          <!-- Cert 1: IBM -->
-          <div class="glass-card cert-card cyber-shimmer reveal-on-scroll delay-1">
-            <div class="cert-top">
-              <div class="cert-badge-row">
-                <div class="cert-issuer-logo">IBM</div>
-                <span class="cert-status-badge verified">Verified</span>
-              </div>
-              <h3 class="cert-name">Cybersecurity Analyst</h3>
-              <div class="cert-issuer">IBM Professional Certification</div>
-              <p class="cert-topics">
-                Threat intelligence, SIEM tools, network defense, incident response methodologies, and forensic discovery.
-              </p>
-            </div>
-          </div>
-
-          <!-- Cert 2: Ethnus MERN -->
-          <div class="glass-card cert-card cyber-shimmer reveal-on-scroll delay-2">
-            <div class="cert-top">
-              <div class="cert-badge-row">
-                <div class="cert-issuer-logo">ETH</div>
-                <span class="cert-status-badge verified">Verified</span>
-              </div>
-              <h3 class="cert-name">MERN Full Stack</h3>
-              <div class="cert-issuer">Ethnus Training</div>
-              <p class="cert-topics">
-                MongoDB, Express.js, React.js, Node.js full-stack web architecture, API integration, and scalable UI engineering.
-              </p>
-            </div>
-          </div>
-
-          <!-- Cert 3: AWS Cloud Practitioner -->
-          <div class="glass-card cert-card cyber-shimmer reveal-on-scroll delay-3">
-            <div class="cert-top">
-              <div class="cert-badge-row">
-                <div class="cert-issuer-logo">AWS</div>
-                <span class="cert-status-badge in-progress">In Progress</span>
-              </div>
-              <h3 class="cert-name">AWS Certified Cloud Practitioner</h3>
-              <div class="cert-issuer">Amazon Web Services (AWS)</div>
-              <p class="cert-topics">
-                Cloud infrastructure fundamentals, AWS shared responsibility security model, IAM identity management, VPC networking, EC2, and S3 architecture.
-              </p>
-            </div>
-          </div>
-
-          <!-- Cert 4: CEH -->
-          <div class="glass-card cert-card cyber-shimmer reveal-on-scroll delay-4">
-            <div class="cert-top">
-              <div class="cert-badge-row">
-                <div class="cert-issuer-logo">CEH</div>
-                <span class="cert-status-badge in-progress">In Progress</span>
-              </div>
-              <h3 class="cert-name">Certified Ethical Hacker (CEH)</h3>
-              <div class="cert-issuer">EC-Council</div>
-              <p class="cert-topics">
-                Advanced attack vectors, vulnerability scanning, social engineering, web application penetration testing, and cryptography.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====================================================================
-         9. INTERACTIVE CONTACT & ENCRYPTED DISPATCH
-         ==================================================================== -->
-    <section id="contact" class="contact-section">
-      <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <div class="section-tag">Direct Comms</div>
-          <h2 class="section-title">Encrypted <span class="gradient-text">Dispatch Console</span></h2>
-          <p class="section-desc">
-            Initiate contact for Cybersecurity Analyst roles, Full-Stack engineering opportunities, or technical collaboration.
-          </p>
-        </div>
-
-        <div class="contact-grid">
-          <!-- Left: Direct Details -->
-          <div class="contact-info-deck reveal-on-scroll delay-1">
-            <!-- Email -->
-            <div class="glass-card contact-card-item">
-              <div class="contact-left">
-                <div class="contact-icon">✉</div>
-                <div class="contact-detail">
-                  <div class="lbl">EMAIL ADDRESS</div>
-                  <div class="val">atharva.d.s.shastrakar@gmail.com</div>
-                </div>
-              </div>
-              <button class="copy-btn" data-copy="atharva.d.s.shastrakar@gmail.com">Copy</button>
-            </div>
-
-            <!-- Phone -->
-            <div class="glass-card contact-card-item">
-              <div class="contact-left">
-                <div class="contact-icon">📱</div>
-                <div class="contact-detail">
-                  <div class="lbl">DIRECT PHONE</div>
-                  <div class="val">+91-7499074139</div>
-                </div>
-              </div>
-              <button class="copy-btn" data-copy="+917499074139">Copy</button>
-            </div>
-
-            <!-- LinkedIn -->
-            <div class="glass-card contact-card-item">
-              <div class="contact-left">
-                <div class="contact-icon">🔗</div>
-                <div class="contact-detail">
-                  <div class="lbl">LINKEDIN</div>
-                  <div class="val">linkedin.com/in/atharva-shastrakar</div>
-                </div>
-              </div>
-              <a href="https://www.linkedin.com/in/atharva-shastrakar/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Visit ↗</a>
-            </div>
-
-            <!-- GitHub -->
-            <div class="glass-card contact-card-item">
-              <div class="contact-left">
-                <div class="contact-icon">🐙</div>
-                <div class="contact-detail">
-                  <div class="lbl">GITHUB</div>
-                  <div class="val">github.com/AtharvaShastrakar</div>
-                </div>
-              </div>
-              <a href="https://github.com/AtharvaShastrakar" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Visit ↗</a>
-            </div>
-          </div>
-
-          <!-- Right: Encrypted Message Form -->
-          <div class="glass-card contact-form-card reveal-on-scroll delay-2">
-            <div class="form-header">
-              <h3>Send Secure Transmission</h3>
-              <div class="encryption-status-bar" id="dispatch-status">
-                <span>✓ TLS 1.3 End-to-End Encrypted Tunnel Ready</span>
-              </div>
-            </div>
-
-            <form class="contact-form" id="contact-form">
-              <div class="form-row">
-                <div class="input-group">
-                  <label for="contact-name">Your Full Name *</label>
-                  <input type="text" id="contact-name" class="cyber-input" placeholder="e.g., Alex Vance" required>
-                </div>
-                <div class="input-group">
-                  <label for="contact-email">Your Work Email *</label>
-                  <input type="email" id="contact-email" class="cyber-input" placeholder="e.g., alex@company.com" required>
-                </div>
-              </div>
-
-              <div class="input-group">
-                <label for="contact-subject">Transmission Subject</label>
-                <input type="text" id="contact-subject" class="cyber-input" placeholder="e.g., Cybersecurity Analyst Role / Full Stack Opportunity">
-              </div>
-
-              <div class="input-group">
-                <label for="contact-message">Encrypted Payload Message *</label>
-                <textarea id="contact-message" class="cyber-textarea" placeholder="Write your message here..." required></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary btn-lg" id="contact-submit-btn">
-                <span>🔒 Transmit Encrypted Message</span>
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+    <footer class="foot"><span>Atharva Dnyaneshwar Shastrakar, 2026</span><a href="#top">Back to top</a></footer>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-brand">
-        <span>Atharva Dnyaneshwar Shastrakar</span>
-        <div class="footer-credit">Cybersecurity Analyst & Full Stack Developer (AWS)</div>
-      </div>
+  <!-- Project detail drawer -->
+  <dialog class="drawer" id="drawer" aria-labelledby="drawer-title">
+    <button type="button" class="drawer-x" id="drawer-x" aria-label="Close project details">Close</button>
+    <div id="drawer-body"></div>
+  </dialog>
 
-      <ul class="footer-links">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#terminal-section">Terminal</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-      <div class="footer-credit">
-        © 2026 Atharva Shastrakar. Built with Zero Dependencies &amp; Secure Architecture.
-      </div>
-    </div>
-  </footer>
-
-  <!-- ====================================================================
-       MODALS & OVERLAYS
-       ==================================================================== -->
-
-  <!-- 1. Project Deep Dive Modal -->
-  <div class="modal-backdrop" id="project-modal" role="dialog" aria-modal="true">
-    <div class="modal-card">
-      <div class="modal-header">
-        <div>
-          <span class="badge badge-primary" id="modal-project-category">Category</span>
-          <h3 id="modal-project-title" style="margin-top: 0.4rem; font-size: 1.35rem;">Project Title</h3>
-        </div>
-        <div style="display: flex; gap: 0.6rem; align-items: center;">
-          <a id="modal-project-github" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="display: none;" title="Open Repository on GitHub">
-            <span>🐙 GitHub ↗</span>
-          </a>
-          <button class="modal-close-btn" id="project-modal-close" aria-label="Close modal">✕</button>
-        </div>
-      </div>
-
-      <div class="modal-body">
-        <div>
-          <h4 style="margin-bottom: 0.5rem;">Executive Overview</h4>
-          <p id="modal-project-desc" style="color: var(--text-secondary); line-height: 1.65;"></p>
-        </div>
-
-        <div>
-          <h4 style="margin-bottom: 0.5rem;">Architecture &amp; Data Flow Diagram</h4>
-          <div class="architecture-diagram" id="modal-project-architecture"></div>
-        </div>
-
-        <div>
-          <h4 style="margin-bottom: 0.6rem;">Key Security Controls &amp; Engineering Highlights</h4>
-          <ul class="project-bullets" id="modal-project-highlights"></ul>
-        </div>
-
-        <div>
-          <h4 style="margin-bottom: 0.6rem;">Technologies Applied</h4>
-          <div class="project-tags" id="modal-project-tags"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2. Original PDF Resume Modal -->
-  <div class="modal-backdrop" id="resume-modal" role="dialog" aria-modal="true">
-    <div class="modal-card" style="max-width: 960px; background: #0b1120;">
-      <div class="modal-header">
-        <div>
-          <h3 style="font-size: 1.25rem;">Atharva Dnyaneshwar Shastrakar — Original Resume</h3>
-          <div style="font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono);">
-            Official PDF Document (Original Upload)
-          </div>
-        </div>
-        <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
-          <a href="assets/Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" download="Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" class="btn btn-primary btn-sm" title="Download Original PDF Resume">📥 Download Original PDF</a>
-          <a href="assets/Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" title="Open PDF in Full Tab">↗ Open in Tab</a>
-          <button class="modal-close-btn" id="resume-modal-close" aria-label="Close resume">✕</button>
-        </div>
-      </div>
-
-      <div class="modal-body" style="padding: 0; background: #070c18; overflow: hidden;">
-        <iframe src="assets/Atharva_Dnyaneshwar_Shastrakar_Resume.pdf" style="width: 100%; height: 80vh; min-height: 580px; border: none;" title="Atharva Dnyaneshwar Shastrakar Original PDF Resume"></iframe>
-      </div>
-    </div>
-  </div>
-
-  <!-- Toast Notification Container -->
-  <div id="toast-container" aria-live="polite"></div>
-
-  <!-- Scripts -->
-  <script src="js/matrix-bg.js"></script>
-  <script src="js/crypto-tools.js"></script>
-  <script src="js/password-analyzer.js"></script>
-  <script src="js/terminal.js"></script>
-  <script src="js/app.js"></script>
+  <script src="assets/js/data.js?v=3"></script>
+  <script src="assets/js/projects.js?v=3"></script>
+  <script src="assets/js/site.js?v=3"></script>
 </body>
 </html>

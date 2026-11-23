@@ -26,7 +26,7 @@ const portfolioData = {
     "AWS Cloud & DevSecOps"
   ],
 
-  marquee: ["Penetration Testing", "Nmap", "Wireshark", "Metasploit", "Burp Suite", "NIST CSF", "Digital Forensics", "Python", "React", "Next.js", "Django", "PostgreSQL", "AWS", "Docker", "GitHub Actions", "AES-256-GCM", "Argon2id"],
+  marquee: ["Penetration Testing", "Active Directory", "Nmap", "Wireshark", "Metasploit", "Burp Suite", "Sysmon", "Splunk", "NIST CSF", "Digital Forensics", "Python", "React", "Next.js", "Django", "PostgreSQL", "AWS", "Docker", "GitHub Actions", "AES-256-GCM", "Argon2id"],
 
   stats: [
     { value: "200+", label: "Students in CTFs & workshops", highlight: "Cyber Warrior Club" },
@@ -134,6 +134,12 @@ const portfolioData = {
     { id: "passvault", name: "Pass-Vault (pv)", sym: "lock", track: "Cryptographic engineering", badge: "Argon2id + AES",
       teaser: "Zero-knowledge encrypted CLI password manager with Argon2id memory-hard key derivation, AES-256-GCM, and crash-resilient atomic storage.",
       tags: ["Python 3", "Argon2id", "AES-256-GCM", "Zero-knowledge"] },
+    { id: "adlab", name: "Active Directory Threat Detection Lab", sym: "shield", track: "Red & blue team lab", badge: "MITRE ATT&CK mapped",
+      teaser: "Reproducible multi-VM Active Directory lab that pairs Kerberos, Pass-the-Hash and DCSync attack emulation with Sysmon telemetry and Splunk / Elastic detection rules.",
+      tags: ["PowerShell", "Sysmon", "Splunk SPL", "Elastic KQL", "Impacket", "BloodHound"] },
+    { id: "dnslookup", name: "DNS Lookup CLI", sym: "file", track: "Network & email security", badge: "Graded A to F",
+      teaser: "DNS query CLI with root-to-authoritative tracing, WHOIS and a scored email security audit of MX, SPF, DKIM and DMARC that can gate CI.",
+      tags: ["Python", "dnspython", "Typer", "Rich", "pytest"] },
     { id: "fileintegrity", name: "File Integrity Checker", sym: "file", track: "Forensics & FIM", badge: "SHA-256 verified",
       teaser: "Log tamper detection CLI with recursive directory crawling, SHA-256 digests, and a protected POSIX 0600 baseline store.",
       tags: ["Python", "SHA-256", "FIM", "POSIX 0600"] },
@@ -166,7 +172,10 @@ const portfolioData = {
         { name: "NIST Framework", kind: "Framework", domain: "Governance & incident response", desc: "Identify, Protect, Detect, Respond and Recover: threat identification, triage and forensic analysis.", lab: true },
         { name: "Network Security", kind: "Method", domain: "Defense in depth", desc: "Zero-trust access control, TLS, and least-privilege policies." },
         { name: "Digital Forensics", kind: "Method", domain: "Investigation", desc: "Root-cause triage and evidence integrity.", appliedAt: "File Integrity Checker" },
-        { name: "Applied Cryptography", kind: "Method", domain: "Symmetric, asymmetric, HMAC", desc: "AES, DES, RSA, Diffie-Hellman and HMAC authentication.", appliedAt: "Pass-Vault, Cryptography Suite", lab: true }
+        { name: "Applied Cryptography", kind: "Method", domain: "Symmetric, asymmetric, HMAC", desc: "AES, DES, RSA, Diffie-Hellman and HMAC authentication.", appliedAt: "Pass-Vault, Cryptography Suite", lab: true },
+        { name: "Active Directory Security", kind: "Method", domain: "Kerberos & lateral movement", desc: "AS-REP roasting, Kerberoasting, Pass-the-Hash, WinRM and DCSync, emulated and detected in an isolated lab.", appliedAt: "Active Directory Threat Detection Lab" },
+        { name: "Sysmon & SIEM Detection", kind: "Tool", domain: "Detection engineering", desc: "Tuned Sysmon config, Windows audit policies, Splunk SPL and Elastic KQL rules mapped to MITRE ATT&CK.", appliedAt: "Active Directory Threat Detection Lab" },
+        { name: "DNS & Email Security", kind: "Method", domain: "SPF, DKIM, DMARC", desc: "SPF include-tree validation, DKIM key analysis, DMARC policy checks, MTA-STS and TLS-RPT.", appliedAt: "DNS Lookup CLI" }
       ]
     },
     {

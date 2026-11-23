@@ -13,7 +13,7 @@
   };
   var CALM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var P = D.personal, ITEMS = D.experiences, PROJECTS = D.projects, PD = window.PROJECT_DETAILS || {};
-  var GROUP = { passvault: 'sec', fileintegrity: 'sec', cryptosuite: 'sec', storeratings: 'dev', orangechat: 'dev', votechain: 'dev', awscloud: 'cloud' };
+  var GROUP = { passvault: 'sec', adlab: 'sec', dnslookup: 'sec', fileintegrity: 'sec', cryptosuite: 'sec', storeratings: 'dev', orangechat: 'dev', votechain: 'dev', awscloud: 'cloud' };
   var projById = {};
   PROJECTS.forEach(function (p) { projById[p.id] = p; });
   var chips = function (list) { return '<span class="chips">' + list.map(function (t) { return '<span>' + esc(t) + '</span>'; }).join('') + '</span>'; };

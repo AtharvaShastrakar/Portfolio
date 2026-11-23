@@ -31,6 +31,80 @@ window.PROJECT_DETAILS = {
         'Comprehensive automated test suite with 71 passing unit/integration tests and 88% code coverage.'
       ]
     },
+    adlab: {
+      title: 'Active Directory Security & Threat Detection Lab',
+      category: 'Adversary Emulation & Detection Engineering',
+      stack: ['Windows Server 2022/2025', 'Windows 10/11', 'Kali Linux', 'PowerShell', 'Sysmon', 'Splunk SPL', 'Elastic KQL', 'Impacket', 'NetExec', 'BloodHound', 'Hashcat', 'MITRE ATT&CK'],
+      githubUrl: 'https://github.com/AtharvaShastrakar/Active-Directory-Security-Threat-Detection-Lab',
+      description: 'A fully reproducible, multi-VM Active Directory lab mirroring a corporate domain (adlab.test). It pairs red team adversary emulation with blue team telemetry and detection engineering, runs on a 16 GB host (Apple Silicon or x86), and is provisioned end to end by PowerShell scripts.',
+      architecture: `
++-------------------------------------------------------------------------+
+|          ISOLATED LAB NETWORK 192.168.56.0/24 (no internet bridge)      |
++-------------------------------------------------------------------------+
+[ DC01  .10 ]   Windows Server, forest adlab.test, AD DS, DNS, Kerberos KDC
+      |
+      +------------------+------------------+
+      v                  v                  v
+[ CLIENT01 .20 ]   [ CLIENT02 .21 ]   [ KALI .50 ]
+  Initial foothold   Lateral pivot      Impacket, NetExec,
+  Sysmon + 4104      Sysmon + 4104      BloodHound, Hashcat
+
+ATTACK PATH (Kali)                        DETECTION (Sysmon + Event Logs)
+Recon / BloodHound            ------->    4624, Sysmon 3
+AS-REP Roast  (svc_backup)    ------->    4768  PreAuthType 0
+Kerberoast    (svc_sql SPN)   ------->    4769  RC4 (0x17)
+Pass-the-Hash / PsExec / WinRM ------>    4624 type 3, 7045, Sysmon 1/17/18
+DCSync / secretsdump          ------->    4662  directory replication
+                                              |
+                                              v
+                                 [ Splunk SPL / Elastic KQL rules ]
+      `,
+      highlights: [
+        'Five PowerShell scripts promote the domain controller, seed OUs, users, SPNs and deliberate misconfigurations, join the clients and enable auditing.',
+        'Red team playbook covering reconnaissance, AS-REP roasting, Kerberoasting, Pass-the-Hash over WMI, PsExec, WinRM and NTDS.dit dumping via DRSUAPI.',
+        'Blue team telemetry: tuned Sysmon config, command-line process auditing (4688), PowerShell script block logging (4104) and Kerberos ticket auditing (4768/4769).',
+        'Every exercise mapped to MITRE ATT&CK techniques with matching Splunk SPL and Elastic KQL detection queries.',
+        'EDR internals research: ntdll.dll user-mode hooking, AMSI and ETW in-memory patching, direct syscalls and DLL unhooking.'
+      ]
+    },
+    dnslookup: {
+      title: 'DNS Lookup CLI – DNS Toolkit & Email Security Auditor',
+      category: 'Network Security & Email Authentication',
+      stack: ['Python 3.10+', 'dnspython', 'Typer', 'Rich', 'cryptography', 'pytest', 'uv'],
+      githubUrl: 'https://github.com/AtharvaShastrakar/DNS-Lookup',
+      description: 'A DNS query CLI with rich terminal output and a built-in email security audit. It looks up every common record type, traces resolution from the root servers, runs WHOIS and batch lookups, and scores a domain\'s MX, SPF, DKIM and DMARC setup from 0 to 100 with an A to F grade.',
+      architecture: `
++-------------------------------------------------------------------------+
+|                      DNSLOOKUP CLI ARCHITECTURE                         |
++-------------------------------------------------------------------------+
+[ cli.py : Typer commands ]
+   query | reverse | trace | batch | whois | email | mx | spf | dkim | dmarc
+          |
+          +------------------------+-------------------------+
+          v                        v                         v
+[ resolver.py ]          [ email_security.py ]        [ whois.py ]
+- dnspython client       - MX: PTR, Null MX, CNAME    - IANA + registrar
+- reverse (PTR)          - SPF: include tree, 10        referral following
+- concurrent batch         lookup + void limits
+- iterative root trace   - DKIM: ~65 selectors, key size
+                         - DMARC, MTA-STS, TLS-RPT, BIMI
+                         - score 0-100, grade A-F
+          |                        |
+          +-----------+------------+
+                      v
+          [ output.py : Rich tables | --json ]
+                      |
+                      v
+          exit code 1 on grade F  -->  can gate CI pipelines
+      `,
+      highlights: [
+        'Record lookups for A, AAAA, MX, NS, TXT, CNAME and SOA, plus CAA, SRV, PTR, DS, DNSKEY, HTTPS, SVCB, NAPTR and TLSA.',
+        'Iterative trace from the root servers to the authoritative nameserver, like dig +trace, plus concurrent batch lookups and WHOIS with referral following.',
+        'SPF validation expands the full include/redirect tree, enforces the 10-lookup and 2-void-lookup limits, detects loops and grades the all policy.',
+        'DKIM discovery probes about 65 common selectors, reports RSA key size or Ed25519, and flags revoked keys, testing mode and SHA-1-only keys.',
+        'Weighted 0 to 100 score with an A to F grade, JSON output on every command, and 46 offline unit tests against an in-memory DNS zone.'
+      ]
+    },
     fileintegrity: {
       title: 'File Integrity Checker – Cryptographic Log Tamper Detection',
       category: 'Security Tooling & Digital Forensics',

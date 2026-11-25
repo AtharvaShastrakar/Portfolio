@@ -238,7 +238,6 @@ const portfolioData = {
   certificationsAndAwards: [
     { title: "Cybersecurity Analyst", issuer: "IBM Professional Certificate", date: "Verified", type: "Certification", desc: "Threat intelligence, SIEM tools, network defense, incident response methodologies, and forensic discovery." },
     { title: "MERN Full Stack", issuer: "Ethnus Training", date: "Verified", type: "Certification", desc: "MongoDB, Express.js, React.js and Node.js full-stack web architecture, API integration, and scalable UI engineering." },
-    { title: "ISC2 Certified in Cybersecurity (CC)", issuer: "ISC2", date: "In progress", type: "In progress", desc: "Security principles, access controls, network security, and security operations." },
     { title: "Certified Ethical Hacker (CEH)", issuer: "EC-Council", date: "In progress", type: "In progress", desc: "Attack vectors, vulnerability scanning, social engineering, web application penetration testing, and cryptography." },
     { title: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", date: "In progress", type: "In progress", desc: "Cloud fundamentals, the shared responsibility model, IAM, VPC networking, EC2, and S3." }
   ],

@@ -47,19 +47,20 @@ const portfolioData = {
       category: "Cybersecurity & IT",
       badge: "Apprenticeship",
       node: { tag: "HOP-05", sym: "shield", name: "APRI", sub: "Cybersecurity apprentice", yr: "2026 to 27" },
-      teaser: "Six-month cybersecurity and IT apprenticeship at the company's Nagpur head office, working on vulnerability assessment, network monitoring and compliance documentation.",
-      projectTitle: "Vulnerability assessment, network monitoring and compliance support",
+      teaser: "Six-month cybersecurity and IT apprenticeship at the company's Nagpur head office: vulnerability assessment, network monitoring and compliance, plus a full redesign of the company website and product collateral.",
+      projectTitle: "Security operations support and digital presence redesign",
       highlights: [
         "Assisting with cybersecurity and IT tasks, including vulnerability assessment and network monitoring.",
-        "Supporting digital documentation and compliance processes.",
-        "Contributing technical research and reporting to internal projects.",
-        "Applying organizational processes under the guidance of senior mentors."
+        "Leading the redesign of the company website: a responsive, mobile-first site with a video hero, dedicated pages for 14 industries served, site search and a language selector.",
+        "Structuring the website's industry, product and service content so it can be updated from a single data source without a build step.",
+        "Designing product collateral, including a refractory solutions brochure for the foundry segment.",
+        "Supporting digital documentation and compliance processes, and contributing technical research and reporting to internal projects."
       ],
-      technologies: ["Vulnerability assessment", "Network monitoring", "Compliance documentation", "Technical reporting"],
+      technologies: ["Vulnerability assessment", "Network monitoring", "Website redesign", "Responsive web design", "HTML, CSS, JavaScript", "Compliance documentation", "Technical reporting"],
       metrics: [
         { label: "Duration", val: "Nov 2026 – Apr 2027" },
         { label: "Location", val: "Head office, Nagpur" },
-        { label: "Focus", val: "Cybersecurity and IT" }
+        { label: "Focus", val: "Cybersecurity, IT and web" }
       ]
     },
     {

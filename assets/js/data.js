@@ -39,6 +39,30 @@ const portfolioData = {
   /* Most recent first. `node` is how the role appears on the route diagram. */
   experiences: [
     {
+      id: "apri",
+      company: "AdithyaPower Refractories & Insulation Pvt. Ltd. (APRI)",
+      role: "Cybersecurity & IT Apprentice",
+      location: "Nagpur",
+      period: "Nov 2026 – Present",
+      category: "Cybersecurity & IT",
+      badge: "Apprenticeship",
+      node: { tag: "HOP-05", sym: "shield", name: "APRI", sub: "Cybersecurity apprentice", yr: "2026 to 27" },
+      teaser: "Six-month cybersecurity and IT apprenticeship at the company's Nagpur head office, working on vulnerability assessment, network monitoring and compliance documentation.",
+      projectTitle: "Vulnerability assessment, network monitoring and compliance support",
+      highlights: [
+        "Assisting with cybersecurity and IT tasks, including vulnerability assessment and network monitoring.",
+        "Supporting digital documentation and compliance processes.",
+        "Contributing technical research and reporting to internal projects.",
+        "Applying organizational processes under the guidance of senior mentors."
+      ],
+      technologies: ["Vulnerability assessment", "Network monitoring", "Compliance documentation", "Technical reporting"],
+      metrics: [
+        { label: "Duration", val: "Nov 2026 – Apr 2027" },
+        { label: "Location", val: "Head office, Nagpur" },
+        { label: "Focus", val: "Cybersecurity and IT" }
+      ]
+    },
+    {
       id: "offcomfrt",
       company: "Offcomfrt Apparels LLP",
       role: "Customer Support Executive",
@@ -102,29 +126,6 @@ const portfolioData = {
         { label: "Focus", val: "Market and competitor research" },
         { label: "Delivered", val: "Technical pitches" },
         { label: "Worked with", val: "Product and engineering" }
-      ]
-    },
-    {
-      id: "cyber-warrior",
-      company: "Cyber Warrior Club",
-      role: "President",
-      location: "VIT Bhopal University",
-      period: "Jul 2024 – Jun 2025",
-      category: "Security leadership",
-      badge: "Club president",
-      node: { tag: "HOP-01", sym: "shield", name: "Cyber Warrior Club", sub: "President", yr: "2024 to 25" },
-      teaser: "Led the university security club: CTF competitions and workshops for 200+ students, events with 300+ participants, and a mentoring program.",
-      projectTitle: "Running a university cybersecurity club: CTFs, workshops and mentoring",
-      highlights: [
-        "Directed cybersecurity workshops and CTF (Capture The Flag) competitions for 200+ students.",
-        "Mentored 30+ members through a structured onboarding program in ethical hacking, penetration testing, and digital forensics.",
-        "Managed technical events with 300+ participants and secured industry sponsorships."
-      ],
-      technologies: ["CTF design", "Ethical hacking", "Penetration testing", "Digital forensics", "Event management", "Sponsorships"],
-      metrics: [
-        { label: "Students reached", val: "200+" },
-        { label: "Event participants", val: "300+" },
-        { label: "Members mentored", val: "30+" }
       ]
     }
   ],

@@ -67,6 +67,48 @@ DCSync / secretsdump          ------->    4662  directory replication
         'EDR internals research: ntdll.dll user-mode hooking, AMSI and ETW in-memory patching, direct syscalls and DLL unhooking.'
       ]
     },
+    killswitch: {
+      title: 'KillSwitch – Auto-Lock & Remote Wipe for Unreturned Laptops',
+      category: 'Endpoint Security & Device Lifecycle (Prototype)',
+      stack: ['Go 1.22', 'Node.js 22', 'Express', 'SQLite', 'BitLocker', 'Windows MDM RemoteWipe', 'PowerShell', 'Ed25519', 'AES-256-GCM', 'HMAC-SHA256', 'scrypt'],
+      githubUrl: 'https://github.com/AtharvaShastrakar/KillSwitch',
+      description: 'When an employee leaves and does not return their laptop, KillSwitch moves it through offboarding, a grace period, a reversible BitLocker lock and finally a two-admin-approved wipe. A Node.js server runs the workflow and admin dashboard; a Go agent on each laptop verifies signed commands and carries them out.',
+      architecture: `
++-------------------------------------------------------------------------+
+|                     KILLSWITCH OFFBOARDING WORKFLOW                     |
++-------------------------------------------------------------------------+
+Resigns -> OFFBOARDING -last day-> GRACE (10 days) -not returned-> LOCKED
+                                      |                              |
+                                      |                  still missing v
+                                      |                        WIPE PENDING
+                                      |                              |
+                                      |              2 admins approve v
+                                      +--- returned ---> RETURNED    WIPED
+
+[ HR system ] --HMAC-signed webhook--> [ Node.js / Express server ]
+                                        - workflow engine + SQLite
+                                        - admin dashboard (strict CSP)
+                                        - append-only audit log
+                                        - recovery keys, AES-256-GCM
+                                                 |
+                               Ed25519-signed commands + 7-day lease
+                                                 v
+                                      [ Go agent on each laptop ]
+                                        - pins server public key
+                                        - rejects expired / replayed cmds
+                                        - LOCK: remove BitLocker TPM key
+                                        - WIPE: crypto-shred + reset
+                                        - offline past lease -> self-lock
+      `,
+      highlights: [
+        'Lock removes the BitLocker TPM protector so the laptop boots to a recovery screen with a return-to-IT message; IT can undo it with the escrowed recovery key.',
+        'Wipe crypto-shreds the escrowed recovery key and triggers Windows protected factory reset, and needs approval from two different admins, with mass-wipe rate limiting.',
+        'Commands and leases are signed with Ed25519; the agent pins the server key and rejects expired commands and replays.',
+        'Offline safety net: a laptop that misses its 7-day lease, or whose clock is moved backwards, locks itself; re-enrolling a locked serial number locks it again.',
+        'Recovery keys encrypted with AES-256-GCM, scrypt password hashing, throttled logins, HMAC-verified HR webhooks and an append-only audit log enforced by database triggers.',
+        'Ships in dry-run mode, with a demo mode where one day is ten seconds, so the full lifecycle can be shown safely on a Mac.'
+      ]
+    },
     dnslookup: {
       title: 'DNS Lookup CLI – DNS Toolkit & Email Security Auditor',
       category: 'Network Security & Email Authentication',

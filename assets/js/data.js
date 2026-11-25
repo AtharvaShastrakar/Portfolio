@@ -26,7 +26,7 @@ const portfolioData = {
     "AWS Cloud & DevSecOps"
   ],
 
-  marquee: ["Penetration Testing", "Active Directory", "Nmap", "Wireshark", "Metasploit", "Burp Suite", "Sysmon", "Splunk", "NIST CSF", "Digital Forensics", "Python", "React", "Next.js", "Django", "PostgreSQL", "AWS", "Docker", "GitHub Actions", "AES-256-GCM", "Argon2id"],
+  marquee: ["Penetration Testing", "Active Directory", "Nmap", "Wireshark", "Metasploit", "Burp Suite", "Sysmon", "Splunk", "BitLocker", "NIST CSF", "Digital Forensics", "Python", "React", "Next.js", "Django", "PostgreSQL", "AWS", "Docker", "GitHub Actions", "AES-256-GCM", "Argon2id"],
 
   stats: [
     { value: "200+", label: "Students in CTFs & workshops", highlight: "Cyber Warrior Club" },
@@ -137,6 +137,9 @@ const portfolioData = {
     { id: "adlab", name: "Active Directory Threat Detection Lab", sym: "shield", track: "Red & blue team lab", badge: "MITRE ATT&CK mapped",
       teaser: "Reproducible multi-VM Active Directory lab that pairs Kerberos, Pass-the-Hash and DCSync attack emulation with Sysmon telemetry and Splunk / Elastic detection rules.",
       tags: ["PowerShell", "Sysmon", "Splunk SPL", "Elastic KQL", "Impacket", "BloodHound"] },
+    { id: "killswitch", name: "KillSwitch", sym: "lock", track: "Endpoint security & offboarding", badge: "Ed25519-signed commands",
+      teaser: "Auto-lock and remote wipe for laptops not returned after offboarding. A Go agent enforces BitLocker lock and crypto-shred wipe commands signed by a Node.js server, with two-admin wipe approval.",
+      tags: ["Go", "Node.js", "Express", "SQLite", "BitLocker", "Ed25519", "AES-256-GCM"] },
     { id: "dnslookup", name: "DNS Lookup CLI", sym: "file", track: "Network & email security", badge: "Graded A to F",
       teaser: "DNS query CLI with root-to-authoritative tracing, WHOIS and a scored email security audit of MX, SPF, DKIM and DMARC that can gate CI.",
       tags: ["Python", "dnspython", "Typer", "Rich", "pytest"] },
@@ -185,7 +188,8 @@ const portfolioData = {
         { name: "JavaScript (ES6+)", kind: "Language", domain: "Web", desc: "Front-end and Node.js development.", appliedAt: "StoreRatings, OrangeChat, this site" },
         { name: "C / C++", kind: "Language", domain: "Systems", desc: "Systems programming fundamentals." },
         { name: "Java", kind: "Language", domain: "Object-oriented", desc: "Object-oriented application development." },
-        { name: "PowerShell", kind: "Language", domain: "Windows automation", desc: "Scripting and administration on Windows." },
+        { name: "PowerShell", kind: "Language", domain: "Windows automation", desc: "Scripting and administration on Windows.", appliedAt: "Active Directory Threat Detection Lab, KillSwitch installer" },
+        { name: "Go", kind: "Language", domain: "Endpoint agents", desc: "Cross-platform agent binaries with Windows-specific BitLocker and reset executors.", appliedAt: "KillSwitch" },
         { name: "Bash", kind: "Language", domain: "Linux automation", desc: "Shell scripting on Linux and macOS." }
       ]
     },
